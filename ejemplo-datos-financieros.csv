@@ -1,0 +1,16 @@
+Codigo,Descripcion,Cuenta,Debitos,Creditos,SaldoActual,Valor,Categoria,Subgrupo
+1105,Caja,Caja,0,0,50000,50000,Activos,Efectivo y equivalentes
+1110,Bancos,Bancos,0,0,150000,150000,Activos,Efectivo y equivalentes
+1305,Clientes,Cuentas por cobrar,0,0,80000,80000,Activos,Cuentas por cobrar
+1435,Inventarios,Inventarios,0,0,120000,120000,Activos,Inventarios
+1504,Terrenos,Terrenos,0,0,200000,200000,Activos,Propiedad planta y equipo
+1520,Maquinaria y equipo,Maquinaria y equipo,0,0,180000,180000,Activos,Propiedad planta y equipo
+2105,Proveedores,Cuentas por pagar,0,0,-60000,-60000,Pasivos,Cuentas por pagar
+2205,Obligaciones bancarias,Obligaciones bancarias,0,0,-100000,-100000,Pasivos,Obligaciones financieras
+2365,Retención en la fuente,Retención en la fuente,0,0,-15000,-15000,Pasivos,Impuestos por pagar
+3105,Capital social,Capital social,0,0,-300000,-300000,Patrimonio,Capital
+3605,Utilidades retenidas,Utilidades retenidas,0,0,-305000,-305000,Patrimonio,Resultados acumulados
+4135,Ventas,Ingresos por ventas,0,500000,500000,500000,Ingresos,Ingresos operacionales
+5135,Costo de ventas,Costo de ventas,200000,0,-200000,-200000,Costos,Costo de ventas
+5205,Gastos de administración,Gastos de administración,80000,0,-80000,-80000,Gastos,Gastos operacionales
+5305,Gastos de ventas,Gastos de ventas,60000,0,-60000,-60000,Gastos,Gastos operacionales

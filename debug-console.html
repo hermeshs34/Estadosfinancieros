@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Supabase</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <h1>Debug de Supabase</h1>
+    <div id="results">
+        <h3>Resultados:</h3>
+        <div id="connection"><strong>Conectividad:</strong> Probando...</div>
+        <div id="companies"><strong>Companies:</strong> Cargando...</div>
+        <div id="periods"><strong>Periods:</strong> Cargando...</div>
+        <div id="entries"><strong>Entries:</strong> Cargando...</div>
+    </div>
+    
+    <script>
+        // Configuración de Supabase
+        const supabaseUrl = 'https://olxkqysvmxzzbbjxwlyl.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9seGtxeXN2bXh6emJianh3bHlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0ODc4NjMsImV4cCI6MjA3MjA2Mzg2M30.EkbIW23rr3NXjYcs1L8PoYA-7uf0a5Axe7j9kd8K2Qc';
+        
+        console.log('Configuración Supabase:');
+        console.log('URL:', supabaseUrl);
+        console.log('Key:', supabaseKey.substring(0, 20) + '...');
+        
+        // Verificar si la librería de Supabase está disponible
+        if (typeof window.supabase === 'undefined') {
+            console.error('La librería de Supabase no está cargada');
+            document.body.innerHTML += '<p style="color: red;">Error: La librería de Supabase no está cargada</p>';
+        } else {
+        
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+        console.log('Cliente Supabase creado:', supabase);
+
+        async function testConnection() {
+            console.log('Probando conectividad básica...');
+            
+            try {
+                // Prueba simple de conectividad
+                const response = await fetch(supabaseUrl + '/rest/v1/', {
+                    headers: {
+                        'apikey': supabaseKey,
+                        'Authorization': 'Bearer ' + supabaseKey
+                    }
+                });
+                
+                console.log('Respuesta de conectividad:', response.status, response.statusText);
+                
+                if (response.ok) {
+                    document.getElementById('results').innerHTML += '<p style="color: green;">✓ Conectividad OK</p>';
+                } else {
+                    document.getElementById('results').innerHTML += '<p style="color: red;">✗ Error de conectividad: ' + response.status + '</p>';
+                }
+                
+            } catch (error) {
+                console.error('Error de conectividad:', error);
+                document.getElementById('results').innerHTML += '<p style="color: red;">✗ Error de red: ' + error.message + '</p>';
+            }
+        }
+        
+        async function debugSupabase() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<p>Iniciando debug...</p>';
+            
+            // Primero probar conectividad
+            await testConnection();
+            
+            try {
+                // Consultar companies
+                console.log('Consultando companies...');
+                const { data: companies, error: companiesError } = await supabase
+                    .from('companies')
+                    .select('*')
+                    .limit(5);
+                
+                if (companiesError) {
+                    console.error('Error en companies:', companiesError);
+                    resultsDiv.innerHTML += `<p style="color: red;">Error companies: ${companiesError.message}</p>`;
+                } else {
+                    console.log('Companies:', companies);
+                    resultsDiv.innerHTML += `<h3>Companies (${companies.length}):</h3><pre>${JSON.stringify(companies, null, 2)}</pre>`;
+                }
+                
+                // Consultar financial_periods
+                console.log('Consultando financial_periods...');
+                const { data: periods, error: periodsError } = await supabase
+                    .from('financial_periods')
+                    .select('*')
+                    .limit(5);
+                
+                if (periodsError) {
+                    console.error('Error en periods:', periodsError);
+                    resultsDiv.innerHTML += `<p style="color: red;">Error periods: ${periodsError.message}</p>`;
+                } else {
+                    console.log('Periods:', periods);
+                    resultsDiv.innerHTML += `<h3>Financial Periods (${periods.length}):</h3><pre>${JSON.stringify(periods, null, 2)}</pre>`;
+                }
+                
+                // Consultar financial_entries
+                console.log('Consultando financial_entries...');
+                const { data: entries, error: entriesError } = await supabase
+                    .from('financial_entries')
+                    .select('*')
+                    .limit(5);
+                
+                if (entriesError) {
+                    console.error('Error en entries:', entriesError);
+                    resultsDiv.innerHTML += `<p style="color: red;">Error entries: ${entriesError.message}</p>`;
+                } else {
+                    console.log('Entries:', entries);
+                    resultsDiv.innerHTML += `<h3>Financial Entries (${entries.length}):</h3><pre>${JSON.stringify(entries, null, 2)}</pre>`;
+                }
+                
+            } catch (error) {
+                console.error('Error general:', error);
+                resultsDiv.innerHTML += `<p style="color: red;">Error general: ${error.message}</p>`;
+            }
+        }
+        
+        // Ejecutar debug al cargar la página
+        window.addEventListener('load', debugSupabase);
+        
+        } // Cierre del bloque else
+    </script>
+</body>
+</html>

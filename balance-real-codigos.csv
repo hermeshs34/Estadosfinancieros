@@ -1,0 +1,14 @@
+Codigo,Descripcion,SaldoInicial,Debitos,Creditos,SaldoActual
+1101,Caja General,45000,15000,5000,55000
+1102,Banco Nación,65000,20000,10000,75000
+1201,Mercaderías,40000,8000,3000,45000
+1301,Clientes,30000,12000,7000,35000
+2101,Proveedores,50000,5000,15000,60000
+2201,Préstamos Bancarios,30000,2000,8000,40000
+3101,Capital Social,200000,0,5000,205000
+3201,Resultados Acumulados,100000,0,30000,130000
+4101,Ventas Mercaderías,0,0,800000,800000
+5101,Costo Mercaderías Vendidas,480000,50000,0,530000
+6101,Gastos Administrativos,150000,20000,0,170000
+6201,Gastos de Ventas,50000,5000,0,55000
+7101,Intereses Perdidos,15000,3000,0,18000

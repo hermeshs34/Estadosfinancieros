@@ -1,0 +1,98 @@
+[
+  {
+    "Codigo": "1105",
+    "Descripcion": "CAJA GENERAL",
+    "SaldoInicial": "50000.00",
+    "Debitos": "25000.00",
+    "Creditos": "15000.00",
+    "SaldoActual": "60000.00"
+  },
+  {
+    "Codigo": "1110",
+    "Descripcion": "BANCOS",
+    "SaldoInicial": "100000.00",
+    "Debitos": "50000.00",
+    "Creditos": "30000.00",
+    "SaldoActual": "120000.00"
+  },
+  {
+    "Codigo": "1305",
+    "Descripcion": "CUENTAS POR COBRAR CLIENTES",
+    "SaldoInicial": "80000.00",
+    "Debitos": "40000.00",
+    "Creditos": "20000.00",
+    "SaldoActual": "100000.00"
+  },
+  {
+    "Codigo": "1435",
+    "Descripcion": "INVENTARIOS",
+    "SaldoInicial": "150000.00",
+    "Debitos": "75000.00",
+    "Creditos": "50000.00",
+    "SaldoActual": "175000.00"
+  },
+  {
+    "Codigo": "1504",
+    "Descripcion": "MAQUINARIA Y EQUIPO",
+    "SaldoInicial": "200000.00",
+    "Debitos": "0.00",
+    "Creditos": "0.00",
+    "SaldoActual": "200000.00"
+  },
+  {
+    "Codigo": "2105",
+    "Descripcion": "CUENTAS POR PAGAR PROVEEDORES",
+    "SaldoInicial": "60000.00",
+    "Debitos": "20000.00",
+    "Creditos": "30000.00",
+    "SaldoActual": "70000.00"
+  },
+  {
+    "Codigo": "2365",
+    "Descripcion": "OBLIGACIONES LABORALES",
+    "SaldoInicial": "25000.00",
+    "Debitos": "5000.00",
+    "Creditos": "10000.00",
+    "SaldoActual": "30000.00"
+  },
+  {
+    "Codigo": "3115",
+    "Descripcion": "CAPITAL SOCIAL",
+    "SaldoInicial": "300000.00",
+    "Debitos": "0.00",
+    "Creditos": "0.00",
+    "SaldoActual": "300000.00"
+  },
+  {
+    "Codigo": "4135",
+    "Descripcion": "INGRESOS POR VENTAS",
+    "SaldoInicial": "0.00",
+    "Debitos": "0.00",
+    "Creditos": "500000.00",
+    "SaldoActual": "500000.00"
+  },
+  {
+    "Codigo": "6135",
+    "Descripcion": "COSTO DE VENTAS",
+    "SaldoInicial": "0.00",
+    "Debitos": "300000.00",
+    "Creditos": "0.00",
+    "SaldoActual": "300000.00"
+  },
+  {
+    "Codigo": "5105",
+    "Descripcion": "GASTOS DE ADMINISTRACION",
+    "SaldoInicial": "0.00",
+    "Debitos": "80000.00",
+    "Creditos": "0.00",
+    "SaldoActual": "80000.00"
+  },
+  {
+    "Codigo": "5205",
+    "Descripcion": "GASTOS DE VENTAS",
+    "SaldoInicial": "0.00",
+    "Debitos": "50000.00",
+    "Creditos": "0.00",
+    "SaldoActual": "50000.00"
+  }
+]

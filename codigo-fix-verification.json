@@ -1,0 +1,527 @@
+{
+  "totalRegistros": 864,
+  "codigosClase5": [
+    "501-",
+    "501-01-",
+    "501-01-02-",
+    "501-01-02-01-",
+    "501-01-02-01-01-",
+    "501-01-02-01-01-01",
+    "501-01-02-01-01-03",
+    "501-01-03-",
+    "501-01-03-01-",
+    "501-01-03-01-01-",
+    "501-01-03-01-01-01",
+    "501-01-03-01-01-03",
+    "501-01-04-",
+    "501-01-04-01-",
+    "501-01-04-01-01-",
+    "501-01-04-01-01-01",
+    "501-01-04-01-01-03",
+    "501-01-04-01-01-04",
+    "501-01-05-",
+    "501-01-05-01-",
+    "501-01-05-01-01-",
+    "501-01-05-01-01-01",
+    "501-01-05-01-01-03",
+    "502-",
+    "502-01-",
+    "502-01-01-",
+    "502-01-01-02-",
+    "502-01-01-02-01-",
+    "502-01-01-02-01-01",
+    "502-01-01-03-",
+    "502-01-01-03-01-",
+    "502-01-01-03-01-01",
+    "502-02-",
+    "502-02-01-",
+    "502-02-01-01-",
+    "502-02-01-01-02-",
+    "502-02-01-01-02-01",
+    "502-02-01-01-03-",
+    "502-02-01-01-03-01",
+    "502-02-01-01-04-",
+    "502-02-01-01-04-01",
+    "503-",
+    "503-01-",
+    "503-01-01-",
+    "503-01-01-02-",
+    "503-01-01-02-02-",
+    "503-01-01-02-02-01",
+    "503-01-01-02-04-",
+    "503-01-01-02-04-01",
+    "503-01-01-03-",
+    "503-01-01-03-02-",
+    "503-01-01-03-02-01",
+    "503-01-01-03-04-",
+    "503-01-01-03-04-01",
+    "503-01-01-04-",
+    "503-01-01-04-02-",
+    "503-01-01-04-02-01",
+    "503-01-01-04-04-",
+    "503-01-01-04-04-01",
+    "503-02-",
+    "503-02-01-",
+    "503-02-01-02-",
+    "503-02-01-02-01-",
+    "503-02-01-02-01-01",
+    "503-02-01-02-01-04",
+    "503-02-01-03-",
+    "503-02-01-03-01-",
+    "503-02-01-03-01-01",
+    "503-02-01-03-01-04",
+    "503-02-01-04-",
+    "503-02-01-04-01-",
+    "503-02-01-04-01-01",
+    "503-02-01-05-",
+    "503-02-01-05-01-",
+    "503-02-01-05-01-01",
+    "506-",
+    "506-01-",
+    "506-01-02-",
+    "506-01-02-01-",
+    "506-01-02-01-01-",
+    "506-01-02-01-01-01",
+    "506-01-02-01-01-03",
+    "506-01-03-",
+    "506-01-03-01-",
+    "506-01-03-01-01-",
+    "506-01-03-01-01-01",
+    "506-01-03-01-01-03",
+    "506-01-04-",
+    "506-01-04-01-",
+    "506-01-04-01-01-",
+    "506-01-04-01-01-01",
+    "506-01-04-01-01-03",
+    "506-01-04-01-01-04",
+    "506-01-05-",
+    "506-01-05-01-",
+    "506-01-05-01-01-",
+    "506-01-05-01-01-01",
+    "506-01-05-01-01-03",
+    "507-",
+    "507-01-",
+    "507-01-03-",
+    "507-01-03-01-",
+    "507-01-03-01-01-",
+    "507-01-03-01-01-01",
+    "507-01-04-",
+    "507-01-04-01-",
+    "507-01-04-01-01-",
+    "507-01-04-01-01-01",
+    "512-",
+    "512-01-",
+    "512-01-01-",
+    "512-01-01-01-",
+    "512-01-01-01-01-",
+    "512-01-01-01-01-01",
+    "512-01-04-",
+    "512-01-04-01-",
+    "512-01-04-01-01-",
+    "512-01-04-01-01-01",
+    "512-03-",
+    "512-03-01-",
+    "512-03-01-01-",
+    "512-03-01-01-01-",
+    "512-03-01-01-01-01",
+    "514-",
+    "514-01-",
+    "514-01-01-",
+    "514-01-01-01-",
+    "514-01-01-01-01-",
+    "514-01-01-01-01-01",
+    "514-01-01-01-01-03",
+    "514-01-01-01-02-",
+    "514-01-01-01-02-01",
+    "514-01-01-01-03-",
+    "514-01-01-01-03-01",
+    "514-01-01-03-",
+    "514-01-01-03-01-",
+    "514-01-01-03-01-01",
+    "514-01-02-",
+    "514-01-02-01-",
+    "514-01-02-01-01-",
+    "514-01-02-01-01-01",
+    "514-01-02-01-01-02",
+    "514-01-02-01-01-03",
+    "514-02-",
+    "514-02-01-",
+    "514-02-01-01-",
+    "514-02-01-01-01-",
+    "514-02-01-01-01-01",
+    "514-05-",
+    "514-05-01-",
+    "514-05-01-01-",
+    "514-05-01-01-01-",
+    "514-05-01-01-01-01"
+  ],
+  "gastosOperacionales": [
+    {
+      "codigo": "501-",
+      "descripcion": "PRIMAS",
+      "saldoActual": "-82278840.36"
+    },
+    {
+      "codigo": "501-01-",
+      "descripcion": "NEGOCIOS NACIONALES",
+      "saldoActual": "-82278840.36"
+    },
+    {
+      "codigo": "501-01-02-",
+      "descripcion": "TRANSPORTE",
+      "saldoActual": "-12425263.6"
+    },
+    {
+      "codigo": "501-01-02-01-",
+      "descripcion": "TRANSPORTE",
+      "saldoActual": "-12425263.6"
+    },
+    {
+      "codigo": "501-01-02-01-01-",
+      "descripcion": "TRANSPORTE",
+      "saldoActual": "-12425263.6"
+    },
+    {
+      "codigo": "501-01-02-01-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-2531261.36"
+    },
+    {
+      "codigo": "501-01-02-01-01-03",
+      "descripcion": "CONTRATO",
+      "saldoActual": "-9894002.24"
+    },
+    {
+      "codigo": "501-01-03-",
+      "descripcion": "INCENDIO",
+      "saldoActual": "-52322145.15"
+    },
+    {
+      "codigo": "501-01-03-01-",
+      "descripcion": "INCENDIO",
+      "saldoActual": "-52322145.15"
+    },
+    {
+      "codigo": "501-01-03-01-01-",
+      "descripcion": "INCENDIO",
+      "saldoActual": "-52322145.15"
+    },
+    {
+      "codigo": "501-01-03-01-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-40071180.14"
+    },
+    {
+      "codigo": "501-01-03-01-01-03",
+      "descripcion": "CONTRATO",
+      "saldoActual": "-12250965.01"
+    },
+    {
+      "codigo": "501-01-04-",
+      "descripcion": "ACCIDENTES Y DIVERSOS",
+      "saldoActual": "-16749684.23"
+    },
+    {
+      "codigo": "501-01-04-01-",
+      "descripcion": "ACCIDENTES Y DIVERSOS",
+      "saldoActual": "-16749684.23"
+    },
+    {
+      "codigo": "501-01-04-01-01-",
+      "descripcion": "ACCIDENTES Y DIVERSOS",
+      "saldoActual": "-16749684.23"
+    },
+    {
+      "codigo": "501-01-04-01-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-5624278.8"
+    },
+    {
+      "codigo": "501-01-04-01-01-03",
+      "descripcion": "CONTRATO",
+      "saldoActual": "-5959934.05"
+    },
+    {
+      "codigo": "501-01-04-01-01-04",
+      "descripcion": "CONTRATO NO PROPORCIONAL",
+      "saldoActual": "-5165471.38"
+    },
+    {
+      "codigo": "501-01-05-",
+      "descripcion": "FIANZA",
+      "saldoActual": "-781747.38"
+    },
+    {
+      "codigo": "501-01-05-01-",
+      "descripcion": "FIANZA",
+      "saldoActual": "-781747.38"
+    },
+    {
+      "codigo": "501-01-05-01-01-",
+      "descripcion": "FIANZA",
+      "saldoActual": "-781747.38"
+    },
+    {
+      "codigo": "501-01-05-01-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-645914.89"
+    },
+    {
+      "codigo": "501-01-05-01-01-03",
+      "descripcion": "CONTRATO",
+      "saldoActual": "-135832.49"
+    },
+    {
+      "codigo": "502-",
+      "descripcion": "PRESTACIONES Y SINIESTROS A CARGO DE RETROCESIO",
+      "saldoActual": "-8213334.75"
+    },
+    {
+      "codigo": "502-02-",
+      "descripcion": "SINIESTROS A CARGO DE RETROCESIONARIOS",
+      "saldoActual": "-8213334.75"
+    },
+    {
+      "codigo": "502-02-01-",
+      "descripcion": "DEL PAIS",
+      "saldoActual": "-8213334.75"
+    },
+    {
+      "codigo": "502-02-01-01-",
+      "descripcion": "NEGOCIOS NACIONALES",
+      "saldoActual": "-8213334.75"
+    },
+    {
+      "codigo": "502-02-01-01-02-",
+      "descripcion": "TRANSPORTE",
+      "saldoActual": "-74857.96"
+    },
+    {
+      "codigo": "502-02-01-01-02-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-74857.96"
+    },
+    {
+      "codigo": "502-02-01-01-03-",
+      "descripcion": "INCENDIO",
+      "saldoActual": "-6196756.77"
+    },
+    {
+      "codigo": "502-02-01-01-03-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-6196756.77"
+    },
+    {
+      "codigo": "502-02-01-01-04-",
+      "descripcion": "ACCIDENTES Y DIVERSOS",
+      "saldoActual": "-1941720.02"
+    },
+    {
+      "codigo": "502-02-01-01-04-01",
+      "descripcion": "FACULTATIVOS",
+      "saldoActual": "-1941720.02"
+    },
+    {
+      "codigo": "503-",
+      "descripcion": "GASTOS OPERACIONALES REEMBOLSADOS POR RETROC",
+      "saldoActual": "-20468859.16"
+    },
+    {
+      "codigo": "503-02-",
+      "descripcion": "DEL EXTERIOR",
+      "saldoActual": "-20468859.16"
+    },
+    {
+      "codigo": "503-02-01-",
+      "descripcion": "NEGOCIOS NACIONALES",
+      "saldoActual": "-20468859.16"
+    },
+    {
+      "codigo": "503-02-01-02-",
+      "descripcion": "TRANSPORTE",
+      "saldoActual": "-2353939.34"
+    },
+    {
+      "codigo": "503-02-01-02-01-",
+      "descripcion": "TRANSPORTE",
+      "saldoActual": "-2353939.34"
+    },
+    {
+      "codigo": "503-02-01-02-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-2302390.82"
+    },
+    {
+      "codigo": "503-02-01-02-01-04",
+      "descripcion": "CONTRATO NO PROPORCIONAL",
+      "saldoActual": "-51548.52"
+    },
+    {
+      "codigo": "503-02-01-03-",
+      "descripcion": "INCENDIO",
+      "saldoActual": "-14404786.54"
+    },
+    {
+      "codigo": "503-02-01-03-01-",
+      "descripcion": "INCENDIO",
+      "saldoActual": "-14404786.54"
+    },
+    {
+      "codigo": "503-02-01-03-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-14254115.75"
+    },
+    {
+      "codigo": "503-02-01-03-01-04",
+      "descripcion": "CONTRATO NO PROPORCIONAL",
+      "saldoActual": "-150670.79"
+    },
+    {
+      "codigo": "503-02-01-04-",
+      "descripcion": "ACCIDENTES Y DIVERSOS",
+      "saldoActual": "-3533847.83"
+    },
+    {
+      "codigo": "503-02-01-04-01-",
+      "descripcion": "ACCIDENTES Y DIVERSOS",
+      "saldoActual": "-3533847.83"
+    },
+    {
+      "codigo": "503-02-01-04-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-3533847.83"
+    },
+    {
+      "codigo": "503-02-01-05-",
+      "descripcion": "FIANZAS",
+      "saldoActual": "-176285.45"
+    },
+    {
+      "codigo": "503-02-01-05-01-",
+      "descripcion": "FIANZAS",
+      "saldoActual": "-176285.45"
+    },
+    {
+      "codigo": "503-02-01-05-01-01",
+      "descripcion": "FACULTATIVO",
+      "saldoActual": "-176285.45"
+    },
+    {
+      "codigo": "514-01-01-01-02-",
+      "descripcion": "RESERVAS PARA RIESGOS EN CURSO",
+      "saldoActual": "-8362744.58"
+    },
+    {
+      "codigo": "514-01-01-01-02-01",
+      "descripcion": "NEGOCIOS NACIONALES",
+      "saldoActual": "-8362744.58"
+    },
+    {
+      "codigo": "514-01-01-01-03-",
+      "descripcion": "RESERVAS PARA SINIESTROS PENDIENTES DE PAGO",
+      "saldoActual": "-423888.06"
+    },
+    {
+      "codigo": "514-01-01-01-03-01",
+      "descripcion": "NEGOCIOS NACIONALES",
+      "saldoActual": "-423888.06"
+    },
+    {
+      "codigo": "514-01-01-03-",
+      "descripcion": "OTRAS OPERACIONES TÉCNICAS",
+      "saldoActual": "-21446722.22"
+    },
+    {
+      "codigo": "514-01-01-03-01-",
+      "descripcion": "NEGOCIOS NACIONALES",
+      "saldoActual": "-21446722.22"
+    },
+    {
+      "codigo": "514-01-01-03-01-01",
+      "descripcion": "DIFERENCIAL CAMBIARIO TÉCNICO",
+      "saldoActual": "-21446722.22"
+    },
+    {
+      "codigo": "514-01-02-",
+      "descripcion": "UTILIDAD FINANCIERA",
+      "saldoActual": "-33121277.12"
+    },
+    {
+      "codigo": "514-01-02-01-",
+      "descripcion": "UTILIDAD FINANCIERA",
+      "saldoActual": "-33121277.12"
+    },
+    {
+      "codigo": "514-01-02-01-01-",
+      "descripcion": "UTILIDAD FINANCIERA",
+      "saldoActual": "-33121277.12"
+    },
+    {
+      "codigo": "514-01-02-01-01-01",
+      "descripcion": "POSICIÓN MONEDA EXTRANJERA",
+      "saldoActual": "-29580566.85"
+    },
+    {
+      "codigo": "514-01-02-01-01-02",
+      "descripcion": "DIFERENCIAL CAMBIARIO ADMINISTRATIVO",
+      "saldoActual": "-3375030.27"
+    },
+    {
+      "codigo": "514-01-02-01-01-03",
+      "descripcion": "FLUCTUACIÓN CAMBIARIA VALORES",
+      "saldoActual": "-165680.0"
+    },
+    {
+      "codigo": "514-02-",
+      "descripcion": "DIFERENCIAS EN COBRANZAS",
+      "saldoActual": "-883.88"
+    },
+    {
+      "codigo": "514-02-01-",
+      "descripcion": "DIFERENCIAS EN COBRANZAS",
+      "saldoActual": "-883.88"
+    },
+    {
+      "codigo": "514-02-01-01-",
+      "descripcion": "DIFERENCIAS EN COBRANZAS",
+      "saldoActual": "-883.88"
+    },
+    {
+      "codigo": "514-02-01-01-01-",
+      "descripcion": "DIFERENCIAS EN COBRANZAS",
+      "saldoActual": "-883.88"
+    },
+    {
+      "codigo": "514-02-01-01-01-01",
+      "descripcion": "DIFERENCIAS EN COBRANZAS",
+      "saldoActual": "-883.88"
+    },
+    {
+      "codigo": "514-05-",
+      "descripcion": "OTROS BENEFICIOS",
+      "saldoActual": "-116262.0"
+    },
+    {
+      "codigo": "514-05-01-",
+      "descripcion": "OTROS BENEFICIOS",
+      "saldoActual": "-116262.0"
+    },
+    {
+      "codigo": "514-05-01-01-",
+      "descripcion": "OTROS BENEFICIOS",
+      "saldoActual": "-116262.0"
+    },
+    {
+      "codigo": "514-05-01-01-01-",
+      "descripcion": "OTROS BENEFICIOS",
+      "saldoActual": "-116262.0"
+    },
+    {
+      "codigo": "514-05-01-01-01-01",
+      "descripcion": "OTROS BENEFICIOS",
+      "saldoActual": "-116262.0"
+    }
+  ],
+  "codigosClase6": [],
+  "correccionExitosa": true
+}

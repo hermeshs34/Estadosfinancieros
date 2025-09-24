@@ -1,0 +1,115 @@
+{
+  "totalRecords": 864,
+  "headers": [
+    "Codigo",
+    "Descripcion",
+    "Naturaleza",
+    "Nivel",
+    "SaldoInicial",
+    "Debitos",
+    "Creditos",
+    "SaldoActual",
+    "FechaPeriodo",
+    "SistemaOrigen"
+  ],
+  "firstThreeRecords": [
+    {
+      "Codigo": "201-",
+      "Descripcion": "INVERSIONES APTAS PARA LA REPRESENTACIÓN DE LAS",
+      "Naturaleza": "Deudora",
+      "Nivel": "1",
+      "SaldoInicial": "2964600.97",
+      "Debitos": "13340155.24",
+      "Creditos": "12234925.46",
+      "SaldoActual": "4069830.75",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    },
+    {
+      "Codigo": "201-01-",
+      "Descripcion": "DISPONIBLE",
+      "Naturaleza": "Deudora",
+      "Nivel": "2",
+      "SaldoInicial": "2436314.73",
+      "Debitos": "12937223.85",
+      "Creditos": "11653245.46",
+      "SaldoActual": "3720293.12",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    },
+    {
+      "Codigo": "201-01-01-",
+      "Descripcion": "CAJA  PRINCIPAL",
+      "Naturaleza": "Deudora",
+      "Nivel": "3",
+      "SaldoInicial": "0.0",
+      "Debitos": "3746896.06",
+      "Creditos": "3746896.06",
+      "SaldoActual": "0.0",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    }
+  ],
+  "recordsWithValues": [
+    {
+      "Codigo": "201-",
+      "Descripcion": "INVERSIONES APTAS PARA LA REPRESENTACIÓN DE LAS",
+      "Naturaleza": "Deudora",
+      "Nivel": "1",
+      "SaldoInicial": "2964600.97",
+      "Debitos": "13340155.24",
+      "Creditos": "12234925.46",
+      "SaldoActual": "4069830.75",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    },
+    {
+      "Codigo": "201-01-",
+      "Descripcion": "DISPONIBLE",
+      "Naturaleza": "Deudora",
+      "Nivel": "2",
+      "SaldoInicial": "2436314.73",
+      "Debitos": "12937223.85",
+      "Creditos": "11653245.46",
+      "SaldoActual": "3720293.12",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    },
+    {
+      "Codigo": "201-01-03-",
+      "Descripcion": "DEPOSITOS A LA VISTA",
+      "Naturaleza": "Deudora",
+      "Nivel": "3",
+      "SaldoInicial": "2436314.73",
+      "Debitos": "9190327.79",
+      "Creditos": "7906349.4",
+      "SaldoActual": "3720293.12",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    },
+    {
+      "Codigo": "201-01-03-01-",
+      "Descripcion": "MONEDA NACIONAL",
+      "Naturaleza": "Deudora",
+      "Nivel": "4",
+      "SaldoInicial": "48130.07",
+      "Debitos": "7745454.3",
+      "Creditos": "7459428.69",
+      "SaldoActual": "334155.68",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    },
+    {
+      "Codigo": "201-01-03-01-01-",
+      "Descripcion": "MONEDA NACIONAL",
+      "Naturaleza": "Deudora",
+      "Nivel": "5",
+      "SaldoInicial": "48130.07",
+      "Debitos": "7745454.3",
+      "Creditos": "7459428.69",
+      "SaldoActual": "334155.68",
+      "FechaPeriodo": "31/01/2025",
+      "SistemaOrigen": "Profit Plus Contabilidad"
+    }
+  ]
+}

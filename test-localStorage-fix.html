@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Solución localStorage</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .test-section {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .btn.success {
+            background: #28a745;
+        }
+        .btn.success:hover {
+            background: #218838;
+        }
+        .btn.danger {
+            background: #dc3545;
+        }
+        .btn.danger:hover {
+            background: #c82333;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .status.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .status.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .status.info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 Prueba de Solución localStorage</h1>
+            <p>Esta herramienta verifica que la solución implementada funcione correctamente</p>
+        </div>
+
+        <div class="test-section">
+            <h3>📋 Instrucciones de Prueba</h3>
+            <ol>
+                <li><strong>Paso 1:</strong> Haz clic en "Simular Datos Iniciales" para crear datos de prueba</li>
+                <li><strong>Paso 2:</strong> Abre la aplicación principal en otra pestaña</li>
+                <li><strong>Paso 3:</strong> Recarga la aplicación principal varias veces</li>
+                <li><strong>Paso 4:</strong> Verifica que los datos persistan usando "Verificar Estado"</li>
+                <li><strong>Paso 5:</strong> Abre el monitor en tiempo real para observar los cambios</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h3>🔧 Controles de Prueba</h3>
+            <button class="btn success" onclick="createTestData()">📝 Simular Datos Iniciales</button>
+            <button class="btn" onclick="checkStatus()">🔍 Verificar Estado</button>
+            <button class="btn" onclick="openMainApp()">🚀 Abrir Aplicación Principal</button>
+            <button class="btn" onclick="openMonitor()">📊 Abrir Monitor en Tiempo Real</button>
+            <button class="btn danger" onclick="clearTestData()">🗑️ Limpiar Datos de Prueba</button>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Estado Actual</h3>
+            <div id="status-display">Haz clic en "Verificar Estado" para ver el estado actual</div>
+        </div>
+
+        <div class="test-section">
+            <h3>📝 Log de Actividades</h3>
+            <div class="log" id="activity-log">Esperando actividades...
+</div>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEYS = {
+            SELECTED_COMPANY: 'financial_app_selected_company',
+            SELECTED_PERIOD: 'financial_app_selected_period'
+        };
+
+        function log(message) {
+            const logElement = document.getElementById('activity-log');
+            const timestamp = new Date().toLocaleTimeString();
+            logElement.textContent += `[${timestamp}] ${message}\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+        }
+
+        function createTestData() {
+            const testCompany = {
+                id: "test-company-123",
+                name: "Empresa de Prueba S.A.",
+                tax_id: "J-12345678-9",
+                industry: "Tecnología",
+                country: "Venezuela",
+                currency: "VES",
+                description: "Empresa creada para pruebas de localStorage",
+                is_active: true,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString(),
+                user_id: "test-user-456",
+                role: "admin",
+                is_owner: true,
+                joined_at: new Date().toISOString(),
+                user_company_id: "test-uc-789"
+            };
+
+            const testPeriod = {
+                id: "test-period-456",
+                company_id: "test-company-123",
+                period_name: "PERÍODO DE PRUEBA 2025 (01/01/2025 - 31/12/2025)",
+                start_date: "2025-01-01",
+                end_date: "2025-12-31",
+                period_type: "annual",
+                is_closed: false,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString(),
+                is_published: false
+            };
+
+            localStorage.setItem(STORAGE_KEYS.SELECTED_COMPANY, JSON.stringify(testCompany));
+            localStorage.setItem(STORAGE_KEYS.SELECTED_PERIOD, JSON.stringify(testPeriod));
+
+            log('✅ Datos de prueba creados exitosamente');
+            log(`   Empresa: ${testCompany.name}`);
+            log(`   Período: ${testPeriod.period_name}`);
+            
+            checkStatus();
+        }
+
+        function checkStatus() {
+            const statusDisplay = document.getElementById('status-display');
+            const companyData = localStorage.getItem(STORAGE_KEYS.SELECTED_COMPANY);
+            const periodData = localStorage.getItem(STORAGE_KEYS.SELECTED_PERIOD);
+
+            let statusHTML = '';
+
+            if (companyData) {
+                try {
+                    const company = JSON.parse(companyData);
+                    statusHTML += `<div class="status success">✅ <strong>Empresa encontrada:</strong> ${company.name} (ID: ${company.id})</div>`;
+                } catch (e) {
+                    statusHTML += `<div class="status error">⚠️ <strong>Empresa corrupta:</strong> Error al parsear datos</div>`;
+                }
+            } else {
+                statusHTML += `<div class="status error">❌ <strong>Empresa no encontrada</strong></div>`;
+            }
+
+            if (periodData) {
+                try {
+                    const period = JSON.parse(periodData);
+                    statusHTML += `<div class="status success">✅ <strong>Período encontrado:</strong> ${period.period_name} (${period.start_date} - ${period.end_date})</div>`;
+                } catch (e) {
+                    statusHTML += `<div class="status error">⚠️ <strong>Período corrupto:</strong> Error al parsear datos</div>`;
+                }
+            } else {
+                statusHTML += `<div class="status error">❌ <strong>Período no encontrado</strong></div>`;
+            }
+
+            // Información adicional
+            const allKeys = Object.keys(localStorage);
+            const relevantKeys = allKeys.filter(key => 
+                key.includes('financial_app') || 
+                key.includes('company') || 
+                key.includes('period')
+            );
+
+            statusHTML += `<div class="status info">📊 <strong>Claves relevantes en localStorage:</strong> ${relevantKeys.length} encontradas</div>`;
+            if (relevantKeys.length > 0) {
+                statusHTML += `<div class="status info">🔑 <strong>Claves:</strong> ${relevantKeys.join(', ')}</div>`;
+            }
+
+            statusDisplay.innerHTML = statusHTML;
+            log('🔍 Estado verificado');
+        }
+
+        function openMainApp() {
+            window.open('http://localhost:5173', '_blank');
+            log('🚀 Aplicación principal abierta en nueva pestaña');
+        }
+
+        function openMonitor() {
+            window.open('http://localhost:5173/monitor-localStorage.html', '_blank');
+            log('📊 Monitor en tiempo real abierto en nueva pestaña');
+        }
+
+        function clearTestData() {
+            if (confirm('¿Estás seguro de que quieres eliminar los datos de prueba?')) {
+                localStorage.removeItem(STORAGE_KEYS.SELECTED_COMPANY);
+                localStorage.removeItem(STORAGE_KEYS.SELECTED_PERIOD);
+                log('🗑️ Datos de prueba eliminados');
+                checkStatus();
+            }
+        }
+
+        // Verificar estado inicial al cargar la página
+        window.onload = function() {
+            log('🔧 Herramienta de prueba iniciada');
+            checkStatus();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,1391 @@
+﻿EMPRESA DE SEGUROS,,,,,,,,,
+ACTIVO ANALÍTICO,,,,,,,,,
+AL XX/XX/20___,,,,,,,,,
+,,,,,,,,,
+Grupo,Sub-Grupo,Cuenta,Sub-Cuenta,Sub-Sub Cuenta,Auxiliar,Sub-Auxiliar 1,Sub-Auxiliar 2,Sub-Auxiliar 3,Nombre de la Cuenta
+2.,,,,,,,,,ACTIVO
+2.,201.,,,,,,,,BIENES APTOS PARA LA REPRESENTACIÓN DE LAS RESERVAS TÉCNICAS
+2.,201.,01.,,,,,,,Disponible
+2.,201.,01.,01.,,,,,,Depósitos a la Vista
+2.,201.,01.,01.,01.,,,,,Bancos
+2.,201.,01.,01.,01.,01.,,,,Moneda Nacional
+2.,201.,01.,01.,01.,02.,,,,Moneda Extranjera
+2.,201.,01.,01.,02.,,,,,Otras Instituciones Financieras
+2.,201.,01.,01.,02.,01.,,,,Moneda Nacional
+2.,201.,01.,01.,02.,02.,,,,Moneda Extranjera
+2.,201.,01.,02.,,,,,,Depósitos a Plazo Fijo
+2.,201.,01.,02.,01.,,,,,Bancos
+2.,201.,01.,02.,01.,01.,,,,Moneda Nacional
+2.,201.,01.,02.,01.,02.,,,,Moneda Extranjera
+2.,201.,01.,02.,02.,,,,,Otras Instituciones Financieras
+2.,201.,01.,02.,02.,01.,,,,Moneda Nacional
+2.,201.,01.,02.,02.,02.,,,,Moneda Extranjera
+2.,201.,02.,,,,,,,Valores Públicos
+2.,201.,02.,01.,,,,,,Emitidos o Garantizados por la República
+2.,201.,02.,01.,01.,,,,,Moneda Nacional
+2.,201.,02.,01.,02.,,,,,Moneda Extranjera
+2.,201.,02.,02.,,,,,,Emitidos por Otros Sujetos de Derecho Público Nacional
+2.,201.,02.,02.,01.,,,,,Moneda Nacional
+2.,201.,02.,02.,02.,,,,,Moneda Extranjera
+2.,201.,02.,03.,,,,,,Emitidos por Empresas con Participación de la República
+2.,201.,02.,03.,01.,,,,,Moneda Nacional
+2.,201.,02.,03.,02.,,,,,Moneda Extranjera
+2.,201.,02.,04.,,,,,,Emitidos por Instituciones con Participación de la República
+2.,201.,02.,04.,01.,,,,,Moneda Nacional
+2.,201.,02.,04.,02.,,,,,Moneda Extranjera
+2.,201.,03.,,,,,,,Participación en Fondos de Inversión
+2.,201.,03.,01.,,,,,,Renta Fija
+2.,201.,03.,01.,01.,,,,,Moneda Nacional
+2.,201.,03.,01.,02.,,,,,Moneda Extranjera
+2.,201.,03.,02.,,,,,,Renta Variable
+2.,201.,03.,02.,01.,,,,,Moneda Nacional
+2.,201.,03.,02.,02.,,,,,Moneda Extranjera
+2.,201.,04.,,,,,,,Participación Fondos de Inversión Inmobiliarios
+2.,201.,04.,01.,,,,,,Moneda Nacional
+2.,201.,04.,02.,,,,,,Moneda Extranjera
+2.,201.,05.,,,,,,,Bienes Inmuebles Edificados
+2.,201.,05.,01.,,,,,,Terrenos
+2.,201.,05.,02.,,,,,,Edificaciones
+2.,201.,06.,,,,,,,Otros Bienes Autorizados 
+2.,201.,06.,01.,,,,,,Valores de Renta Fija
+2.,201.,06.,01.,01.,,,,,Moneda Nacional
+2.,201.,06.,01.,02.,,,,,Moneda Extranjera
+2.,201.,06.,02.,,,,,,Otros activos o Derechos Nacionales
+2.,201.,06.,02.,01.,,,,,Moneda Nacional
+2.,201.,06.,02.,02.,,,,,Moneda Extranjera
+2.,202.,,,,,,,,GARANTÍA A LA NACIÓN
+2.,202.,01.,,,,,,,Efectivo
+2.,202.,02.,,,,,,,Valores Públicos
+2.,203.,,,,,,,,BIENES NO APTOS PARA LA REPRESENTACIÓN DE LAS RESERVAS TÉCNICAS
+2.,203.,01.,,,,,,,Disponible 
+2.,203.,01.,01.,,,,,,Caja
+2.,203.,01.,01.,01.,,,,,Moneda Nacional
+2.,203.,01.,01.,02.,,,,,Moneda Extranjera
+2.,203.,01.,02.,,,,,,Caja Chica
+2.,203.,01.,02.,01.,,,,,Moneda Nacional
+2.,203.,01.,02.,02.,,,,,Moneda Extranjera
+2.,203.,01.,03.,,,,,,Depósitos a la Vista
+2.,203.,01.,03.,01.,,,,,Bancos
+2.,203.,01.,03.,01.,01.,,,,Moneda Nacional
+2.,203.,01.,03.,01.,02.,,,,Moneda Extranjera
+2.,203.,01.,04.,,,,,,Otras Instituciones Financieras
+2.,203.,01.,04.,01.,,,,,Moneda Nacional
+2.,203.,01.,04.,02.,,,,,Moneda Extranjera
+2.,203.,01.,05.,,,,,,Depósitos a Plazo Fijo
+2.,203.,01.,05.,01.,,,,,Bancos
+2.,203.,01.,05.,01.,01.,,,,Moneda Nacional
+2.,203.,01.,05.,01.,02.,,,,Moneda Extranjera
+2.,203.,01.,06.,,,,,,Otras Instituciones Financieras
+2.,203.,01.,06.,01.,,,,,Moneda Nacional
+2.,203.,01.,06.,02.,,,,,Moneda Extranjera
+2.,203.,02.,,,,,,,Valores Públicos
+2.,203.,02.,01.,,,,,,Emitidos o Garantizados por la República
+2.,203.,02.,01.,01.,,,,,Moneda Nacional
+2.,203.,02.,01.,02.,,,,,Moneda Extranjera
+2.,203.,02.,02.,,,,,,Emitidos por Otros Sujetos de Derecho Público Nacional
+2.,203.,02.,02.,01.,,,,,Moneda Nacional
+2.,203.,02.,02.,02.,,,,,Moneda Extranjera
+2.,203.,02.,03.,,,,,,Emitidos por Empresas con Participación de la República
+2.,203.,02.,03.,01.,,,,,Moneda Nacional
+2.,203.,02.,03.,02.,,,,,Moneda Extranjera
+2.,203.,02.,04.,,,,,,Emitidos por Instituciones con Participación de la República
+2.,203.,02.,04.,01.,,,,,Moneda Nacional
+2.,203.,02.,04.,02.,,,,,Moneda Extranjera
+2.,203.,03.,,,,,,,Participación en Fondos de Inversión
+2.,203.,03.,01.,,,,,,Renta Fija
+2.,203.,03.,01.,01.,,,,,Moneda Nacional
+2.,203.,03.,01.,02.,,,,,Moneda Extranjera
+2.,203.,03.,02.,,,,,,Renta Variable
+2.,203.,03.,02.,01.,,,,,Moneda Nacional
+2.,203.,03.,02.,02.,,,,,Moneda Extranjera
+2.,203.,04.,,,,,,,Participación Fondos de Inversión Inmobiliarios
+2.,203.,04.,01.,,,,,,Moneda Nacional
+2.,203.,04.,02.,,,,,,Moneda Extranjera
+2.,203.,05.,,,,,,,Inmuebles
+2.,203.,05.,01.,,,,,,Terrenos
+2.,203.,05.,02.,,,,,,Edificaciones
+2.,203.,06.,,,,,,,Valores Privados
+2.,203.,06.,01.,,,,,,Acciones de Sociedades Anónimas
+2.,203.,06.,01.,01.,,,,,Empresas de Seguros o Reaseguros
+2.,203.,06.,01.,01.,01.,,,,Moneda Nacional
+2.,203.,06.,01.,01.,02.,,,,Moneda Extranjera
+2.,203.,06.,01.,02.,,,,,Sociedades de Corretaje de Seguros, de Reaseguros o de Valores
+2.,203.,06.,01.,02.,01.,,,,Moneda Nacional
+2.,203.,06.,01.,02.,02.,,,,Moneda Extranjera
+2.,203.,06.,01.,03.,,,,,Bancos y Otras Instituciones Financieras
+2.,203.,06.,01.,03.,01.,,,,Moneda Nacional
+2.,203.,06.,01.,03.,02.,,,,Moneda Extranjera
+2.,203.,06.,01.,04.,,,,,Sociedades Industriales y Comerciales
+2.,203.,06.,01.,04.,01.,,,,Moneda Nacional
+2.,203.,06.,01.,04.,02.,,,,Moneda Extranjera
+2.,203.,06.,01.,05.,,,,,Sociedades Civiles
+2.,203.,06.,01.,05.,01.,,,,Moneda Nacional
+2.,203.,06.,01.,05.,02.,,,,Moneda Extranjera
+2.,203.,06.,01.,06.,,,,,Empresas Filiales, Afiliadas y Relacionadas
+2.,203.,06.,01.,06.,01.,,,,Moneda Nacional
+2.,203.,06.,01.,06.,02.,,,,Moneda Extranjera
+2.,203.,06.,01.,07.,,,,,Otras Sociedades Anónimas
+2.,203.,06.,01.,07.,01.,,,,Moneda Nacional
+2.,203.,06.,01.,07.,02.,,,,Moneda Extranjera
+2.,203.,06.,02.,,,,,,Bonos de Sociedades Anónimas
+2.,203.,06.,02.,01.,,,,,Moneda Nacional
+2.,203.,06.,02.,02.,,,,,Moneda Extranjera
+2.,203.,06.,03.,,,,,,Valores de Renta Fija
+2.,203.,06.,03.,01.,,,,,Moneda Nacional
+2.,203.,06.,03.,02.,,,,,Moneda Extranjera
+2.,203.,07.,,,,,,,Activos en el Extranjero
+2.,203.,07.,01.,,,,,,Bancos  
+2.,203.,07.,02.,,,,,,Títulos Valores
+2.,203.,07.,03.,,,,,,Inmuebles 
+2.,203.,07.,04.,,,,,,Otras Inversiones 
+2.,203.,08.,,,,,,,Depósitos y Títulos Valores en Instituciones Intervenidas
+2.,203.,09.,,,,,,,Recuperaciones y Salvamentos de Siniestros
+2.,203.,09.,01.,,,,,,Recuperaciones
+2.,203.,09.,01.,01.,,,,,Operaciones de Seguros de Vida
+2.,203.,09.,01.,02.,,,,,Operaciones de Seguros Generales
+2.,203.,09.,01.,02.,01.,,,,Personas No Vida
+2.,203.,09.,01.,02.,02.,,,,Patrimoniales
+2.,203.,09.,01.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,203.,09.,01.,03.,,,,,Operaciones de Fianzas
+2.,203.,09.,02.,,,,,,Salvamentos
+2.,203.,09.,02.,01.,,,,,Operaciones de Seguros Generales
+2.,203.,09.,02.,01.,01.,,,,Patrimoniales
+2.,203.,09.,02.,01.,02.,,,,Obligacionales o de Responsabilidad
+2.,203.,10.,,,,,,,Primas por Operaciones en Coaseguro
+2.,203.,10.,01.,,,,,,Cuenta Especial Bancaria de Primas
+2.,203.,11.,,,,,,,Otros Bienes No Aptos para la Representación de las Reservas Técnicas
+2.,203.,11.,01.,,,,,,Moneda Nacional
+2.,203.,11.,02.,,,,,,Moneda Extranjera
+2.,204.,,,,,,,,CUENTAS DE REASEGURO
+2.,204.,01.,,,,,,,Cuentas Corrientes con Reaseguradores 
+2.,204.,01.,01.,,,,,,Del País
+2.,204.,01.,01.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,01.,01.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,01.,01.,02.,01.,,,,Personas No Vida
+2.,204.,01.,01.,02.,02.,,,,Patrimoniales
+2.,204.,01.,01.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,01.,01.,03.,,,,,Operaciones de Fianzas
+2.,204.,01.,02.,,,,,,Del Exterior
+2.,204.,01.,02.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,01.,02.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,01.,02.,02.,01.,,,,Personas No Vida
+2.,204.,01.,02.,02.,02.,,,,Patrimoniales
+2.,204.,01.,02.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,01.,02.,03.,,,,,Operaciones de Fianzas
+2.,204.,02.,,,,,,,Cuentas Corrientes con Reaseguradas
+2.,204.,02.,01.,,,,,,Del País
+2.,204.,02.,01.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,02.,01.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,02.,01.,02.,01.,,,,Personas No Vida
+2.,204.,02.,01.,02.,02.,,,,Patrimoniales
+2.,204.,02.,01.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,02.,01.,03.,,,,,Operaciones de Fianzas
+2.,204.,02.,02.,,,,,,Del Exterior
+2.,204.,02.,02.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,02.,02.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,02.,02.,02.,01.,,,,Personas No Vida
+2.,204.,02.,02.,02.,02.,,,,Patrimoniales
+2.,204.,02.,02.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,02.,02.,03.,,,,,Operaciones de Fianzas
+2.,204.,03.,,,,,,,Cuentas Corrientes con Retrocesionarios
+2.,204.,03.,01.,,,,,,Del País
+2.,204.,03.,01.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,03.,01.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,03.,01.,02.,01.,,,,Personas No Vida
+2.,204.,03.,01.,02.,02.,,,,Patrimoniales
+2.,204.,03.,01.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,03.,01.,03.,,,,,Operaciones de Fianzas
+2.,204.,03.,02.,,,,,,Del Exterior
+2.,204.,03.,02.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,03.,02.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,03.,02.,02.,01.,,,,Personas No Vida
+2.,204.,03.,02.,02.,02.,,,,Patrimoniales
+2.,204.,03.,02.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,03.,02.,03.,,,,,Operaciones de Fianzas
+2.,204.,04.,,,,,,,Cuentas Corrientes con Intermediarios de Reaseguros
+2.,204.,04.,01.,,,,,,Del País
+2.,204.,04.,01.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,04.,01.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,04.,01.,02.,01.,,,,Personas No Vida
+2.,204.,04.,01.,02.,02.,,,,Patrimoniales
+2.,204.,04.,01.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,04.,01.,03.,,,,,Operaciones de Fianzas
+2.,204.,04.,02.,,,,,,Del Exterior
+2.,204.,04.,02.,01.,,,,,Operaciones de Seguros de Vida
+2.,204.,04.,02.,02.,,,,,Operaciones de Seguros Generales
+2.,204.,04.,02.,02.,01.,,,,Personas No Vida
+2.,204.,04.,02.,02.,02.,,,,Patrimoniales
+2.,204.,04.,02.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,204.,04.,02.,03.,,,,,Operaciones de Fianzas
+2.,205.,,,,,,,,CUENTAS DE RESERVAS A CARGO DE REASEGURADORES Y DE RETROCESIONARIOS
+2.,205.,01.,,,,,,,A Cargo de Reaseguradores
+2.,205.,01.,01.,,,,,,Operaciones de Seguros de Vida
+2.,205.,01.,01.,01.,,,,,Del País
+2.,205.,01.,01.,01.,01.,,,,Reservas Matemáticas
+2.,205.,01.,01.,01.,01.,01.,,,Individual
+2.,205.,01.,01.,01.,01.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,01.,01.,03.,,,Rentas Vitalicias
+2.,205.,01.,01.,01.,02.,,,,Reservas para Riesgos en Curso
+2.,205.,01.,01.,01.,02.,01.,,,Individual
+2.,205.,01.,01.,01.,02.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,01.,02.,03.,,,Colectivo
+2.,205.,01.,01.,01.,02.,04.,,,Funerarios 
+2.,205.,01.,01.,01.,02.,04.,01.,,Individual
+2.,205.,01.,01.,01.,02.,04.,02.,,Colectivo 
+2.,205.,01.,01.,01.,03.,,,,Reservas para Prestaciones Pendientes de Pago
+2.,205.,01.,01.,01.,03.,01.,,,Individual
+2.,205.,01.,01.,01.,03.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,01.,03.,03.,,,Rentas Vitalicias
+2.,205.,01.,01.,01.,03.,04.,,,Colectivo
+2.,205.,01.,01.,01.,03.,05.,,,Funerarios 
+2.,205.,01.,01.,01.,03.,05.,01.,,Individual
+2.,205.,01.,01.,01.,03.,05.,02.,,Colectivo
+2.,205.,01.,01.,01.,04.,,,,Reservas para Prestaciones Ocurridas y No Notificadas
+2.,205.,01.,01.,01.,04.,01.,,,Individual
+2.,205.,01.,01.,01.,04.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,01.,04.,03.,,,Rentas Vitalicias
+2.,205.,01.,01.,01.,04.,04.,,,Colectivo
+2.,205.,01.,01.,01.,04.,05.,,,Funerarios 
+2.,205.,01.,01.,01.,04.,05.,01.,,Individual
+2.,205.,01.,01.,01.,04.,05.,02.,,Colectivo
+2.,205.,01.,01.,01.,05.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,01.,01.,01.,05.,01.,,,Colectivo de Vida
+2.,205.,01.,01.,01.,05.,02.,,,Colectivo Funerario
+2.,205.,01.,01.,02.,,,,,Del Exterior
+2.,205.,01.,01.,02.,01.,,,,Reservas Matemáticas
+2.,205.,01.,01.,02.,01.,01.,,,Individual
+2.,205.,01.,01.,02.,01.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,02.,01.,03.,,,Rentas Vitalicias
+2.,205.,01.,01.,02.,02.,,,,Reservas para Riesgos en Curso
+2.,205.,01.,01.,02.,02.,01.,,,Individual
+2.,205.,01.,01.,02.,02.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,02.,02.,03.,,,Colectivo
+2.,205.,01.,01.,02.,02.,04.,,,Funerarios 
+2.,205.,01.,01.,02.,02.,04.,01.,,Individual
+2.,205.,01.,01.,02.,02.,04.,02.,,Colectivo 
+2.,205.,01.,01.,02.,03.,,,,Reservas para Prestaciones Pendientes de Pago
+2.,205.,01.,01.,02.,03.,01.,,,Individual
+2.,205.,01.,01.,02.,03.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,02.,03.,03.,,,Rentas Vitalicias
+2.,205.,01.,01.,02.,03.,04.,,,Colectivo
+2.,205.,01.,01.,02.,03.,05.,,,Funerarios 
+2.,205.,01.,01.,02.,03.,05.,01.,,Individual
+2.,205.,01.,01.,02.,03.,05.,02.,,Colectivo
+2.,205.,01.,01.,02.,04.,,,,Reservas para Prestaciones Ocurridas y No Notificadas
+2.,205.,01.,01.,02.,04.,01.,,,Individual
+2.,205.,01.,01.,02.,04.,02.,,,Desgravamen Hipotecario
+2.,205.,01.,01.,02.,04.,03.,,,Rentas Vitalicias
+2.,205.,01.,01.,02.,04.,04.,,,Colectivo
+2.,205.,01.,01.,02.,04.,05.,,,Funerarios 
+2.,205.,01.,01.,02.,04.,05.,01.,,Individual
+2.,205.,01.,01.,02.,04.,05.,02.,,Colectivo
+2.,205.,01.,01.,02.,05.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,01.,01.,02.,05.,01.,,,Colectivo de Vida
+2.,205.,01.,01.,02.,05.,02.,,,Colectivo Funerario
+2.,205.,01.,02.,,,,,,Operaciones de Seguros Generales
+2.,205.,01.,02.,01.,,,,,Del País
+2.,205.,01.,02.,01.,01.,,,,Reservas para Riesgos en Curso
+2.,205.,01.,02.,01.,01.,01.,,,Personas No Vida
+2.,205.,01.,02.,01.,01.,01.,01.,,Accidentes Personales
+2.,205.,01.,02.,01.,01.,01.,01.,01.,Individual
+2.,205.,01.,02.,01.,01.,01.,01.,02.,Colectivo
+2.,205.,01.,02.,01.,01.,01.,01.,03.,Escolar
+2.,205.,01.,02.,01.,01.,01.,02.,,Salud
+2.,205.,01.,02.,01.,01.,01.,02.,01.,Individual
+2.,205.,01.,02.,01.,01.,01.,02.,02.,Colectivo
+2.,205.,01.,02.,01.,01.,01.,03.,,Funerarios Servicios
+2.,205.,01.,02.,01.,01.,01.,03.,01.,Individual
+2.,205.,01.,02.,01.,01.,01.,03.,02.,Colectivo
+2.,205.,01.,02.,01.,01.,01.,04.,,Combinados de Personas
+2.,205.,01.,02.,01.,01.,01.,04.,01.,Individual
+2.,205.,01.,02.,01.,01.,01.,04.,02.,Colectivo
+2.,205.,01.,02.,01.,01.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,01.,01.,01.,05.,01.,Individual
+2.,205.,01.,02.,01.,01.,01.,05.,02.,Colectivo
+2.,205.,01.,02.,01.,01.,01.,06.,,Otros Seguros de Personas
+2.,205.,01.,02.,01.,01.,01.,06.,01.,Individual
+2.,205.,01.,02.,01.,01.,01.,06.,02.,Colectivo
+2.,205.,01.,02.,01.,01.,02.,,,Patrimoniales
+2.,205.,01.,02.,01.,01.,02.,01.,,Incendio
+2.,205.,01.,02.,01.,01.,02.,02.,,Terremoto
+2.,205.,01.,02.,01.,01.,02.,03.,,Sustracción Ilegítima
+2.,205.,01.,02.,01.,01.,02.,04.,,Transporte
+2.,205.,01.,02.,01.,01.,02.,05.,,Ramos Técnicos
+2.,205.,01.,02.,01.,01.,02.,06.,,Petroleros
+2.,205.,01.,02.,01.,01.,02.,07.,,Combinados
+2.,205.,01.,02.,01.,01.,02.,08.,,Lucro Cesante
+2.,205.,01.,02.,01.,01.,02.,09.,,Automóvil Casco
+2.,205.,01.,02.,01.,01.,02.,09.,01.,Individual
+2.,205.,01.,02.,01.,01.,02.,09.,02.,Colectivo o Flota
+2.,205.,01.,02.,01.,01.,02.,10.,,Aeronaves
+2.,205.,01.,02.,01.,01.,02.,11.,,Naves
+2.,205.,01.,02.,01.,01.,02.,12.,,Agrícola
+2.,205.,01.,02.,01.,01.,02.,13.,,Pecuarios
+2.,205.,01.,02.,01.,01.,02.,14.,,Bancarios
+2.,205.,01.,02.,01.,01.,02.,15.,,Joyería
+2.,205.,01.,02.,01.,01.,02.,16.,,Diversos
+2.,205.,01.,02.,01.,01.,02.,16.,01.,Dinero y Valores
+2.,205.,01.,02.,01.,01.,02.,16.,02.,Artículos Valiosos
+2.,205.,01.,02.,01.,01.,02.,16.,03.,Asistencia en Viajes
+2.,205.,01.,02.,01.,01.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,01.,02.,01.,01.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,01.,01.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,01.,02.,01.,01.,03.,01.,01.,Individual
+2.,205.,01.,02.,01.,01.,03.,01.,02.,Colectivo o Flota
+2.,205.,01.,02.,01.,01.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,01.,02.,01.,01.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,01.,02.,01.,01.,03.,04.,,Responsabilidad Civil General
+2.,205.,01.,02.,01.,01.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,01.,02.,01.,01.,03.,06.,,Fidelidad de Empleados
+2.,205.,01.,02.,01.,01.,03.,07.,,Seguros de Crédito
+2.,205.,01.,02.,01.,02.,,,,Reservas para Prestaciones y Siniestros Pendientes de Pago
+2.,205.,01.,02.,01.,02.,01.,,,Personas No Vida
+2.,205.,01.,02.,01.,02.,01.,01.,,Accidentes Personales
+2.,205.,01.,02.,01.,02.,01.,01.,01.,Individual
+2.,205.,01.,02.,01.,02.,01.,01.,02.,Colectivo
+2.,205.,01.,02.,01.,02.,01.,01.,03.,Escolar
+2.,205.,01.,02.,01.,02.,01.,02.,,Salud
+2.,205.,01.,02.,01.,02.,01.,02.,01.,Individual
+2.,205.,01.,02.,01.,02.,01.,02.,02.,Colectivo
+2.,205.,01.,02.,01.,02.,01.,03.,,Funerarios Servicios
+2.,205.,01.,02.,01.,02.,01.,03.,01.,Individual
+2.,205.,01.,02.,01.,02.,01.,03.,02.,Colectivo
+2.,205.,01.,02.,01.,02.,01.,04.,,Combinados de Personas
+2.,205.,01.,02.,01.,02.,01.,04.,01.,Individual
+2.,205.,01.,02.,01.,02.,01.,04.,02.,Colectivo
+2.,205.,01.,02.,01.,02.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,01.,02.,01.,05.,01.,Individual
+2.,205.,01.,02.,01.,02.,01.,05.,02.,Colectivo
+2.,205.,01.,02.,01.,02.,01.,06.,,Otros Seguros de Personas
+2.,205.,01.,02.,01.,02.,01.,06.,01.,Individual
+2.,205.,01.,02.,01.,02.,01.,06.,02.,Colectivo
+2.,205.,01.,02.,01.,02.,02.,,,Patrimoniales
+2.,205.,01.,02.,01.,02.,02.,01.,,Incendio
+2.,205.,01.,02.,01.,02.,02.,02.,,Terremoto
+2.,205.,01.,02.,01.,02.,02.,03.,,Sustracción Ilegítima
+2.,205.,01.,02.,01.,02.,02.,04.,,Transporte
+2.,205.,01.,02.,01.,02.,02.,05.,,Ramos Técnicos
+2.,205.,01.,02.,01.,02.,02.,06.,,Petroleros
+2.,205.,01.,02.,01.,02.,02.,07.,,Combinados
+2.,205.,01.,02.,01.,02.,02.,08.,,Lucro Cesante
+2.,205.,01.,02.,01.,02.,02.,09.,,Automóvil Casco
+2.,205.,01.,02.,01.,02.,02.,09.,01.,Individual
+2.,205.,01.,02.,01.,02.,02.,09.,02.,Colectivo o Flota
+2.,205.,01.,02.,01.,02.,02.,10.,,Aeronaves
+2.,205.,01.,02.,01.,02.,02.,11.,,Naves
+2.,205.,01.,02.,01.,02.,02.,12.,,Agrícola
+2.,205.,01.,02.,01.,02.,02.,13.,,Pecuarios
+2.,205.,01.,02.,01.,02.,02.,14.,,Bancarios
+2.,205.,01.,02.,01.,02.,02.,15.,,Joyería
+2.,205.,01.,02.,01.,02.,02.,16.,,Diversos
+2.,205.,01.,02.,01.,02.,02.,16.,01.,Dinero y Valores
+2.,205.,01.,02.,01.,02.,02.,16.,02.,Artículos Valiosos
+2.,205.,01.,02.,01.,02.,02.,16.,03.,Asistencia en Viajes
+2.,205.,01.,02.,01.,02.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,01.,02.,01.,02.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,01.,02.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,01.,02.,01.,02.,03.,01.,01.,Individual
+2.,205.,01.,02.,01.,02.,03.,01.,02.,Colectivo o Flota
+2.,205.,01.,02.,01.,02.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,01.,02.,01.,02.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,01.,02.,01.,02.,03.,04.,,Responsabilidad Civil General
+2.,205.,01.,02.,01.,02.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,01.,02.,01.,02.,03.,06.,,Fidelidad de Empleados
+2.,205.,01.,02.,01.,02.,03.,07.,,Seguros de Crédito
+2.,205.,01.,02.,01.,03.,,,,Reservas para Siniestros Ocurridos y No Notificados
+2.,205.,01.,02.,01.,03.,01.,,,Personas No Vida
+2.,205.,01.,02.,01.,03.,01.,01.,,Accidentes Personales
+2.,205.,01.,02.,01.,03.,01.,01.,01.,Individual
+2.,205.,01.,02.,01.,03.,01.,01.,02.,Colectivo
+2.,205.,01.,02.,01.,03.,01.,01.,03.,Escolar
+2.,205.,01.,02.,01.,03.,01.,02.,,Salud
+2.,205.,01.,02.,01.,03.,01.,02.,01.,Individual
+2.,205.,01.,02.,01.,03.,01.,02.,02.,Colectivo
+2.,205.,01.,02.,01.,03.,01.,03.,,Funerarios Servicios
+2.,205.,01.,02.,01.,03.,01.,03.,01.,Individual
+2.,205.,01.,02.,01.,03.,01.,03.,02.,Colectivo
+2.,205.,01.,02.,01.,03.,01.,04.,,Combinados de Personas
+2.,205.,01.,02.,01.,03.,01.,04.,01.,Individual
+2.,205.,01.,02.,01.,03.,01.,04.,02.,Colectivo
+2.,205.,01.,02.,01.,03.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,01.,03.,01.,05.,01.,Individual
+2.,205.,01.,02.,01.,03.,01.,05.,02.,Colectivo
+2.,205.,01.,02.,01.,03.,01.,06.,,Otros Seguros de Personas
+2.,205.,01.,02.,01.,03.,01.,06.,01.,Individual
+2.,205.,01.,02.,01.,03.,01.,06.,02.,Colectivo
+2.,205.,01.,02.,01.,03.,02.,,,Patrimoniales
+2.,205.,01.,02.,01.,03.,02.,01.,,Incendio
+2.,205.,01.,02.,01.,03.,02.,02.,,Terremoto
+2.,205.,01.,02.,01.,03.,02.,03.,,Sustracción Ilegítima
+2.,205.,01.,02.,01.,03.,02.,04.,,Transporte
+2.,205.,01.,02.,01.,03.,02.,05.,,Ramos Técnicos
+2.,205.,01.,02.,01.,03.,02.,06.,,Petroleros
+2.,205.,01.,02.,01.,03.,02.,07.,,Combinados
+2.,205.,01.,02.,01.,03.,02.,08.,,Lucro Cesante
+2.,205.,01.,02.,01.,03.,02.,09.,,Automóvil Casco
+2.,205.,01.,02.,01.,03.,02.,09.,01.,Individual
+2.,205.,01.,02.,01.,03.,02.,09.,02.,Colectivo o Flota
+2.,205.,01.,02.,01.,03.,02.,10.,,Aeronaves
+2.,205.,01.,02.,01.,03.,02.,11.,,Naves
+2.,205.,01.,02.,01.,03.,02.,12.,,Agrícola
+2.,205.,01.,02.,01.,03.,02.,13.,,Pecuarios
+2.,205.,01.,02.,01.,03.,02.,14.,,Bancarios
+2.,205.,01.,02.,01.,03.,02.,15.,,Joyería
+2.,205.,01.,02.,01.,03.,02.,16.,,Diversos
+2.,205.,01.,02.,01.,03.,02.,16.,01.,Dinero y Valores
+2.,205.,01.,02.,01.,03.,02.,16.,02.,Artículos Valiosos
+2.,205.,01.,02.,01.,03.,02.,16.,03.,Asistencia en Viajes
+2.,205.,01.,02.,01.,03.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,01.,02.,01.,03.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,01.,03.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,01.,02.,01.,03.,03.,01.,01.,Individual
+2.,205.,01.,02.,01.,03.,03.,01.,02.,Colectivo o Flota
+2.,205.,01.,02.,01.,03.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,01.,02.,01.,03.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,01.,02.,01.,03.,03.,04.,,Responsabilidad Civil General
+2.,205.,01.,02.,01.,03.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,01.,02.,01.,03.,03.,06.,,Fidelidad de Empleados
+2.,205.,01.,02.,01.,03.,03.,07.,,Seguros de Crédito
+2.,205.,01.,02.,01.,04.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,01.,02.,01.,04.,01.,,,Personas No Vida
+2.,205.,01.,02.,01.,04.,01.,01.,,Colectivo de Accidentes Personales
+2.,205.,01.,02.,01.,04.,01.,02.,,Colectivo de Salud
+2.,205.,01.,02.,01.,04.,01.,03.,,Colectivo Funerarios Servicios
+2.,205.,01.,02.,01.,04.,01.,04.,,Colectivo Combinados de Personas
+2.,205.,01.,02.,01.,04.,01.,05.,,Colectivo Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,01.,04.,01.,06.,,Colectivo Otros Seguros de Personas
+2.,205.,01.,02.,01.,04.,02.,,,Patrimoniales
+2.,205.,01.,02.,01.,04.,02.,01.,,Colectivo o Flota Automóvil Casco
+2.,205.,01.,02.,01.,04.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,01.,04.,03.,01.,,Colectivo o Flota Responsabilidad Civil de Vehículos
+2.,205.,01.,02.,02.,,,,,Del Exterior
+2.,205.,01.,02.,02.,01.,,,,Reservas para Riesgos en Curso
+2.,205.,01.,02.,02.,01.,01.,,,Personas No Vida
+2.,205.,01.,02.,02.,01.,01.,01.,,Accidentes Personales
+2.,205.,01.,02.,02.,01.,01.,01.,01.,Individual
+2.,205.,01.,02.,02.,01.,01.,01.,02.,Colectivo
+2.,205.,01.,02.,02.,01.,01.,01.,03.,Escolar
+2.,205.,01.,02.,02.,01.,01.,02.,,Salud
+2.,205.,01.,02.,02.,01.,01.,02.,01.,Individual
+2.,205.,01.,02.,02.,01.,01.,02.,02.,Colectivo
+2.,205.,01.,02.,02.,01.,01.,03.,,Funerarios Servicios
+2.,205.,01.,02.,02.,01.,01.,03.,01.,Individual
+2.,205.,01.,02.,02.,01.,01.,03.,02.,Colectivo
+2.,205.,01.,02.,02.,01.,01.,04.,,Combinados de Personas
+2.,205.,01.,02.,02.,01.,01.,04.,01.,Individual
+2.,205.,01.,02.,02.,01.,01.,04.,02.,Colectivo
+2.,205.,01.,02.,02.,01.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,02.,01.,01.,05.,01.,Individual
+2.,205.,01.,02.,02.,01.,01.,05.,02.,Colectivo
+2.,205.,01.,02.,02.,01.,01.,06.,,Otros Seguros de Personas
+2.,205.,01.,02.,02.,01.,01.,06.,01.,Individual
+2.,205.,01.,02.,02.,01.,01.,06.,02.,Colectivo
+2.,205.,01.,02.,02.,01.,02.,,,Patrimoniales
+2.,205.,01.,02.,02.,01.,02.,01.,,Incendio
+2.,205.,01.,02.,02.,01.,02.,02.,,Terremoto
+2.,205.,01.,02.,02.,01.,02.,03.,,Sustracción Ilegítima
+2.,205.,01.,02.,02.,01.,02.,04.,,Transporte
+2.,205.,01.,02.,02.,01.,02.,05.,,Ramos Técnicos
+2.,205.,01.,02.,02.,01.,02.,06.,,Petroleros
+2.,205.,01.,02.,02.,01.,02.,07.,,Combinados
+2.,205.,01.,02.,02.,01.,02.,08.,,Lucro Cesante
+2.,205.,01.,02.,02.,01.,02.,09.,,Automóvil Casco
+2.,205.,01.,02.,02.,01.,02.,09.,01.,Individual
+2.,205.,01.,02.,02.,01.,02.,09.,02.,Colectivo o Flota
+2.,205.,01.,02.,02.,01.,02.,10.,,Aeronaves
+2.,205.,01.,02.,02.,01.,02.,11.,,Naves
+2.,205.,01.,02.,02.,01.,02.,12.,,Agrícola
+2.,205.,01.,02.,02.,01.,02.,13.,,Pecuarios
+2.,205.,01.,02.,02.,01.,02.,14.,,Bancarios
+2.,205.,01.,02.,02.,01.,02.,15.,,Joyería
+2.,205.,01.,02.,02.,01.,02.,16.,,Diversos
+2.,205.,01.,02.,02.,01.,02.,16.,01.,Dinero y Valores
+2.,205.,01.,02.,02.,01.,02.,16.,02.,Artículos Valiosos
+2.,205.,01.,02.,02.,01.,02.,16.,03.,Asistencia en Viajes
+2.,205.,01.,02.,02.,01.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,01.,02.,02.,01.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,02.,01.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,01.,02.,02.,01.,03.,01.,01.,Individual
+2.,205.,01.,02.,02.,01.,03.,01.,02.,Colectivo o Flota
+2.,205.,01.,02.,02.,01.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,01.,02.,02.,01.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,01.,02.,02.,01.,03.,04.,,Responsabilidad Civil General
+2.,205.,01.,02.,02.,01.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,01.,02.,02.,01.,03.,06.,,Fidelidad de Empleados
+2.,205.,01.,02.,02.,01.,03.,07.,,Seguros de Crédito
+2.,205.,01.,02.,02.,02.,,,,Reservas para Prestaciones y Siniestros Pendientes de Pago
+2.,205.,01.,02.,02.,02.,01.,,,Personas No Vida
+2.,205.,01.,02.,02.,02.,01.,01.,,Accidentes Personales
+2.,205.,01.,02.,02.,02.,01.,01.,01.,Individual
+2.,205.,01.,02.,02.,02.,01.,01.,02.,Colectivo
+2.,205.,01.,02.,02.,02.,01.,01.,03.,Escolar
+2.,205.,01.,02.,02.,02.,01.,02.,,Salud
+2.,205.,01.,02.,02.,02.,01.,02.,01.,Individual
+2.,205.,01.,02.,02.,02.,01.,02.,02.,Colectivo
+2.,205.,01.,02.,02.,02.,01.,03.,,Funerarios Servicios
+2.,205.,01.,02.,02.,02.,01.,03.,01.,Individual
+2.,205.,01.,02.,02.,02.,01.,03.,02.,Colectivo
+2.,205.,01.,02.,02.,02.,01.,04.,,Combinados de Personas
+2.,205.,01.,02.,02.,02.,01.,04.,01.,Individual
+2.,205.,01.,02.,02.,02.,01.,04.,02.,Colectivo
+2.,205.,01.,02.,02.,02.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,02.,02.,01.,05.,01.,Individual
+2.,205.,01.,02.,02.,02.,01.,05.,02.,Colectivo
+2.,205.,01.,02.,02.,02.,01.,06.,,Otros Seguros de Personas
+2.,205.,01.,02.,02.,02.,01.,06.,01.,Individual
+2.,205.,01.,02.,02.,02.,01.,06.,02.,Colectivo
+2.,205.,01.,02.,02.,02.,02.,,,Patrimoniales
+2.,205.,01.,02.,02.,02.,02.,01.,,Incendio
+2.,205.,01.,02.,02.,02.,02.,02.,,Terremoto
+2.,205.,01.,02.,02.,02.,02.,03.,,Sustracción Ilegítima
+2.,205.,01.,02.,02.,02.,02.,04.,,Transporte
+2.,205.,01.,02.,02.,02.,02.,05.,,Ramos Técnicos
+2.,205.,01.,02.,02.,02.,02.,06.,,Petroleros
+2.,205.,01.,02.,02.,02.,02.,07.,,Combinados
+2.,205.,01.,02.,02.,02.,02.,08.,,Lucro Cesante
+2.,205.,01.,02.,02.,02.,02.,09.,,Automóvil Casco
+2.,205.,01.,02.,02.,02.,02.,09.,01.,Individual
+2.,205.,01.,02.,02.,02.,02.,09.,02.,Colectivo o Flota
+2.,205.,01.,02.,02.,02.,02.,10.,,Aeronaves
+2.,205.,01.,02.,02.,02.,02.,11.,,Naves
+2.,205.,01.,02.,02.,02.,02.,12.,,Agrícola
+2.,205.,01.,02.,02.,02.,02.,13.,,Pecuarios
+2.,205.,01.,02.,02.,02.,02.,14.,,Bancarios
+2.,205.,01.,02.,02.,02.,02.,15.,,Joyería
+2.,205.,01.,02.,02.,02.,02.,16.,,Diversos
+2.,205.,01.,02.,02.,02.,02.,16.,01.,Dinero y Valores
+2.,205.,01.,02.,02.,02.,02.,16.,02.,Artículos Valiosos
+2.,205.,01.,02.,02.,02.,02.,16.,03.,Asistencia en Viajes
+2.,205.,01.,02.,02.,02.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,01.,02.,02.,02.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,02.,02.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,01.,02.,02.,02.,03.,01.,01.,Individual
+2.,205.,01.,02.,02.,02.,03.,01.,02.,Colectivo o Flota
+2.,205.,01.,02.,02.,02.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,01.,02.,02.,02.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,01.,02.,02.,02.,03.,04.,,Responsabilidad Civil General
+2.,205.,01.,02.,02.,02.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,01.,02.,02.,02.,03.,06.,,Fidelidad de Empleados
+2.,205.,01.,02.,02.,02.,03.,07.,,Seguros de Crédito
+2.,205.,01.,02.,02.,03.,,,,Reservas para Siniestros Ocurridos y No Notificados
+2.,205.,01.,02.,02.,03.,01.,,,Personas No Vida
+2.,205.,01.,02.,02.,03.,01.,01.,,Accidentes Personales
+2.,205.,01.,02.,02.,03.,01.,01.,01.,Individual
+2.,205.,01.,02.,02.,03.,01.,01.,02.,Colectivo
+2.,205.,01.,02.,02.,03.,01.,01.,03.,Escolar
+2.,205.,01.,02.,02.,03.,01.,02.,,Salud
+2.,205.,01.,02.,02.,03.,01.,02.,01.,Individual
+2.,205.,01.,02.,02.,03.,01.,02.,02.,Colectivo
+2.,205.,01.,02.,02.,03.,01.,03.,,Funerarios Servicios
+2.,205.,01.,02.,02.,03.,01.,03.,01.,Individual
+2.,205.,01.,02.,02.,03.,01.,03.,02.,Colectivo
+2.,205.,01.,02.,02.,03.,01.,04.,,Combinados de Personas
+2.,205.,01.,02.,02.,03.,01.,04.,01.,Individual
+2.,205.,01.,02.,02.,03.,01.,04.,02.,Colectivo
+2.,205.,01.,02.,02.,03.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,02.,03.,01.,05.,01.,Individual
+2.,205.,01.,02.,02.,03.,01.,05.,02.,Colectivo
+2.,205.,01.,02.,02.,03.,01.,06.,,Otros Seguros de Personas
+2.,205.,01.,02.,02.,03.,01.,06.,01.,Individual
+2.,205.,01.,02.,02.,03.,01.,06.,02.,Colectivo
+2.,205.,01.,02.,02.,03.,02.,,,Patrimoniales
+2.,205.,01.,02.,02.,03.,02.,01.,,Incendio
+2.,205.,01.,02.,02.,03.,02.,02.,,Terremoto
+2.,205.,01.,02.,02.,03.,02.,03.,,Sustracción Ilegítima
+2.,205.,01.,02.,02.,03.,02.,04.,,Transporte
+2.,205.,01.,02.,02.,03.,02.,05.,,Ramos Técnicos
+2.,205.,01.,02.,02.,03.,02.,06.,,Petroleros
+2.,205.,01.,02.,02.,03.,02.,07.,,Combinados
+2.,205.,01.,02.,02.,03.,02.,08.,,Lucro Cesante
+2.,205.,01.,02.,02.,03.,02.,09.,,Automóvil Casco
+2.,205.,01.,02.,02.,03.,02.,09.,01.,Individual
+2.,205.,01.,02.,02.,03.,02.,09.,02.,Colectivo o Flota
+2.,205.,01.,02.,02.,03.,02.,10.,,Aeronaves
+2.,205.,01.,02.,02.,03.,02.,11.,,Naves
+2.,205.,01.,02.,02.,03.,02.,12.,,Agrícola
+2.,205.,01.,02.,02.,03.,02.,13.,,Pecuarios
+2.,205.,01.,02.,02.,03.,02.,14.,,Bancarios
+2.,205.,01.,02.,02.,03.,02.,15.,,Joyería
+2.,205.,01.,02.,02.,03.,02.,16.,,Diversos
+2.,205.,01.,02.,02.,03.,02.,16.,01.,Dinero y Valores
+2.,205.,01.,02.,02.,03.,02.,16.,02.,Artículos Valiosos
+2.,205.,01.,02.,02.,03.,02.,16.,03.,Asistencia en Viajes
+2.,205.,01.,02.,02.,03.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,01.,02.,02.,03.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,02.,03.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,01.,02.,02.,03.,03.,01.,01.,Individual
+2.,205.,01.,02.,02.,03.,03.,01.,02.,Colectivo o Flota
+2.,205.,01.,02.,02.,03.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,01.,02.,02.,03.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,01.,02.,02.,03.,03.,04.,,Responsabilidad Civil General
+2.,205.,01.,02.,02.,03.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,01.,02.,02.,03.,03.,06.,,Fidelidad de Empleados
+2.,205.,01.,02.,02.,03.,03.,07.,,Seguros de Crédito
+2.,205.,01.,02.,02.,04.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,01.,02.,02.,04.,01.,,,Personas No Vida
+2.,205.,01.,02.,02.,04.,01.,01.,,Colectivo de Accidentes Personales
+2.,205.,01.,02.,02.,04.,01.,02.,,Colectivo de Salud
+2.,205.,01.,02.,02.,04.,01.,03.,,Colectivo Funerarios Servicios
+2.,205.,01.,02.,02.,04.,01.,04.,,Colectivo Combinados de Personas
+2.,205.,01.,02.,02.,04.,01.,05.,,Colectivo Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,01.,02.,02.,04.,01.,06.,,Colectivo Otros Seguros de Personas
+2.,205.,01.,02.,02.,04.,02.,,,Patrimoniales
+2.,205.,01.,02.,02.,04.,02.,01.,,Colectivo o Flota Automóvil Casco
+2.,205.,01.,02.,02.,04.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,01.,02.,02.,04.,03.,01.,,Colectivo o Flota Responsabilidad Civil de Vehículos
+2.,205.,01.,03.,,,,,,Operaciones de Fianzas
+2.,205.,01.,03.,01.,,,,,Del País
+2.,205.,01.,03.,01.,01.,,,,Reserva para Fianzas en Curso
+2.,205.,01.,03.,01.,02.,,,,Reserva para Siniestros Pendientes de Pago
+2.,205.,01.,03.,02.,,,,,Del Exterior
+2.,205.,01.,03.,02.,01.,,,,Reserva para Fianzas en Curso
+2.,205.,01.,03.,02.,02.,,,,Reserva para Siniestros Pendientes de Pago
+2.,205.,02.,,,,,,,A Cargo de Retrocesionarios
+2.,205.,02.,01.,,,,,,Operaciones de Seguros de Vida
+2.,205.,02.,01.,01.,,,,,Del País
+2.,205.,02.,01.,01.,01.,,,,Reservas Matemáticas
+2.,205.,02.,01.,01.,01.,01.,,,Individual
+2.,205.,02.,01.,01.,01.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,01.,01.,03.,,,Rentas Vitalicias
+2.,205.,02.,01.,01.,02.,,,,Reservas para Riesgos en Curso
+2.,205.,02.,01.,01.,02.,01.,,,Individual
+2.,205.,02.,01.,01.,02.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,01.,02.,03.,,,Colectivo
+2.,205.,02.,01.,01.,02.,04.,,,Funerarios 
+2.,205.,02.,01.,01.,02.,04.,01.,,Individual
+2.,205.,02.,01.,01.,02.,04.,02.,,Colectivo 
+2.,205.,02.,01.,01.,03.,,,,Reservas para Prestaciones Pendientes de Pago
+2.,205.,02.,01.,01.,03.,01.,,,Individual
+2.,205.,02.,01.,01.,03.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,01.,03.,03.,,,Rentas Vitalicias
+2.,205.,02.,01.,01.,03.,04.,,,Colectivo
+2.,205.,02.,01.,01.,03.,05.,,,Funerarios 
+2.,205.,02.,01.,01.,03.,05.,01.,,Individual
+2.,205.,02.,01.,01.,03.,05.,02.,,Colectivo
+2.,205.,02.,01.,01.,04.,,,,Reservas para Prestaciones Ocurridas y No Notificadas
+2.,205.,02.,01.,01.,04.,01.,,,Individual
+2.,205.,02.,01.,01.,04.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,01.,04.,03.,,,Rentas Vitalicias
+2.,205.,02.,01.,01.,04.,04.,,,Colectivo
+2.,205.,02.,01.,01.,04.,05.,,,Funerarios 
+2.,205.,02.,01.,01.,04.,05.,01.,,Individual
+2.,205.,02.,01.,01.,04.,05.,02.,,Colectivo
+2.,205.,02.,01.,01.,05.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,02.,01.,01.,05.,01.,,,Colectivo de Vida
+2.,205.,02.,01.,01.,05.,02.,,,Colectivo Funerario
+2.,205.,02.,01.,02.,,,,,Del Exterior
+2.,205.,02.,01.,02.,01.,,,,Reservas Matemáticas
+2.,205.,02.,01.,02.,01.,01.,,,Individual
+2.,205.,02.,01.,02.,01.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,02.,01.,03.,,,Rentas Vitalicias
+2.,205.,02.,01.,02.,02.,,,,Reservas para Riesgos en Curso
+2.,205.,02.,01.,02.,02.,01.,,,Individual
+2.,205.,02.,01.,02.,02.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,02.,02.,03.,,,Colectivo
+2.,205.,02.,01.,02.,02.,04.,,,Funerarios 
+2.,205.,02.,01.,02.,02.,04.,01.,,Individual
+2.,205.,02.,01.,02.,02.,04.,02.,,Colectivo 
+2.,205.,02.,01.,02.,03.,,,,Reservas para Prestaciones Pendientes de Pago
+2.,205.,02.,01.,02.,03.,01.,,,Individual
+2.,205.,02.,01.,02.,03.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,02.,03.,03.,,,Rentas Vitalicias
+2.,205.,02.,01.,02.,03.,04.,,,Colectivo
+2.,205.,02.,01.,02.,03.,05.,,,Funerarios 
+2.,205.,02.,01.,02.,03.,05.,01.,,Individual
+2.,205.,02.,01.,02.,03.,05.,02.,,Colectivo
+2.,205.,02.,01.,02.,04.,,,,Reservas para Prestaciones Ocurridas y No Notificadas
+2.,205.,02.,01.,02.,04.,01.,,,Individual
+2.,205.,02.,01.,02.,04.,02.,,,Desgravamen Hipotecario
+2.,205.,02.,01.,02.,04.,03.,,,Rentas Vitalicias
+2.,205.,02.,01.,02.,04.,04.,,,Colectivo
+2.,205.,02.,01.,02.,04.,05.,,,Funerarios 
+2.,205.,02.,01.,02.,04.,05.,01.,,Individual
+2.,205.,02.,01.,02.,04.,05.,02.,,Colectivo
+2.,205.,02.,01.,02.,05.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,02.,01.,02.,05.,01.,,,Colectivo de Vida
+2.,205.,02.,01.,02.,05.,02.,,,Colectivo Funerario
+2.,205.,02.,02.,,,,,,Operaciones de Seguros Generales
+2.,205.,02.,02.,01.,,,,,Del País
+2.,205.,02.,02.,01.,01.,,,,Reservas para Riesgos en Curso
+2.,205.,02.,02.,01.,01.,01.,,,Personas No Vida
+2.,205.,02.,02.,01.,01.,01.,01.,,Accidentes Personales
+2.,205.,02.,02.,01.,01.,01.,01.,01.,Individual
+2.,205.,02.,02.,01.,01.,01.,01.,02.,Colectivo
+2.,205.,02.,02.,01.,01.,01.,01.,03.,Escolar
+2.,205.,02.,02.,01.,01.,01.,02.,,Salud
+2.,205.,02.,02.,01.,01.,01.,02.,01.,Individual
+2.,205.,02.,02.,01.,01.,01.,02.,02.,Colectivo
+2.,205.,02.,02.,01.,01.,01.,03.,,Funerarios Servicios
+2.,205.,02.,02.,01.,01.,01.,03.,01.,Individual
+2.,205.,02.,02.,01.,01.,01.,03.,02.,Colectivo
+2.,205.,02.,02.,01.,01.,01.,04.,,Combinados de Personas
+2.,205.,02.,02.,01.,01.,01.,04.,01.,Individual
+2.,205.,02.,02.,01.,01.,01.,04.,02.,Colectivo
+2.,205.,02.,02.,01.,01.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,01.,01.,01.,05.,01.,Individual
+2.,205.,02.,02.,01.,01.,01.,05.,02.,Colectivo
+2.,205.,02.,02.,01.,01.,01.,06.,,Otros Seguros de Personas
+2.,205.,02.,02.,01.,01.,01.,06.,01.,Individual
+2.,205.,02.,02.,01.,01.,01.,06.,02.,Colectivo
+2.,205.,02.,02.,01.,01.,02.,,,Patrimoniales
+2.,205.,02.,02.,01.,01.,02.,01.,,Incendio
+2.,205.,02.,02.,01.,01.,02.,02.,,Terremoto
+2.,205.,02.,02.,01.,01.,02.,03.,,Sustracción Ilegítima
+2.,205.,02.,02.,01.,01.,02.,04.,,Transporte
+2.,205.,02.,02.,01.,01.,02.,05.,,Ramos Técnicos
+2.,205.,02.,02.,01.,01.,02.,06.,,Petroleros
+2.,205.,02.,02.,01.,01.,02.,07.,,Combinados
+2.,205.,02.,02.,01.,01.,02.,08.,,Lucro Cesante
+2.,205.,02.,02.,01.,01.,02.,09.,,Automóvil Casco
+2.,205.,02.,02.,01.,01.,02.,09.,01.,Individual
+2.,205.,02.,02.,01.,01.,02.,09.,02.,Colectivo o Flota
+2.,205.,02.,02.,01.,01.,02.,10.,,Aeronaves
+2.,205.,02.,02.,01.,01.,02.,11.,,Naves
+2.,205.,02.,02.,01.,01.,02.,12.,,Agrícola
+2.,205.,02.,02.,01.,01.,02.,13.,,Pecuarios
+2.,205.,02.,02.,01.,01.,02.,14.,,Bancarios
+2.,205.,02.,02.,01.,01.,02.,15.,,Joyería
+2.,205.,02.,02.,01.,01.,02.,16.,,Diversos
+2.,205.,02.,02.,01.,01.,02.,16.,01.,Dinero y Valores
+2.,205.,02.,02.,01.,01.,02.,16.,02.,Artículos Valiosos
+2.,205.,02.,02.,01.,01.,02.,16.,03.,Asistencia en Viajes
+2.,205.,02.,02.,01.,01.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,02.,02.,01.,01.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,01.,01.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,02.,02.,01.,01.,03.,01.,01.,Individual
+2.,205.,02.,02.,01.,01.,03.,01.,02.,Colectivo o Flota
+2.,205.,02.,02.,01.,01.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,02.,02.,01.,01.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,02.,02.,01.,01.,03.,04.,,Responsabilidad Civil General
+2.,205.,02.,02.,01.,01.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,02.,02.,01.,01.,03.,06.,,Fidelidad de Empleados
+2.,205.,02.,02.,01.,01.,03.,07.,,Seguros de Crédito
+2.,205.,02.,02.,01.,02.,,,,Reservas para Prestaciones y Siniestros Pendientes de Pago
+2.,205.,02.,02.,01.,02.,01.,,,Personas No Vida
+2.,205.,02.,02.,01.,02.,01.,01.,,Accidentes Personales
+2.,205.,02.,02.,01.,02.,01.,01.,01.,Individual
+2.,205.,02.,02.,01.,02.,01.,01.,02.,Colectivo
+2.,205.,02.,02.,01.,02.,01.,01.,03.,Escolar
+2.,205.,02.,02.,01.,02.,01.,02.,,Salud
+2.,205.,02.,02.,01.,02.,01.,02.,01.,Individual
+2.,205.,02.,02.,01.,02.,01.,02.,02.,Colectivo
+2.,205.,02.,02.,01.,02.,01.,03.,,Funerarios Servicios
+2.,205.,02.,02.,01.,02.,01.,03.,01.,Individual
+2.,205.,02.,02.,01.,02.,01.,03.,02.,Colectivo
+2.,205.,02.,02.,01.,02.,01.,04.,,Combinados de Personas
+2.,205.,02.,02.,01.,02.,01.,04.,01.,Individual
+2.,205.,02.,02.,01.,02.,01.,04.,02.,Colectivo
+2.,205.,02.,02.,01.,02.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,01.,02.,01.,05.,01.,Individual
+2.,205.,02.,02.,01.,02.,01.,05.,02.,Colectivo
+2.,205.,02.,02.,01.,02.,01.,06.,,Otros Seguros de Personas
+2.,205.,02.,02.,01.,02.,01.,06.,01.,Individual
+2.,205.,02.,02.,01.,02.,01.,06.,02.,Colectivo
+2.,205.,02.,02.,01.,02.,02.,,,Patrimoniales
+2.,205.,02.,02.,01.,02.,02.,01.,,Incendio
+2.,205.,02.,02.,01.,02.,02.,02.,,Terremoto
+2.,205.,02.,02.,01.,02.,02.,03.,,Sustracción Ilegítima
+2.,205.,02.,02.,01.,02.,02.,04.,,Transporte
+2.,205.,02.,02.,01.,02.,02.,05.,,Ramos Técnicos
+2.,205.,02.,02.,01.,02.,02.,06.,,Petroleros
+2.,205.,02.,02.,01.,02.,02.,07.,,Combinados
+2.,205.,02.,02.,01.,02.,02.,08.,,Lucro Cesante
+2.,205.,02.,02.,01.,02.,02.,09.,,Automóvil Casco
+2.,205.,02.,02.,01.,02.,02.,09.,01.,Individual
+2.,205.,02.,02.,01.,02.,02.,09.,02.,Colectivo o Flota
+2.,205.,02.,02.,01.,02.,02.,10.,,Aeronaves
+2.,205.,02.,02.,01.,02.,02.,11.,,Naves
+2.,205.,02.,02.,01.,02.,02.,12.,,Agrícola
+2.,205.,02.,02.,01.,02.,02.,13.,,Pecuarios
+2.,205.,02.,02.,01.,02.,02.,14.,,Bancarios
+2.,205.,02.,02.,01.,02.,02.,15.,,Joyería
+2.,205.,02.,02.,01.,02.,02.,16.,,Diversos
+2.,205.,02.,02.,01.,02.,02.,16.,01.,Dinero y Valores
+2.,205.,02.,02.,01.,02.,02.,16.,02.,Artículos Valiosos
+2.,205.,02.,02.,01.,02.,02.,16.,03.,Asistencia en Viajes
+2.,205.,02.,02.,01.,02.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,02.,02.,01.,02.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,01.,02.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,02.,02.,01.,02.,03.,01.,01.,Individual
+2.,205.,02.,02.,01.,02.,03.,01.,02.,Colectivo o Flota
+2.,205.,02.,02.,01.,02.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,02.,02.,01.,02.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,02.,02.,01.,02.,03.,04.,,Responsabilidad Civil General
+2.,205.,02.,02.,01.,02.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,02.,02.,01.,02.,03.,06.,,Fidelidad de Empleados
+2.,205.,02.,02.,01.,02.,03.,07.,,Seguros de Crédito
+2.,205.,02.,02.,01.,03.,,,,Reservas para Siniestros Ocurridos y No Notificados
+2.,205.,02.,02.,01.,03.,01.,,,Personas No Vida
+2.,205.,02.,02.,01.,03.,01.,01.,,Accidentes Personales
+2.,205.,02.,02.,01.,03.,01.,01.,01.,Individual
+2.,205.,02.,02.,01.,03.,01.,01.,02.,Colectivo
+2.,205.,02.,02.,01.,03.,01.,01.,03.,Escolar
+2.,205.,02.,02.,01.,03.,01.,02.,,Salud
+2.,205.,02.,02.,01.,03.,01.,02.,01.,Individual
+2.,205.,02.,02.,01.,03.,01.,02.,02.,Colectivo
+2.,205.,02.,02.,01.,03.,01.,03.,,Funerarios Servicios
+2.,205.,02.,02.,01.,03.,01.,03.,01.,Individual
+2.,205.,02.,02.,01.,03.,01.,03.,02.,Colectivo
+2.,205.,02.,02.,01.,03.,01.,04.,,Combinados de Personas
+2.,205.,02.,02.,01.,03.,01.,04.,01.,Individual
+2.,205.,02.,02.,01.,03.,01.,04.,02.,Colectivo
+2.,205.,02.,02.,01.,03.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,01.,03.,01.,05.,01.,Individual
+2.,205.,02.,02.,01.,03.,01.,05.,02.,Colectivo
+2.,205.,02.,02.,01.,03.,01.,06.,,Otros Seguros de Personas
+2.,205.,02.,02.,01.,03.,01.,06.,01.,Individual
+2.,205.,02.,02.,01.,03.,01.,06.,02.,Colectivo
+2.,205.,02.,02.,01.,03.,02.,,,Patrimoniales
+2.,205.,02.,02.,01.,03.,02.,01.,,Incendio
+2.,205.,02.,02.,01.,03.,02.,02.,,Terremoto
+2.,205.,02.,02.,01.,03.,02.,03.,,Sustracción Ilegítima
+2.,205.,02.,02.,01.,03.,02.,04.,,Transporte
+2.,205.,02.,02.,01.,03.,02.,05.,,Ramos Técnicos
+2.,205.,02.,02.,01.,03.,02.,06.,,Petroleros
+2.,205.,02.,02.,01.,03.,02.,07.,,Combinados
+2.,205.,02.,02.,01.,03.,02.,08.,,Lucro Cesante
+2.,205.,02.,02.,01.,03.,02.,09.,,Automóvil Casco
+2.,205.,02.,02.,01.,03.,02.,09.,01.,Individual
+2.,205.,02.,02.,01.,03.,02.,09.,02.,Colectivo o Flota
+2.,205.,02.,02.,01.,03.,02.,10.,,Aeronaves
+2.,205.,02.,02.,01.,03.,02.,11.,,Naves
+2.,205.,02.,02.,01.,03.,02.,12.,,Agrícola
+2.,205.,02.,02.,01.,03.,02.,13.,,Pecuarios
+2.,205.,02.,02.,01.,03.,02.,14.,,Bancarios
+2.,205.,02.,02.,01.,03.,02.,15.,,Joyería
+2.,205.,02.,02.,01.,03.,02.,16.,,Diversos
+2.,205.,02.,02.,01.,03.,02.,16.,01.,Dinero y Valores
+2.,205.,02.,02.,01.,03.,02.,16.,02.,Artículos Valiosos
+2.,205.,02.,02.,01.,03.,02.,16.,03.,Asistencia en Viajes
+2.,205.,02.,02.,01.,03.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,02.,02.,01.,03.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,01.,03.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,02.,02.,01.,03.,03.,01.,01.,Individual
+2.,205.,02.,02.,01.,03.,03.,01.,02.,Colectivo o Flota
+2.,205.,02.,02.,01.,03.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,02.,02.,01.,03.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,02.,02.,01.,03.,03.,04.,,Responsabilidad Civil General
+2.,205.,02.,02.,01.,03.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,02.,02.,01.,03.,03.,06.,,Fidelidad de Empleados
+2.,205.,02.,02.,01.,03.,03.,07.,,Seguros de Crédito
+2.,205.,02.,02.,01.,04.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,02.,02.,01.,04.,01.,,,Personas No Vida
+2.,205.,02.,02.,01.,04.,01.,01.,,Colectivo de Accidentes Personales
+2.,205.,02.,02.,01.,04.,01.,02.,,Colectivo de Salud
+2.,205.,02.,02.,01.,04.,01.,03.,,Colectivo Funerarios Servicios
+2.,205.,02.,02.,01.,04.,01.,04.,,Colectivo Combinados de Personas
+2.,205.,02.,02.,01.,04.,01.,05.,,Colectivo Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,01.,04.,01.,06.,,Colectivo Otros Seguros de Personas
+2.,205.,02.,02.,01.,04.,02.,,,Patrimoniales
+2.,205.,02.,02.,01.,04.,02.,01.,,Colectivo o Flota Automóvil Casco
+2.,205.,02.,02.,01.,04.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,01.,04.,03.,01.,,Colectivo o Flota Responsabilidad Civil de Vehículos
+2.,205.,02.,02.,02.,,,,,Del Exterior
+2.,205.,02.,02.,02.,01.,,,,Reservas para Riesgos en Curso
+2.,205.,02.,02.,02.,01.,01.,,,Personas No Vida
+2.,205.,02.,02.,02.,01.,01.,01.,,Accidentes Personales
+2.,205.,02.,02.,02.,01.,01.,01.,01.,Individual
+2.,205.,02.,02.,02.,01.,01.,01.,02.,Colectivo
+2.,205.,02.,02.,02.,01.,01.,01.,03.,Escolar
+2.,205.,02.,02.,02.,01.,01.,02.,,Salud
+2.,205.,02.,02.,02.,01.,01.,02.,01.,Individual
+2.,205.,02.,02.,02.,01.,01.,02.,02.,Colectivo
+2.,205.,02.,02.,02.,01.,01.,03.,,Funerarios Servicios
+2.,205.,02.,02.,02.,01.,01.,03.,01.,Individual
+2.,205.,02.,02.,02.,01.,01.,03.,02.,Colectivo
+2.,205.,02.,02.,02.,01.,01.,04.,,Combinados de Personas
+2.,205.,02.,02.,02.,01.,01.,04.,01.,Individual
+2.,205.,02.,02.,02.,01.,01.,04.,02.,Colectivo
+2.,205.,02.,02.,02.,01.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,02.,01.,01.,05.,01.,Individual
+2.,205.,02.,02.,02.,01.,01.,05.,02.,Colectivo
+2.,205.,02.,02.,02.,01.,01.,06.,,Otros Seguros de Personas
+2.,205.,02.,02.,02.,01.,01.,06.,01.,Individual
+2.,205.,02.,02.,02.,01.,01.,06.,02.,Colectivo
+2.,205.,02.,02.,02.,01.,02.,,,Patrimoniales
+2.,205.,02.,02.,02.,01.,02.,01.,,Incendio
+2.,205.,02.,02.,02.,01.,02.,02.,,Terremoto
+2.,205.,02.,02.,02.,01.,02.,03.,,Sustracción Ilegítima
+2.,205.,02.,02.,02.,01.,02.,04.,,Transporte
+2.,205.,02.,02.,02.,01.,02.,05.,,Ramos Técnicos
+2.,205.,02.,02.,02.,01.,02.,06.,,Petroleros
+2.,205.,02.,02.,02.,01.,02.,07.,,Combinados
+2.,205.,02.,02.,02.,01.,02.,08.,,Lucro Cesante
+2.,205.,02.,02.,02.,01.,02.,09.,,Automóvil Casco
+2.,205.,02.,02.,02.,01.,02.,09.,01.,Individual
+2.,205.,02.,02.,02.,01.,02.,09.,02.,Colectivo o Flota
+2.,205.,02.,02.,02.,01.,02.,10.,,Aeronaves
+2.,205.,02.,02.,02.,01.,02.,11.,,Naves
+2.,205.,02.,02.,02.,01.,02.,12.,,Agrícola
+2.,205.,02.,02.,02.,01.,02.,13.,,Pecuarios
+2.,205.,02.,02.,02.,01.,02.,14.,,Bancarios
+2.,205.,02.,02.,02.,01.,02.,15.,,Joyería
+2.,205.,02.,02.,02.,01.,02.,16.,,Diversos
+2.,205.,02.,02.,02.,01.,02.,16.,01.,Dinero y Valores
+2.,205.,02.,02.,02.,01.,02.,16.,02.,Artículos Valiosos
+2.,205.,02.,02.,02.,01.,02.,16.,03.,Asistencia en Viajes
+2.,205.,02.,02.,02.,01.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,02.,02.,02.,01.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,02.,01.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,02.,02.,02.,01.,03.,01.,01.,Individual
+2.,205.,02.,02.,02.,01.,03.,01.,02.,Colectivo o Flota
+2.,205.,02.,02.,02.,01.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,02.,02.,02.,01.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,02.,02.,02.,01.,03.,04.,,Responsabilidad Civil General
+2.,205.,02.,02.,02.,01.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,02.,02.,02.,01.,03.,06.,,Fidelidad de Empleados
+2.,205.,02.,02.,02.,01.,03.,07.,,Seguros de Crédito
+2.,205.,02.,02.,02.,02.,,,,Reservas para Prestaciones y Siniestros Pendientes de Pago
+2.,205.,02.,02.,02.,02.,01.,,,Personas No Vida
+2.,205.,02.,02.,02.,02.,01.,01.,,Accidentes Personales
+2.,205.,02.,02.,02.,02.,01.,01.,01.,Individual
+2.,205.,02.,02.,02.,02.,01.,01.,02.,Colectivo
+2.,205.,02.,02.,02.,02.,01.,01.,03.,Escolar
+2.,205.,02.,02.,02.,02.,01.,02.,,Salud
+2.,205.,02.,02.,02.,02.,01.,02.,01.,Individual
+2.,205.,02.,02.,02.,02.,01.,02.,02.,Colectivo
+2.,205.,02.,02.,02.,02.,01.,03.,,Funerarios Servicios
+2.,205.,02.,02.,02.,02.,01.,03.,01.,Individual
+2.,205.,02.,02.,02.,02.,01.,03.,02.,Colectivo
+2.,205.,02.,02.,02.,02.,01.,04.,,Combinados de Personas
+2.,205.,02.,02.,02.,02.,01.,04.,01.,Individual
+2.,205.,02.,02.,02.,02.,01.,04.,02.,Colectivo
+2.,205.,02.,02.,02.,02.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,02.,02.,01.,05.,01.,Individual
+2.,205.,02.,02.,02.,02.,01.,05.,02.,Colectivo
+2.,205.,02.,02.,02.,02.,01.,06.,,Otros Seguros de Personas
+2.,205.,02.,02.,02.,02.,01.,06.,01.,Individual
+2.,205.,02.,02.,02.,02.,01.,06.,02.,Colectivo
+2.,205.,02.,02.,02.,02.,02.,,,Patrimoniales
+2.,205.,02.,02.,02.,02.,02.,01.,,Incendio
+2.,205.,02.,02.,02.,02.,02.,02.,,Terremoto
+2.,205.,02.,02.,02.,02.,02.,03.,,Sustracción Ilegítima
+2.,205.,02.,02.,02.,02.,02.,04.,,Transporte
+2.,205.,02.,02.,02.,02.,02.,05.,,Ramos Técnicos
+2.,205.,02.,02.,02.,02.,02.,06.,,Petroleros
+2.,205.,02.,02.,02.,02.,02.,07.,,Combinados
+2.,205.,02.,02.,02.,02.,02.,08.,,Lucro Cesante
+2.,205.,02.,02.,02.,02.,02.,09.,,Automóvil Casco
+2.,205.,02.,02.,02.,02.,02.,09.,01.,Individual
+2.,205.,02.,02.,02.,02.,02.,09.,02.,Colectivo o Flota
+2.,205.,02.,02.,02.,02.,02.,10.,,Aeronaves
+2.,205.,02.,02.,02.,02.,02.,11.,,Naves
+2.,205.,02.,02.,02.,02.,02.,12.,,Agrícola
+2.,205.,02.,02.,02.,02.,02.,13.,,Pecuarios
+2.,205.,02.,02.,02.,02.,02.,14.,,Bancarios
+2.,205.,02.,02.,02.,02.,02.,15.,,Joyería
+2.,205.,02.,02.,02.,02.,02.,16.,,Diversos
+2.,205.,02.,02.,02.,02.,02.,16.,01.,Dinero y Valores
+2.,205.,02.,02.,02.,02.,02.,16.,02.,Artículos Valiosos
+2.,205.,02.,02.,02.,02.,02.,16.,03.,Asistencia en Viajes
+2.,205.,02.,02.,02.,02.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,02.,02.,02.,02.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,02.,02.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,02.,02.,02.,02.,03.,01.,01.,Individual
+2.,205.,02.,02.,02.,02.,03.,01.,02.,Colectivo o Flota
+2.,205.,02.,02.,02.,02.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,02.,02.,02.,02.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,02.,02.,02.,02.,03.,04.,,Responsabilidad Civil General
+2.,205.,02.,02.,02.,02.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,02.,02.,02.,02.,03.,06.,,Fidelidad de Empleados
+2.,205.,02.,02.,02.,02.,03.,07.,,Seguros de Crédito
+2.,205.,02.,02.,02.,03.,,,,Reservas para Siniestros Ocurridos y No Notificados
+2.,205.,02.,02.,02.,03.,01.,,,Personas No Vida
+2.,205.,02.,02.,02.,03.,01.,01.,,Accidentes Personales
+2.,205.,02.,02.,02.,03.,01.,01.,01.,Individual
+2.,205.,02.,02.,02.,03.,01.,01.,02.,Colectivo
+2.,205.,02.,02.,02.,03.,01.,01.,03.,Escolar
+2.,205.,02.,02.,02.,03.,01.,02.,,Salud
+2.,205.,02.,02.,02.,03.,01.,02.,01.,Individual
+2.,205.,02.,02.,02.,03.,01.,02.,02.,Colectivo
+2.,205.,02.,02.,02.,03.,01.,03.,,Funerarios Servicios
+2.,205.,02.,02.,02.,03.,01.,03.,01.,Individual
+2.,205.,02.,02.,02.,03.,01.,03.,02.,Colectivo
+2.,205.,02.,02.,02.,03.,01.,04.,,Combinados de Personas
+2.,205.,02.,02.,02.,03.,01.,04.,01.,Individual
+2.,205.,02.,02.,02.,03.,01.,04.,02.,Colectivo
+2.,205.,02.,02.,02.,03.,01.,05.,,Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,02.,03.,01.,05.,01.,Individual
+2.,205.,02.,02.,02.,03.,01.,05.,02.,Colectivo
+2.,205.,02.,02.,02.,03.,01.,06.,,Otros Seguros de Personas
+2.,205.,02.,02.,02.,03.,01.,06.,01.,Individual
+2.,205.,02.,02.,02.,03.,01.,06.,02.,Colectivo
+2.,205.,02.,02.,02.,03.,02.,,,Patrimoniales
+2.,205.,02.,02.,02.,03.,02.,01.,,Incendio
+2.,205.,02.,02.,02.,03.,02.,02.,,Terremoto
+2.,205.,02.,02.,02.,03.,02.,03.,,Sustracción Ilegítima
+2.,205.,02.,02.,02.,03.,02.,04.,,Transporte
+2.,205.,02.,02.,02.,03.,02.,05.,,Ramos Técnicos
+2.,205.,02.,02.,02.,03.,02.,06.,,Petroleros
+2.,205.,02.,02.,02.,03.,02.,07.,,Combinados
+2.,205.,02.,02.,02.,03.,02.,08.,,Lucro Cesante
+2.,205.,02.,02.,02.,03.,02.,09.,,Automóvil Casco
+2.,205.,02.,02.,02.,03.,02.,09.,01.,Individual
+2.,205.,02.,02.,02.,03.,02.,09.,02.,Colectivo o Flota
+2.,205.,02.,02.,02.,03.,02.,10.,,Aeronaves
+2.,205.,02.,02.,02.,03.,02.,11.,,Naves
+2.,205.,02.,02.,02.,03.,02.,12.,,Agrícola
+2.,205.,02.,02.,02.,03.,02.,13.,,Pecuarios
+2.,205.,02.,02.,02.,03.,02.,14.,,Bancarios
+2.,205.,02.,02.,02.,03.,02.,15.,,Joyería
+2.,205.,02.,02.,02.,03.,02.,16.,,Diversos
+2.,205.,02.,02.,02.,03.,02.,16.,01.,Dinero y Valores
+2.,205.,02.,02.,02.,03.,02.,16.,02.,Artículos Valiosos
+2.,205.,02.,02.,02.,03.,02.,16.,03.,Asistencia en Viajes
+2.,205.,02.,02.,02.,03.,02.,16.,04.,Otros Riesgos Diversos
+2.,205.,02.,02.,02.,03.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,02.,03.,03.,01.,,Responsabilidad Civil de Vehículos
+2.,205.,02.,02.,02.,03.,03.,01.,01.,Individual
+2.,205.,02.,02.,02.,03.,03.,01.,02.,Colectivo o Flota
+2.,205.,02.,02.,02.,03.,03.,02.,,Responsabilidad Civil Patronal
+2.,205.,02.,02.,02.,03.,03.,03.,,Responsabilidad Civil Empresarial
+2.,205.,02.,02.,02.,03.,03.,04.,,Responsabilidad Civil General
+2.,205.,02.,02.,02.,03.,03.,05.,,Responsabilidad Civil Profesional
+2.,205.,02.,02.,02.,03.,03.,06.,,Fidelidad de Empleados
+2.,205.,02.,02.,02.,03.,03.,07.,,Seguros de Crédito
+2.,205.,02.,02.,02.,04.,,,,Reservas para Reintegro por Experiencia Favorable
+2.,205.,02.,02.,02.,04.,01.,,,Personas No Vida
+2.,205.,02.,02.,02.,04.,01.,01.,,Colectivo de Accidentes Personales
+2.,205.,02.,02.,02.,04.,01.,02.,,Colectivo de Salud
+2.,205.,02.,02.,02.,04.,01.,03.,,Colectivo Funerarios Servicios
+2.,205.,02.,02.,02.,04.,01.,04.,,Colectivo Combinados de Personas
+2.,205.,02.,02.,02.,04.,01.,05.,,Colectivo Pago de Capital por Enfermedades Graves o Críticas
+2.,205.,02.,02.,02.,04.,01.,06.,,Colectivo Otros Seguros de Personas
+2.,205.,02.,02.,02.,04.,02.,,,Patrimoniales
+2.,205.,02.,02.,02.,04.,02.,01.,,Colectivo o Flota Automóvil Casco
+2.,205.,02.,02.,02.,04.,03.,,,Obligacionales o de Responsabilidad
+2.,205.,02.,02.,02.,04.,03.,01.,,Colectivo o Flota Responsabilidad Civil de Vehículos
+2.,205.,02.,03.,,,,,,Operaciones de Fianzas
+2.,205.,02.,03.,01.,,,,,Del País
+2.,205.,02.,03.,01.,01.,,,,Reserva para Fianzas en Curso
+2.,205.,02.,03.,01.,02.,,,,Reserva para Siniestros Pendientes de Pago
+2.,205.,02.,03.,02.,,,,,Del Exterior
+2.,205.,02.,03.,02.,01.,,,,Reserva para Fianzas en Curso
+2.,205.,02.,03.,02.,02.,,,,Reserva para Siniestros Pendientes de Pago
+2.,206.,,,,,,,,ACTIVOS DEPRECIABLES Y AMORTIZABLES
+2.,206.,01.,,,,,,,Activos Depreciables
+2.,206.,01.,01.,,,,,,Mobiliario
+2.,206.,01.,02.,,,,,,Equipos de Oficina
+2.,206.,01.,03.,,,,,,Equipos de Computación y Software
+2.,206.,01.,04.,,,,,,Vehículos
+2.,206.,01.,05.,,,,,,Aeronaves
+2.,206.,01.,06.,,,,,,Naves
+2.,206.,02.,,,,,,,Activos Amortizables
+2.,206.,02.,01.,,,,,,Gastos de Constitución
+2.,206.,02.,02.,,,,,,Gastos de Instalación
+2.,207.,,,,,,,,CUENTAS DIVERSAS
+2.,207.,01.,,,,,,,Cuentas por Cobrar - Empleados
+2.,207.,02.,,,,,,,Cuentas por Cobrar - Intermediarios de la Actividad Aseguradora
+2.,207.,03.,,,,,,,Anticipos a Cuenta de Comisiones
+2.,207.,03.,01.,,,,,,Agentes
+2.,207.,03.,02.,,,,,,Corredores de Seguros
+2.,207.,03.,03.,,,,,,Sociedades de Corretaje de Seguros
+2.,207.,04.,,,,,,,Organismos y Entes de la Administración Pública
+2.,207.,05.,,,,,,,Préstamos sobre Pólizas de Vida  
+2.,207.,05.,01.,,,,,,Automáticos
+2.,207.,05.,02.,,,,,,Documentados
+2.,207.,06.,,,,,,,Depósitos en Poder de Reaseguradas
+2.,207.,06.,01.,,,,,,Del País
+2.,207.,06.,01.,01.,,,,,Reservas de Primas
+2.,207.,06.,01.,02.,,,,,Reservas de Prestaciones y Siniestros Pendientes
+2.,207.,06.,02.,,,,,,Del Exterior
+2.,207.,06.,02.,01.,,,,,Reservas de Primas
+2.,207.,06.,02.,02.,,,,,Reservas de Prestaciones y Siniestros Pendientes
+2.,207.,07.,,,,,,,Primas por Cobrar o Recaudar
+2.,207.,07.,01.,,,,,,Vida 
+2.,207.,07.,02.,,,,,,Transporte 
+2.,207.,08.,,,,,,,Primas Notificadas Pendientes por Cobrar
+2.,207.,08.,01.,,,,,,Agentes
+2.,207.,08.,01.,01.,,,,,Operaciones de Seguros de Vida
+2.,207.,08.,01.,02.,,,,,Operaciones de Seguros Generales
+2.,207.,08.,01.,02.,01.,,,,Personas No Vida
+2.,207.,08.,01.,02.,02.,,,,Patrimoniales
+2.,207.,08.,01.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,207.,08.,01.,03.,,,,,Operaciones de Fianzas
+2.,207.,08.,02.,,,,,,Corredores de Seguros
+2.,207.,08.,02.,01.,,,,,Operaciones de Seguros de Vida
+2.,207.,08.,02.,02.,,,,,Operaciones de Seguros Generales
+2.,207.,08.,02.,02.,01.,,,,Personas No Vida
+2.,207.,08.,02.,02.,02.,,,,Patrimoniales
+2.,207.,08.,02.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,207.,08.,02.,03.,,,,,Operaciones de Fianzas
+2.,207.,08.,03.,,,,,,Sociedades de Corretaje de Seguros
+2.,207.,08.,03.,01.,,,,,Operaciones de Seguros de Vida
+2.,207.,08.,03.,02.,,,,,Operaciones de Seguros Generales
+2.,207.,08.,03.,02.,01.,,,,Personas No Vida
+2.,207.,08.,03.,02.,02.,,,,Patrimoniales
+2.,207.,08.,03.,02.,03.,,,,Obligacionales o de Responsabilidad
+2.,207.,08.,03.,03.,,,,,Operaciones de Fianzas
+2.,207.,09.,,,,,,,Cuentas por Cobrar Diversas
+2.,207.,09.,01.,,,,,,Empresas Filiales
+2.,207.,09.,02.,,,,,,Empresas Afiliadas
+2.,207.,09.,03.,,,,,,Empresas Relacionadas
+2.,207.,09.,04.,,,,,,Proveedores de Bienes y Servicios
+2.,207.,09.,05.,,,,,,Otras Cuentas por Cobrar 
+2.,207.,10.,,,,,,,Cuentas por Cobrar - Operaciones de Coaseguro
+2.,207.,10.,01.,,,,,,Primas
+2.,207.,10.,01.,,,,,,Operaciones de Seguros de Vida
+2.,207.,10.,01.,,,,,,Operaciones de Seguros Generales
+2.,207.,10.,01.,,,,,,Personas No Vida
+2.,207.,10.,01.,,,,,,Patrimoniales
+2.,207.,10.,01.,,,,,,Obligacionales o de Responsabilidad
+2.,207.,10.,02.,,,,,,Prestaciones y Siniestros 
+2.,207.,10.,02.,,,,,,Operaciones de Seguros de Vida
+2.,207.,10.,02.,,,,,,Operaciones de Seguros Generales
+2.,207.,10.,02.,,,,,,Personas No Vida
+2.,207.,10.,02.,,,,,,Patrimoniales
+2.,207.,10.,02.,,,,,,Obligacionales o de Responsabilidad
+2.,207.,11.,,,,,,,Beneficios Devengados por Cobrar 
+2.,207.,11.,01.,,,,,,Intereses por Cobrar
+2.,207.,11.,01.,01.,,,,,Depósitos a la Vista
+2.,207.,11.,01.,01.,01.,,,,Bancos
+2.,207.,11.,01.,01.,01.,01.,,,Moneda Nacional
+2.,207.,11.,01.,01.,01.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,01.,02.,,,,Otras Instituciones Financieras
+2.,207.,11.,01.,01.,02.,01.,,,Moneda Nacional
+2.,207.,11.,01.,01.,02.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,02.,,,,,Depósitos a Plazo Fijo
+2.,207.,11.,01.,02.,01.,,,,Bancos
+2.,207.,11.,01.,02.,01.,01.,,,Moneda Nacional
+2.,207.,11.,01.,02.,01.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,02.,02.,,,,Otras Instituciones Financieras
+2.,207.,11.,01.,02.,02.,01.,,,Moneda Nacional
+2.,207.,11.,01.,02.,02.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,03.,,,,,Valores Públicos
+2.,207.,11.,01.,03.,01.,,,,Emitidos o Garantizados por la República
+2.,207.,11.,01.,03.,01.,01.,,,Moneda Nacional
+2.,207.,11.,01.,03.,01.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,03.,02.,,,,Emitidos por Otros Sujetos de Derecho Público Nacional
+2.,207.,11.,01.,03.,02.,01.,,,Moneda Nacional
+2.,207.,11.,01.,03.,02.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,03.,03.,,,,Emitidos por Empresas con Participación de la República
+2.,207.,11.,01.,03.,03.,01.,,,Moneda Nacional
+2.,207.,11.,01.,03.,03.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,03.,04.,,,,Emitidos por Instituciones con Participación de la República
+2.,207.,11.,01.,03.,04.,01.,,,Moneda Nacional
+2.,207.,11.,01.,03.,04.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,04.,,,,,Participación en Fondos de Inversión
+2.,207.,11.,01.,04.,01.,,,,Renta Fija
+2.,207.,11.,01.,04.,01.,01.,,,Moneda Nacional
+2.,207.,11.,01.,04.,01.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,04.,02.,,,,Renta Variable
+2.,207.,11.,01.,04.,02.,01.,,,Moneda Nacional
+2.,207.,11.,01.,04.,02.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,05.,,,,,Valores Privados
+2.,207.,11.,01.,05.,01.,,,,Bonos de Sociedades Anónimas
+2.,207.,11.,01.,05.,01.,01.,,,Moneda Nacional
+2.,207.,11.,01.,05.,01.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,05.,02.,,,,Valores de Renta Fija
+2.,207.,11.,01.,05.,02.,01.,,,Moneda Nacional
+2.,207.,11.,01.,05.,02.,02.,,,Moneda Extranjera
+2.,207.,11.,01.,06.,,,,,Activos en el Extranjero
+2.,207.,11.,01.,06.,01.,,,,Bancos
+2.,207.,11.,01.,06.,02.,,,,Títulos Valores
+2.,207.,11.,01.,06.,03.,,,,Otras Inversiones
+2.,207.,11.,01.,07.,,,,,Intereses por Cobrar de Otros Activos 
+2.,207.,11.,01.,07.,01.,,,,Moneda Nacional
+2.,207.,11.,01.,07.,02.,,,,Moneda Extranjera
+2.,207.,11.,01.,08.,,,,,Préstamos Hipotecarios
+2.,207.,11.,01.,08.,01.,,,,Moneda Nacional
+2.,207.,11.,01.,08.,02.,,,,Moneda Extranjera
+2.,207.,11.,01.,09.,,,,,Préstamos a Productores de Seguros
+2.,207.,11.,01.,09.,01.,,,,Moneda Nacional
+2.,207.,11.,01.,09.,02.,,,,Moneda Extranjera
+2.,207.,11.,01.,10.,,,,,Préstamos Sobre Pólizas
+2.,207.,11.,01.,10.,01.,,,,Moneda Nacional
+2.,207.,11.,01.,10.,02.,,,,Moneda Extranjera
+2.,207.,11.,02.,,,,,,Dividendos por Cobrar
+2.,207.,11.,02.,01.,,,,,Participación Fondos de Inversión Inmobiliarios
+2.,207.,11.,02.,01.,01.,,,,Moneda Nacional
+2.,207.,11.,02.,01.,02.,,,,Moneda Extranjera
+2.,207.,11.,02.,02.,,,,,Valores Privados
+2.,207.,11.,02.,02.,01.,,,,Acciones de Sociedades Anónimas
+2.,207.,11.,02.,02.,01.,01.,,,Empresas de Seguros o Reaseguros
+2.,207.,11.,02.,02.,01.,01.,01.,,Moneda Nacional
+2.,207.,11.,02.,02.,01.,01.,02.,,Moneda Extranjera
+2.,207.,11.,02.,02.,01.,02.,,,Sociedades de Corretaje de Seguros, de Reaseguros o de Valores
+2.,207.,11.,02.,02.,01.,02.,01.,,Moneda Nacional
+2.,207.,11.,02.,02.,01.,02.,02.,,Moneda Extranjera
+2.,207.,11.,02.,02.,01.,03.,,,Bancos y Otras Instituciones Financieras
+2.,207.,11.,02.,02.,01.,03.,01.,,Moneda Nacional
+2.,207.,11.,02.,02.,01.,03.,02.,,Moneda Extranjera
+2.,207.,11.,02.,02.,01.,04.,,,Sociedades Industriales y Comerciales
+2.,207.,11.,02.,02.,01.,04.,01.,,Moneda Nacional
+2.,207.,11.,02.,02.,01.,04.,02.,,Moneda Extranjera
+2.,207.,11.,02.,02.,01.,05.,,,Sociedades Civiles
+2.,207.,11.,02.,02.,01.,05.,01.,,Moneda Nacional
+2.,207.,11.,02.,02.,01.,05.,02.,,Moneda Extranjera
+2.,207.,11.,02.,02.,01.,06.,,,Empresas Filiales, Afiliadas y Relacionadas
+2.,207.,11.,02.,02.,01.,06.,01.,,Moneda Nacional
+2.,207.,11.,02.,02.,01.,06.,02.,,Moneda Extranjera
+2.,207.,11.,02.,02.,01.,07.,,,Otras Sociedades Anónimas
+2.,207.,11.,02.,02.,01.,07.,01.,,Moneda Nacional
+2.,207.,11.,02.,02.,01.,07.,02.,,Moneda Extranjera
+2.,207.,11.,02.,03.,,,,,Dividendos por Cobrar de Otros Activos 
+2.,207.,11.,02.,03.,01.,,,,Moneda Nacional
+2.,207.,11.,02.,03.,02.,,,,Moneda Extranjera
+2.,207.,11.,03.,,,,,,Otros Beneficios Devengados por Cobrar 
+2.,207.,11.,03.,01.,,,,,Valores Vendidos
+2.,207.,11.,03.,02.,,,,,Valores Redimidos
+2.,207.,12.,,,,,,,Arrendamientos por Cobrar
+2.,207.,13.,,,,,,,Anticipos a Proveedores de Bienes y Servicios
+2.,207.,14.,,,,,,,Anticipos a Proveedores de Servicios de seguros
+2.,207.,14.,01.,,,,,,Administradoras de Riesgos
+2.,207.,14.,02.,,,,,,Otros Proveedores de Servicios de Seguros
+2.,208.,,,,,,,,CARGOS DIFERIDOS
+2.,208.,01.,,,,,,,Primas sobre Adquisición de Títulos Valores
+2.,208.,01.,01.,,,,,,Valores Públicos
+2.,208.,01.,01.,01.,,,,,Emitidos o Garantizados por la República
+2.,208.,01.,01.,01.,01.,,,,Moneda Nacional
+2.,208.,01.,01.,01.,02.,,,,Moneda Extranjera
+2.,208.,01.,01.,02.,,,,,Emitidos por Otros Sujetos de Derecho Público Nacional
+2.,208.,01.,01.,02.,01.,,,,Moneda Nacional
+2.,208.,01.,01.,02.,02.,,,,Moneda Extranjera
+2.,208.,01.,01.,03.,,,,,Emitidos por Empresas con Participación de la República
+2.,208.,01.,01.,03.,01.,,,,Moneda Nacional
+2.,208.,01.,01.,03.,02.,,,,Moneda Extranjera
+2.,208.,01.,01.,04.,,,,,Emitidos por Instituciones con Participación de la República
+2.,208.,01.,01.,04.,01.,,,,Moneda Nacional
+2.,208.,01.,01.,04.,02.,,,,Moneda Extranjera
+2.,208.,01.,02.,,,,,,Participación en Fondos de Inversión
+2.,208.,01.,02.,01.,,,,,Renta Fija
+2.,208.,01.,02.,01.,01.,,,,Moneda Nacional
+2.,208.,01.,02.,01.,02.,,,,Moneda Extranjera
+2.,208.,01.,02.,02.,,,,,Renta Variable
+2.,208.,01.,02.,02.,01.,,,,Moneda Nacional
+2.,208.,01.,02.,02.,02.,,,,Moneda Extranjera
+2.,208.,01.,03.,,,,,,Garantía a la Nación
+2.,208.,01.,03.,01.,,,,,Valores Públicos
+2.,208.,01.,04.,,,,,,Valores Privados
+2.,208.,01.,04.,01.,,,,,Acciones de Sociedades Anónimas
+2.,208.,01.,04.,01.,01.,,,,Empresas de Seguros o Reaseguros
+2.,208.,01.,04.,01.,01.,01.,,,Moneda Nacional
+2.,208.,01.,04.,01.,01.,02.,,,Moneda Extranjera
+2.,208.,01.,04.,01.,02.,,,,Sociedades de Corretaje de Seguros, de Reaseguros o de Valores
+2.,208.,01.,04.,01.,02.,01.,,,Moneda Nacional
+2.,208.,01.,04.,01.,02.,02.,,,Moneda Extranjera
+2.,208.,01.,04.,01.,03.,,,,Bancos y Otras Instituciones Financieras
+2.,208.,01.,04.,01.,03.,01.,,,Moneda Nacional
+2.,208.,01.,04.,01.,03.,02.,,,Moneda Extranjera
+2.,208.,01.,04.,01.,04.,,,,Sociedades Industriales y Comerciales
+2.,208.,01.,04.,01.,04.,01.,,,Moneda Nacional
+2.,208.,01.,04.,01.,04.,02.,,,Moneda Extranjera
+2.,208.,01.,04.,01.,05.,,,,Sociedades Civiles
+2.,208.,01.,04.,01.,05.,01.,,,Moneda Nacional
+2.,208.,01.,04.,01.,05.,02.,,,Moneda Extranjera
+2.,208.,01.,04.,01.,06.,,,,Empresas Filiales, Afiliadas y Relacionadas
+2.,208.,01.,04.,01.,06.,01.,,,Moneda Nacional
+2.,208.,01.,04.,01.,06.,02.,,,Moneda Extranjera
+2.,208.,01.,04.,01.,07.,,,,Otras Sociedades Anónimas
+2.,208.,01.,04.,01.,07.,01.,,,Moneda Nacional
+2.,208.,01.,04.,01.,07.,02.,,,Moneda Extranjera
+2.,208.,01.,04.,02.,,,,,Bonos de Sociedades Anónimas
+2.,208.,01.,04.,02.,01.,,,,Moneda Nacional
+2.,208.,01.,04.,02.,02.,,,,Moneda Extranjera
+2.,208.,01.,04.,03.,,,,,Valores en Renta Fija
+2.,208.,01.,04.,03.,01.,,,,Moneda Nacional
+2.,208.,01.,04.,03.,02.,,,,Moneda Extranjera
+2.,208.,01.,05.,,,,,,Activos en el Extranjero
+2.,208.,01.,05.,01.,,,,,Títulos Valores
+2.,208.,01.,06.,,,,,,Primas de Adquisición Sobre Otros Activos
+2.,208.,02.,,,,,,,Inventarios - Papelería y Artículos de Oficina
+2.,208.,02.,01.,,,,,,Papelería
+2.,208.,02.,02.,,,,,,Artículos de Oficina
+2.,208.,02.,03.,,,,,,Artículos e Insumos para Procesamiento de Datos
+2.,208.,03.,,,,,,,Gastos Reembolsables
+2.,208.,03.,01.,,,,,,Gastos de Alojamiento
+2.,208.,03.,02.,,,,,,Gastos de Transporte
+2.,208.,03.,02.,01.,,,,,Aéreos
+2.,208.,03.,02.,02.,,,,,Terrestres
+2.,208.,03.,02.,03.,,,,,Otros Gastos de Transporte
+2.,208.,03.,03.,,,,,,Gastos de Combustible
+2.,208.,03.,04.,,,,,,Otros Gastos Reembolsables
+2.,208.,04.,,,,,,,Gastos Pagados por Anticipado
+2.,208.,04.,01.,,,,,,Impuestos Pagados por Anticipado
+2.,208.,04.,01.,01.,,,,,Impuesto sobre la Renta
+2.,208.,04.,01.,01.,01.,,,,ISLR - Retenido por Terceros
+2.,208.,04.,01.,01.,02.,,,,ISLR - Declaración Estimada
+2.,208.,04.,01.,01.,03.,,,,Anticipo  - ISLR  
+2.,208.,04.,01.,01.,04.,,,,ISRL por Compensar (Pagado en Exceso)
+2.,208.,04.,01.,01.,05.,,,,ISLR Diferido
+2.,208.,04.,01.,02.,,,,,Impuesto al Valor Agregado (IVA)
+2.,208.,04.,01.,02.,01.,,,,IVA - Retenido por Terceros sobre Compras o Servicios Recibidos (Crédito Fiscal)
+2.,208.,04.,01.,03.,,,,,Otros Impuestos Nacionales
+2.,208.,04.,01.,04.,,,,,Impuestos Municipales
+2.,208.,04.,01.,04.,01.,,,,Patente de Industria y Comercio
+2.,208.,04.,01.,04.,02.,,,,Impuesto Inmobiliario Urbano
+2.,208.,04.,01.,04.,03.,,,,Impuesto sobre Publicidad y Propaganda
+2.,208.,04.,01.,04.,04.,,,,Impuesto sobre Circulación de Vehículos
+2.,208.,04.,01.,04.,05.,,,,Otros Impuestos
+2.,208.,04.,02.,,,,,,Seguros Pagados por Anticipado
+2.,208.,04.,03.,,,,,,Intereses Pagados por Anticipado
+2.,208.,04.,04.,,,,,,Arrendamientos Pagados por Anticipado
+2.,208.,04.,05.,,,,,,Publicidad Pagada por Anticipado
+2.,208.,04.,06.,,,,,,Suscripciones Pagadas por Anticipado
+2.,208.,04.,07.,,,,,,Hipotecas Pagadas por Anticipado
+2.,208.,04.,08.,,,,,,Comisiones Pagadas sobre Primas Cobradas por Anticipado
+2.,208.,04.,09.,,,,,,Otros Gastos Pagados por Anticipado
+2.,208.,05.,,,,,,,Operaciones de Permuta
+2.,208.,05.,01.,,,,,,Valores Públicos
+2.,208.,05.,02.,,,,,,Valores Privados
+2.,208.,05.,03.,,,,,,Terrenos y Edificaciones
+2.,208.,05.,04.,,,,,,Inmuebles
+2.,208.,05.,05.,,,,,,Otros
+2.,209.,,,,,,,,OTROS ACTIVOS
+2.,209.,01.,,,,,,,Operaciones en Tránsito
+2.,209.,01.,01.,,,,,,Bancarias 
+2.,209.,01.,01.,01.,,,,,Moneda Nacional
+2.,209.,01.,01.,02.,,,,,Moneda Extranjera
+2.,209.,01.,02.,,,,,,Otros
+2.,209.,01.,02.,01.,,,,,Moneda Nacional
+2.,209.,01.,02.,02.,,,,,Moneda Extranjera
+2.,209.,02.,,,,,,,Propiedades, Mejoras Inmobiliarias y Equipos
+2.,209.,02.,01.,,,,,,Edificaciones en Construcción
+2.,209.,02.,02.,,,,,,Mejoras Inmobiliarias
+2.,209.,02.,03.,,,,,,Equipos
+2.,209.,02.,04.,,,,,,Otros
+2.,209.,03.,,,,,,,Acervo Artístico 
+2.,209.,03.,01.,,,,,,Pinturas
+2.,209.,03.,02.,,,,,,Esculturas
+2.,209.,03.,03.,,,,,,Otros
+2.,209.,04.,,,,,,,Depósitos en Garantía de Servicios 
+,,,,,,,,,TOTAL ACTIVO
+2.,212.,,,,,,,,CUENTAS DE ORDEN
+2.,212.,01.,,,,,,,Primas Emitidas al Cobro
+2.,212.,01.,01.,,,,,,Operaciones de Seguros de Vida
+2.,212.,01.,02.,,,,,,Operaciones de Seguros Generales
+2.,212.,01.,02.,01.,,,,,Personas No Vida
+2.,212.,01.,02.,02.,,,,,Patrimoniales
+2.,212.,01.,02.,03.,,,,,Obligacionales o de Responsabilidad
+2.,212.,01.,03.,,,,,,Operaciones de Fianzas
+2.,212.,02.,,,,,,,Bienes en Fideicomiso - Fiduciario
+2.,212.,03.,,,,,,,Depósitos Recibidos en Garantía
+2.,212.,03.,01.,,,,,,Bancos y Otras Instituciones Financieras
+2.,212.,03.,02.,,,,,,Otras Inversiones
+2.,212.,04.,,,,,,,Fondos Administrados
+2.,212.,05.,,,,,,,Capital a Riesgo en Fianzas Neto de Reaseguro
+2.,212.,06.,,,,,,,Fideicomiso - Trabajadores de la Empresa de Seguros
+2.,212.,07.,,,,,,,Demandas o Litigios en Proceso
+,,,,,,,,,TOTAL  CUENTAS DE ORDEN
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,9

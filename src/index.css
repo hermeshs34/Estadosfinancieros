@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .financial-table {
+    @apply w-full border-collapse;
+  }
+  
+  .financial-table th {
+    @apply bg-gray-50 font-semibold text-gray-700 py-3 px-4 text-left border-b border-gray-200;
+  }
+  
+  .financial-table td {
+    @apply py-2 px-4 border-b border-gray-100;
+  }
+  
+  .financial-table tr:hover {
+    @apply bg-gray-50;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Estilos de impresión */
+@media print {
+  /* Configuración general de página */
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+  
+  /* Ocultar elementos no necesarios en impresión */
+  .no-print,
+  button,
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Asegurar que los gráficos se muestren correctamente */
+  [data-chart],
+  .recharts-wrapper,
+  .recharts-surface,
+  canvas {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Mejorar la visualización de tablas */
+  .financial-table,
+  table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    width: 100% !important;
+  }
+  
+  .financial-table th,
+  .financial-table td {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Asegurar que las cards se impriman correctamente */
+  .bg-white,
+  .card {
+    background: white !important;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+  
+  /* Mejorar el espaciado para impresión */
+  .space-y-6 > * + * {
+    margin-top: 1.5rem !important;
+  }
+  
+  /* Asegurar que los colores se mantengan */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Evitar cortes de página en elementos importantes */
+  .grid,
+  .grid-cols-1,
+  .grid-cols-2,
+  .lg\:grid-cols-2 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Estilos específicos para FinancialChart */
+  [data-chart="financial-performance"] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    min-height: 500px !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 1.5rem !important;
+  }
+
+  [data-chart="financial-performance"] .space-y-4 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    min-height: 400px !important;
+    overflow: visible !important;
+  }
+
+  [data-chart="financial-performance"] .space-y-6 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    overflow: visible !important;
+  }
+
+  [data-chart="financial-performance"] .space-y-3 {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 1.5rem !important;
+    min-height: 80px !important;
+    overflow: visible !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* Asegurar que las barras del gráfico se muestren completamente */
+  [data-chart="financial-performance"] .bg-green-500,
+  [data-chart="financial-performance"] .bg-blue-500,
+  [data-chart="financial-performance"] .bg-purple-500,
+  [data-chart="financial-performance"] .bg-orange-500,
+  [data-chart="financial-performance"] .bg-red-500,
+  [data-chart="financial-performance"] .bg-indigo-500 {
+    min-width: 12px !important;
+    height: 16px !important;
+    overflow: visible !important;
+    display: block !important;
+    border-radius: 9999px !important;
+    transition: all 0.7s ease-out !important;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Contenedor de las barras de progreso */
+  [data-chart="financial-performance"] .bg-gray-200 {
+    height: 16px !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    background-color: #e5e7eb !important;
+  }
+
+  /* Contenedor de cada métrica individual */
+  [data-chart="financial-performance"] .space-y-3 > div {
+    margin-bottom: 1.5rem !important;
+    padding: 0.75rem 0 !important;
+    overflow: visible !important;
+    min-height: 80px !important;
+  }
+
+  /* Mejorar el espaciado entre elementos */
+  [data-chart="financial-performance"] .flex.justify-between {
+    margin-bottom: 0.75rem !important;
+    align-items: center !important;
+  }
+
+  /* Asegurar que los textos sean legibles */
+  [data-chart="financial-performance"] .text-sm {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+  }
+
+  [data-chart="financial-performance"] .text-xs {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+  }
+
+  /* Estilos específicos para gráficos de análisis financiero */
+  [data-chart="asset-composition"],
+  [data-chart="financial-structure"],
+  [data-chart="profitability"] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    min-height: 350px !important;
+  }
+
+  [data-chart="asset-composition"] .recharts-wrapper,
+  [data-chart="financial-structure"] .recharts-wrapper,
+  [data-chart="profitability"] .recharts-wrapper {
+    height: 300px !important;
+    min-height: 300px !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Asegurar que las leyendas de los gráficos se muestren correctamente */
+  .recharts-legend-wrapper {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-top: 20px !important;
+  }
+
+  /* Mejorar la visualización de los colores en los gráficos */
+  .recharts-pie-sector,
+  .recharts-bar {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Asegurar que los textos de las etiquetas sean visibles */
+  .recharts-text {
+    fill: currentColor !important;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Ajustar el tamaño de fuente para impresión */
+  body {
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+  }
+  
+  h1 { font-size: 18pt !important; }
+  h2 { font-size: 16pt !important; }
+  h3 { font-size: 14pt !important; }
+  h4 { font-size: 13pt !important; }
+}

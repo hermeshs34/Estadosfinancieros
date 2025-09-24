@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Datos de Supabase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .section h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .data-item {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+        }
+        .success {
+            color: #155724;
+            background: #d4edda;
+        }
+        .warning {
+            color: #856404;
+            background: #fff3cd;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .json-display {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 11px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Debug - Datos de Supabase</h1>
+        <p>Esta herramienta verifica si hay datos en Supabase y por qué no se están cargando en la aplicación.</p>
+        
+        <div class="section">
+            <h3>🏢 Empresa y Período Seleccionados</h3>
+            <button onclick="checkSelectedCompanyPeriod()">Verificar Selección</button>
+            <div id="selection-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>📊 Datos en Supabase</h3>
+            <button onclick="checkSupabaseData()">Verificar Datos en Supabase</button>
+            <div id="supabase-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>🔄 Simulación de Carga</h3>
+            <button onclick="simulateDataLoad()">Simular loadDataFromSupabase</button>
+            <button onclick="diagnoseAutoLoad()">🔍 Diagnosticar Auto-Carga</button>
+            <button onclick="clearLocalStorage()" style="background: #dc3545;">🗑️ Limpiar localStorage</button>
+            <button onclick="reloadMainApp()" style="background: #17a2b8;">🔄 Recargar App Principal</button>
+            <div id="simulation-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>📝 Log de Debug</h3>
+            <div id="debug-log"></div>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEYS = {
+            SELECTED_COMPANY: 'financial_app_selected_company',
+            SELECTED_PERIOD: 'financial_app_selected_period',
+            IMPORTED_DATA: 'financial_app_imported_data'
+        };
+
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('debug-log');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `data-item ${type}`;
+            logEntry.innerHTML = `[${timestamp}] ${message}`;
+            logDiv.insertBefore(logEntry, logDiv.firstChild);
+            console.log(`[DEBUG] ${message}`);
+        }
+
+        function checkSelectedCompanyPeriod() {
+            const statusDiv = document.getElementById('selection-status');
+            statusDiv.innerHTML = '';
+            
+            log('=== DIAGNÓSTICO DE EMPRESA Y PERÍODO ===');
+            
+            // Mostrar información del dominio actual
+            log(`Dominio actual: ${window.location.origin}`);
+            log(`URL completa: ${window.location.href}`);
+            
+            // Mostrar todas las claves de localStorage
+            log('Todas las claves en localStorage:');
+            if (localStorage.length === 0) {
+                log('  ⚠️ localStorage está completamente vacío');
+            } else {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    const value = localStorage.getItem(key);
+                    log(`  "${key}": ${value ? value.substring(0, 100) + (value.length > 100 ? '...' : '') : 'null'}`);
+                }
+            }
+            
+            // Buscar claves que contengan 'company' o 'period'
+            log('\nClaves relacionadas con empresa/período:');
+            const allKeys = Object.keys(localStorage);
+            const relatedKeys = allKeys.filter(key => 
+                key.toLowerCase().includes('company') || 
+                key.toLowerCase().includes('period') ||
+                key.toLowerCase().includes('empresa') ||
+                key.toLowerCase().includes('periodo')
+            );
+            
+            if (relatedKeys.length === 0) {
+                log('  ❌ No se encontraron claves relacionadas');
+            } else {
+                relatedKeys.forEach(key => {
+                    const value = localStorage.getItem(key);
+                    log(`  "${key}": ${value ? value.substring(0, 100) + (value.length > 100 ? '...' : '') : 'null'}`);
+                });
+            }
+            
+            const companyData = localStorage.getItem(STORAGE_KEYS.SELECTED_COMPANY);
+            const periodData = localStorage.getItem(STORAGE_KEYS.SELECTED_PERIOD);
+            
+            log(`\nBuscando clave empresa exacta: '${STORAGE_KEYS.SELECTED_COMPANY}'`);
+            log(`Valor encontrado: ${companyData ? 'SÍ ENCONTRADO' : 'NO ENCONTRADO'}`);
+            if (companyData) {
+                log(`Contenido completo: ${companyData}`);
+            }
+            
+            log(`\nBuscando clave período exacta: '${STORAGE_KEYS.SELECTED_PERIOD}'`);
+            log(`Valor encontrado: ${periodData ? 'SÍ ENCONTRADO' : 'NO ENCONTRADO'}`);
+            if (periodData) {
+                log(`Contenido completo: ${periodData}`);
+            }
+            
+            let company = null;
+            let period = null;
+            
+            if (companyData) {
+                try {
+                    company = JSON.parse(companyData);
+                    const div = document.createElement('div');
+                    div.className = 'data-item success';
+                    div.innerHTML = `✅ Empresa: ${company.name} (ID: ${company.id})`;
+                    statusDiv.appendChild(div);
+                    log(`✅ Empresa seleccionada: ${company.name}`);
+                } catch (e) {
+                    const div = document.createElement('div');
+                    div.className = 'data-item error';
+                    div.innerHTML = `❌ Error parsing empresa: ${e.message}`;
+                    statusDiv.appendChild(div);
+                    log(`❌ Error parsing empresa: ${e.message}`);
+                }
+            } else {
+                const div = document.createElement('div');
+                div.className = 'data-item error';
+                div.innerHTML = `❌ No hay empresa seleccionada<br><small>Total claves en localStorage: ${localStorage.length}<br>Claves relacionadas: ${relatedKeys.length}<br>Dominio: ${window.location.origin}</small>`;
+                statusDiv.appendChild(div);
+                log('❌ No hay empresa seleccionada');
+            }
+            
+            if (periodData) {
+                try {
+                    period = JSON.parse(periodData);
+                    const div = document.createElement('div');
+                    div.className = 'data-item success';
+                    div.innerHTML = `✅ Período: ${period.period_name || period.name} (ID: ${period.id})`;
+                    statusDiv.appendChild(div);
+                    log(`✅ Período seleccionado: ${period.period_name || period.name}`);
+                } catch (e) {
+                    const div = document.createElement('div');
+                    div.className = 'data-item error';
+                    div.innerHTML = `❌ Error parsing período: ${e.message}`;
+                    statusDiv.appendChild(div);
+                    log(`❌ Error parsing período: ${e.message}`);
+                }
+            } else {
+                const div = document.createElement('div');
+                div.className = 'data-item error';
+                div.innerHTML = `❌ No hay período seleccionado<br><small>Total claves en localStorage: ${localStorage.length}<br>Claves relacionadas: ${relatedKeys.length}<br>Dominio: ${window.location.origin}</small>`;
+                statusDiv.appendChild(div);
+                log('❌ No hay período seleccionado');
+            }
+            
+            // Mostrar si se pueden cargar datos
+            if (company && period) {
+                const div = document.createElement('div');
+                div.className = 'data-item success';
+                div.innerHTML = `✅ Condiciones cumplidas para cargar desde Supabase`;
+                statusDiv.appendChild(div);
+                log('✅ Condiciones cumplidas para cargar desde Supabase');
+            } else {
+                const div = document.createElement('div');
+                div.className = 'data-item warning';
+                div.innerHTML = `⚠️ Faltan condiciones para cargar desde Supabase<br><small>Diagnóstico completo disponible en el log de debug</small>`;
+                statusDiv.appendChild(div);
+                log('⚠️ Faltan condiciones para cargar desde Supabase');
+            }
+        }
+
+        function checkSupabaseData() {
+            const statusDiv = document.getElementById('supabase-status');
+            statusDiv.innerHTML = '';
+            
+            log('📊 Verificando datos en Supabase...');
+            
+            const div = document.createElement('div');
+            div.className = 'data-item warning';
+            div.innerHTML = `⚠️ Esta función requiere acceso directo a Supabase. <br>
+                           Para verificar datos reales, revisa la consola del navegador en la aplicación principal <br>
+                           y busca logs de "loadDataFromSupabase" o "getFinancialEntries".`;
+            statusDiv.appendChild(div);
+            
+            log('⚠️ Verificación de Supabase requiere acceso desde la aplicación principal');
+        }
+
+        async function simulateDataLoad() {
+            const statusDiv = document.getElementById('simulation-status');
+            statusDiv.innerHTML = '';
+            
+            log('🔄 Simulando carga de datos...');
+            
+            const companyData = localStorage.getItem(STORAGE_KEYS.SELECTED_COMPANY);
+            const periodData = localStorage.getItem(STORAGE_KEYS.SELECTED_PERIOD);
+            
+            if (!companyData || !periodData) {
+                const div = document.createElement('div');
+                div.className = 'data-item error';
+                div.innerHTML = `❌ No se puede simular: falta empresa o período seleccionado`;
+                statusDiv.appendChild(div);
+                log('❌ Simulación cancelada: falta empresa o período');
+                return;
+            }
+            
+            try {
+                const company = JSON.parse(companyData);
+                const period = JSON.parse(periodData);
+                
+                const div = document.createElement('div');
+                div.className = 'data-item success';
+                div.innerHTML = `✅ Simulación: loadDataFromSupabase('${company.id}', '${period.id}')`;
+                statusDiv.appendChild(div);
+                
+                log(`📊 Simulando carga para: ${company.name} - ${period.period_name || period.name}`);
+                
+                // Forzar la carga en la aplicación principal
+                try {
+                    // Enviar mensaje a la ventana principal para forzar la carga
+                    if (window.opener) {
+                        window.opener.postMessage({
+                            type: 'FORCE_SUPABASE_LOAD',
+                            company: company,
+                            period: period
+                        }, '*');
+                        log('📤 Mensaje enviado a la aplicación principal para forzar carga');
+                    } else {
+                        log('⚠️ No se puede comunicar con la aplicación principal');
+                    }
+                    
+                    // También intentar acceder directamente al DataContext si está disponible
+                    log('🔍 Intentando acceder al DataContext...');
+                    
+                    // Simular delay de red
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    log('✅ Simulación completada. Revisa la consola de la aplicación principal.');
+                } catch (error) {
+                    log('❌ Error en la simulación: ' + error.message);
+                }
+                
+                // Mostrar qué debería pasar
+                const steps = [
+                    '1. Llamar a SupabaseService.getFinancialEntries()',
+                    '2. Mapear datos de Supabase al formato interno',
+                    '3. Ejecutar setImportedData() con los datos mapeados',
+                    '4. Actualizar availableDates',
+                    '5. Procesar análisis financiero'
+                ];
+                
+                steps.forEach(step => {
+                    const stepDiv = document.createElement('div');
+                    stepDiv.className = 'data-item';
+                    stepDiv.innerHTML = step;
+                    statusDiv.appendChild(stepDiv);
+                });
+                
+                // Verificar si hay datos en localStorage después de la carga
+                setTimeout(() => {
+                    const importedData = localStorage.getItem(STORAGE_KEYS.IMPORTED_DATA);
+                    if (importedData) {
+                        try {
+                            const parsed = JSON.parse(importedData);
+                            const resultDiv = document.createElement('div');
+                            resultDiv.className = 'data-item success';
+                            resultDiv.innerHTML = `📊 Datos encontrados en localStorage: ${parsed.length} registros`;
+                            statusDiv.appendChild(resultDiv);
+                            log(`📊 Datos en localStorage: ${parsed.length} registros`);
+                        } catch (e) {
+                            const resultDiv = document.createElement('div');
+                            resultDiv.className = 'data-item error';
+                            resultDiv.innerHTML = `❌ Error parsing datos: ${e.message}`;
+                            statusDiv.appendChild(resultDiv);
+                            log(`❌ Error parsing datos: ${e.message}`);
+                        }
+                    } else {
+                        const resultDiv = document.createElement('div');
+                        resultDiv.className = 'data-item warning';
+                        resultDiv.innerHTML = `⚠️ No se encontraron datos en localStorage después de la simulación`;
+                        statusDiv.appendChild(resultDiv);
+                        log('⚠️ No hay datos en localStorage');
+                    }
+                }, 2000);
+                
+            } catch (e) {
+                const div = document.createElement('div');
+                div.className = 'data-item error';
+                div.innerHTML = `❌ Error en simulación: ${e.message}`;
+                statusDiv.appendChild(div);
+                log(`❌ Error en simulación: ${e.message}`);
+            }
+        }
+
+        function diagnoseAutoLoad() {
+             log('🔍 === DIAGNÓSTICO DE AUTO-CARGA ===');
+             
+             // Verificar empresa y período seleccionados
+             const companyData = localStorage.getItem(STORAGE_KEYS.SELECTED_COMPANY);
+             const periodData = localStorage.getItem(STORAGE_KEYS.SELECTED_PERIOD);
+             
+             let company = null;
+             let period = null;
+             
+             if (companyData) {
+                 try {
+                     company = JSON.parse(companyData);
+                 } catch (e) {
+                     log('❌ Error parsing empresa: ' + e.message);
+                 }
+             }
+             
+             if (periodData) {
+                 try {
+                     period = JSON.parse(periodData);
+                 } catch (e) {
+                     log('❌ Error parsing período: ' + e.message);
+                 }
+             }
+             
+             log('📊 Estado actual:');
+             log(`- Empresa seleccionada: ${company ? company.name : 'NO'}`);
+             log(`- Período seleccionado: ${period ? (period.period_name || period.name) : 'NO'}`);
+             
+             if (!company || !period) {
+                 log('❌ PROBLEMA: Falta empresa o período seleccionado');
+                 log('💡 SOLUCIÓN: Selecciona empresa y período en la aplicación principal');
+                 return;
+             }
+             
+             // Verificar localStorage
+             log('💾 Verificando localStorage...');
+             log(`- Empresa en localStorage: ${companyData ? 'SÍ' : 'NO'}`);
+             log(`- Período en localStorage: ${periodData ? 'SÍ' : 'NO'}`);
+             
+             // Verificar datos importados
+             const importedData = localStorage.getItem(STORAGE_KEYS.IMPORTED_DATA);
+             if (importedData) {
+                 try {
+                     const data = JSON.parse(importedData);
+                     log(`📋 Datos importados: ${data.length} registros`);
+                 } catch (e) {
+                     log('❌ Error al parsear datos importados');
+                 }
+             } else {
+                 log('📋 No hay datos importados en localStorage');
+             }
+             
+             // Verificar condiciones del useEffect
+             log('🔄 Condiciones para auto-carga:');
+             log('✅ selectedCompany?.id: ' + (company ? 'SÍ' : 'NO'));
+             log('✅ selectedPeriod?.id: ' + (period ? 'SÍ' : 'NO'));
+             log('⚠️ !preventAutoReload: DESCONOCIDO (solo visible en la aplicación)');
+             
+             if (company && period) {
+                 log('✅ Todas las condiciones básicas se cumplen');
+                 log('🔄 El useEffect debería ejecutarse automáticamente');
+                 log('💡 Si no se ejecuta, puede ser por preventAutoReload=true');
+                 
+                 // Enviar mensaje para forzar diagnóstico en la aplicación principal
+                 if (window.opener) {
+                     window.opener.postMessage({
+                         type: 'DIAGNOSE_AUTO_LOAD',
+                         company: company,
+                         period: period
+                     }, '*');
+                     log('📤 Mensaje de diagnóstico enviado a la aplicación principal');
+                 }
+             } else {
+                 log('❌ Faltan condiciones básicas para la auto-carga');
+             }
+         }
+
+         function clearLocalStorage() {
+             if (confirm('¿Estás seguro de que quieres limpiar todo el localStorage? Esto eliminará todas las selecciones y datos guardados.')) {
+                 localStorage.clear();
+                 log('🗑️ localStorage limpiado completamente');
+                 log('🔄 Recarga la aplicación principal para empezar de nuevo');
+                 
+                 // Actualizar la visualización
+                 checkSelectedCompanyPeriod();
+             }
+         }
+
+         function reloadMainApp() {
+             if (window.opener) {
+                 log('🔄 Enviando mensaje para recargar la aplicación principal...');
+                 window.opener.postMessage({
+                     type: 'RELOAD_APP'
+                 }, '*');
+                 log('📤 Mensaje de recarga enviado');
+             } else {
+                 log('⚠️ No se puede comunicar con la aplicación principal');
+                 log('💡 Intenta recargar manualmente la pestaña de la aplicación');
+             }
+         }
+
+        // Auto-ejecutar verificación inicial
+        window.onload = function() {
+            log('🚀 Herramienta de debug iniciada');
+            checkSelectedCompanyPeriod();
+        };
+    </script>
+</body>
+</html>

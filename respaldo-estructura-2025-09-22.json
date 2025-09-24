@@ -1,0 +1,29 @@
+{
+  "fecha": "2025-09-22T16:05:36.594Z",
+  "version": "1.0.0",
+  "descripcion": "Respaldo completo antes de implementar multicompañía",
+  "estructura": {},
+  "datos": {},
+  "configuracion": {
+    "supabaseUrl": "https://ixmjkbmwrakgkqpnqvqr.supabase.co",
+    "relacionActual": {
+      "descripcion": "Relación actual: users.company_id -> companies.id (uno a uno)",
+      "campoRelacion": "company_id",
+      "tipoRelacion": "one-to-one"
+    },
+    "limitacionesActuales": [
+      "Un usuario solo puede pertenecer a una empresa",
+      "No hay interfaz para cambiar empresa de usuario",
+      "No hay historial de cambios de empresa",
+      "No hay sistema de roles por empresa"
+    ]
+  },
+  "estadisticas": {
+    "totalUsuarios": 0,
+    "totalEmpresas": 0,
+    "totalEstadosFinancieros": 0,
+    "totalCuentas": 0,
+    "usuariosSinEmpresa": 0,
+    "empresasSinUsuarios": 0
+  }
+}

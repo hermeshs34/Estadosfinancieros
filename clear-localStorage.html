@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpiar localStorage - Debug</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .danger {
+            background: #dc3545;
+        }
+        .danger:hover {
+            background: #c82333;
+        }
+        .success {
+            background: #28a745;
+        }
+        .success:hover {
+            background: #218838;
+        }
+        .info {
+            background: #17a2b8;
+        }
+        .info:hover {
+            background: #138496;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Debug localStorage - Estados Financieros</h1>
+        
+        <div class="section">
+            <h2>📊 Datos Actuales en localStorage</h2>
+            <button onclick="showStorageData()" class="info">Ver Datos Almacenados</button>
+            <button onclick="showStorageSize()" class="info">Ver Tamaño de Datos</button>
+            <div id="storageInfo"></div>
+        </div>
+
+        <div class="section">
+            <h2>🧹 Acciones de Limpieza</h2>
+            <button onclick="clearFinancialData()" class="danger">Limpiar Solo Datos Financieros</button>
+            <button onclick="clearAllStorage()" class="danger">Limpiar TODO el localStorage</button>
+            <button onclick="backupAndClear()" class="success">Hacer Backup y Limpiar</button>
+        </div>
+
+        <div class="section">
+            <h2>🔍 Análisis de Datos</h2>
+            <button onclick="analyzeFinancialData()" class="info">Analizar Datos Financieros</button>
+            <button onclick="findLargeValues()" class="info">Buscar Valores Grandes</button>
+            <div id="analysisResults"></div>
+        </div>
+
+        <div class="section">
+            <h2>📝 Log de Acciones</h2>
+            <div id="logOutput"></div>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEYS = {
+            IMPORTED_DATA: 'financial_app_imported_data',
+            IMPORT_HISTORY: 'financial_app_import_history',
+            FINANCIAL_METRICS: 'financial_app_financial_metrics',
+            BALANCE_SHEET: 'financial_app_balance_sheet',
+            INCOME_STATEMENT: 'financial_app_income_statement',
+            CASH_FLOW: 'financial_app_cash_flow',
+            FINANCIAL_ANALYSIS: 'financial_app_financial_analysis',
+            SELECTED_COMPANY: 'financial_app_selected_company',
+            SELECTED_PERIOD: 'financial_app_selected_period'
+        };
+
+        function log(message) {
+            const logOutput = document.getElementById('logOutput');
+            const timestamp = new Date().toLocaleTimeString();
+            logOutput.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+            console.log(message);
+        }
+
+        function showStorageData() {
+            const storageInfo = document.getElementById('storageInfo');
+            let html = '<h3>Datos en localStorage:</h3>';
+            
+            Object.entries(STORAGE_KEYS).forEach(([key, storageKey]) => {
+                const data = localStorage.getItem(storageKey);
+                if (data) {
+                    try {
+                        const parsed = JSON.parse(data);
+                        const size = new Blob([data]).size;
+                        html += `<p><strong>${key}:</strong> ${Array.isArray(parsed) ? parsed.length + ' registros' : 'objeto'} (${(size/1024).toFixed(2)} KB)</p>`;
+                    } catch (e) {
+                        html += `<p><strong>${key}:</strong> Error parsing data</p>`;
+                    }
+                } else {
+                    html += `<p><strong>${key}:</strong> No data</p>`;
+                }
+            });
+            
+            storageInfo.innerHTML = html;
+            log('Datos de localStorage mostrados');
+        }
+
+        function showStorageSize() {
+            let totalSize = 0;
+            let itemCount = 0;
+            
+            for (let key in localStorage) {
+                if (localStorage.hasOwnProperty(key)) {
+                    totalSize += localStorage[key].length;
+                    itemCount++;
+                }
+            }
+            
+            const storageInfo = document.getElementById('storageInfo');
+            storageInfo.innerHTML = `<h3>Tamaño Total del localStorage:</h3>
+                <p><strong>Total items:</strong> ${itemCount}</p>
+                <p><strong>Tamaño total:</strong> ${(totalSize/1024).toFixed(2)} KB</p>
+                <p><strong>Límite aproximado:</strong> 5-10 MB</p>`;
+            
+            log(`localStorage: ${itemCount} items, ${(totalSize/1024).toFixed(2)} KB`);
+        }
+
+        function clearFinancialData() {
+            if (confirm('¿Estás seguro de que quieres limpiar solo los datos financieros?')) {
+                Object.values(STORAGE_KEYS).forEach(key => {
+                    localStorage.removeItem(key);
+                });
+                log('✅ Datos financieros limpiados del localStorage');
+                alert('Datos financieros limpiados. Recarga la página para ver los cambios.');
+            }
+        }
+
+        function clearAllStorage() {
+            if (confirm('¿Estás seguro de que quieres limpiar TODO el localStorage? Esto eliminará TODOS los datos almacenados.')) {
+                localStorage.clear();
+                log('🧹 TODO el localStorage ha sido limpiado');
+                alert('Todo el localStorage limpiado. Recarga la página para ver los cambios.');
+            }
+        }
+
+        function backupAndClear() {
+            const backup = {};
+            Object.entries(STORAGE_KEYS).forEach(([key, storageKey]) => {
+                const data = localStorage.getItem(storageKey);
+                if (data) {
+                    backup[key] = data;
+                }
+            });
+            
+            // Guardar backup
+            const backupString = JSON.stringify(backup, null, 2);
+            const blob = new Blob([backupString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `financial-data-backup-${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.json`;
+            a.click();
+            
+            // Limpiar después del backup
+            Object.values(STORAGE_KEYS).forEach(key => {
+                localStorage.removeItem(key);
+            });
+            
+            log('💾 Backup creado y datos limpiados');
+            alert('Backup descargado y datos limpiados. Recarga la página para ver los cambios.');
+        }
+
+        function analyzeFinancialData() {
+            const analysisResults = document.getElementById('analysisResults');
+            let html = '<h3>Análisis de Datos Financieros:</h3>';
+            
+            const importedData = localStorage.getItem(STORAGE_KEYS.IMPORTED_DATA);
+            if (importedData) {
+                try {
+                    const data = JSON.parse(importedData);
+                    html += `<p><strong>Registros importados:</strong> ${data.length}</p>`;
+                    
+                    if (data.length > 0) {
+                        const sample = data[0];
+                        html += `<p><strong>Campos disponibles:</strong> ${Object.keys(sample).join(', ')}</p>`;
+                        
+                        // Buscar campos numéricos
+                        const numericFields = [];
+                        Object.entries(sample).forEach(([key, value]) => {
+                            if (typeof value === 'number' || (!isNaN(parseFloat(value)) && isFinite(value))) {
+                                numericFields.push(key);
+                            }
+                        });
+                        html += `<p><strong>Campos numéricos:</strong> ${numericFields.join(', ')}</p>`;
+                    }
+                } catch (e) {
+                    html += '<p>Error analizando datos importados</p>';
+                }
+            } else {
+                html += '<p>No hay datos importados</p>';
+            }
+            
+            analysisResults.innerHTML = html;
+            log('Análisis de datos financieros completado');
+        }
+
+        function findLargeValues() {
+            const analysisResults = document.getElementById('analysisResults');
+            let html = '<h3>🔍 Valores Grandes Encontrados:</h3>';
+            
+            const importedData = localStorage.getItem(STORAGE_KEYS.IMPORTED_DATA);
+            if (importedData) {
+                try {
+                    const data = JSON.parse(importedData);
+                    const largeValues = [];
+                    
+                    data.forEach((item, index) => {
+                        Object.entries(item).forEach(([key, value]) => {
+                            const numValue = parseFloat(value);
+                            if (!isNaN(numValue) && Math.abs(numValue) > 1000000) { // Valores mayores a 1 millón
+                                largeValues.push({
+                                    index,
+                                    field: key,
+                                    value: numValue,
+                                    codigo: item.Codigo || item.codigo || 'N/A',
+                                    descripcion: item.Descripcion || item.descripcion || 'N/A'
+                                });
+                            }
+                        });
+                    });
+                    
+                    if (largeValues.length > 0) {
+                        html += `<p><strong>Se encontraron ${largeValues.length} valores grandes:</strong></p>`;
+                        html += '<pre>';
+                        largeValues.slice(0, 20).forEach(item => { // Mostrar solo los primeros 20
+                            html += `Registro ${item.index}: ${item.codigo} - ${item.descripcion}\n`;
+                            html += `  Campo: ${item.field} = ${item.value.toLocaleString()}\n\n`;
+                        });
+                        html += '</pre>';
+                        
+                        if (largeValues.length > 20) {
+                            html += `<p>... y ${largeValues.length - 20} más</p>`;
+                        }
+                    } else {
+                        html += '<p>No se encontraron valores excesivamente grandes (> 1,000,000)</p>';
+                    }
+                } catch (e) {
+                    html += '<p>Error buscando valores grandes</p>';
+                }
+            } else {
+                html += '<p>No hay datos para analizar</p>';
+            }
+            
+            analysisResults.innerHTML = html;
+            log('Búsqueda de valores grandes completada');
+        }
+
+        // Mostrar datos al cargar la página
+        window.onload = function() {
+            log('🚀 Herramienta de debug localStorage iniciada');
+            showStorageData();
+        };
+    </script>
+</body>
+</html>

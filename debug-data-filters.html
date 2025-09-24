@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Datos y Filtros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .section h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .data-item {
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .error {
+            color: #dc3545;
+            background: #f8d7da;
+        }
+        .success {
+            color: #155724;
+            background: #d4edda;
+        }
+        .warning {
+            color: #856404;
+            background: #fff3cd;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .clear-btn {
+            background: #dc3545;
+        }
+        .clear-btn:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Debug - Datos y Filtros del Sistema Financiero</h1>
+        
+        <div class="section">
+            <h3>📊 Estado de localStorage</h3>
+            <button onclick="checkLocalStorage()">Revisar localStorage</button>
+            <button onclick="clearAllStorage()" class="clear-btn">Limpiar Todo localStorage</button>
+            <div id="localStorage-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>🏢 Empresa y Período Seleccionados</h3>
+            <button onclick="checkCompanyPeriod()">Revisar Empresa/Período</button>
+            <div id="company-period-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>📋 Datos Importados</h3>
+            <button onclick="checkImportedData()">Revisar Datos Importados</button>
+            <div id="imported-data-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>🎯 Estado de Filtros</h3>
+            <button onclick="checkFilters()">Revisar Filtros</button>
+            <div id="filters-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>💰 Datos Financieros Procesados</h3>
+            <button onclick="checkFinancialData()">Revisar Datos Financieros</button>
+            <div id="financial-data-status"></div>
+        </div>
+        
+        <div class="section">
+            <h3>🔧 Acciones de Depuración</h3>
+            <button onclick="simulateFilterChange()">Simular Cambio de Filtro</button>
+            <button onclick="testDataProcessing()">Probar Procesamiento de Datos</button>
+            <button onclick="exportDebugInfo()">Exportar Info de Debug</button>
+        </div>
+        
+        <div class="section">
+            <h3>📝 Log de Actividades</h3>
+            <div id="activity-log"></div>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEYS = {
+            IMPORTED_DATA: 'financial_app_imported_data',
+            IMPORT_HISTORY: 'financial_app_import_history',
+            FINANCIAL_METRICS: 'financial_app_financial_metrics',
+            BALANCE_SHEET: 'financial_app_balance_sheet',
+            INCOME_STATEMENT: 'financial_app_income_statement',
+            CASH_FLOW: 'financial_app_cash_flow',
+            FINANCIAL_ANALYSIS: 'financial_app_financial_analysis',
+            SELECTED_COMPANY: 'financial_app_selected_company',
+            SELECTED_PERIOD: 'financial_app_selected_period'
+        };
+
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('activity-log');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `data-item ${type}`;
+            logEntry.innerHTML = `[${timestamp}] ${message}`;
+            logDiv.insertBefore(logEntry, logDiv.firstChild);
+            console.log(`[DEBUG] ${message}`);
+        }
+
+        function checkLocalStorage() {
+            const statusDiv = document.getElementById('localStorage-status');
+            statusDiv.innerHTML = '';
+            
+            log('🔍 Revisando localStorage...');
+            
+            Object.entries(STORAGE_KEYS).forEach(([key, storageKey]) => {
+                const data = localStorage.getItem(storageKey);
+                const div = document.createElement('div');
+                div.className = 'data-item';
+                
+                if (data) {
+                    try {
+                        const parsed = JSON.parse(data);
+                        const length = Array.isArray(parsed) ? parsed.length : Object.keys(parsed).length;
+                        div.innerHTML = `✅ ${key}: ${length} elementos`;
+                        div.className += ' success';
+                        log(`✅ ${key}: ${length} elementos encontrados`);
+                    } catch (e) {
+                        div.innerHTML = `⚠️ ${key}: Error parsing - ${data.substring(0, 100)}...`;
+                        div.className += ' warning';
+                        log(`⚠️ ${key}: Error parsing data`);
+                    }
+                } else {
+                    div.innerHTML = `❌ ${key}: No encontrado`;
+                    div.className += ' error';
+                    log(`❌ ${key}: No encontrado en localStorage`);
+                }
+                
+                statusDiv.appendChild(div);
+            });
+        }
+
+        function checkCompanyPeriod() {
+            const statusDiv = document.getElementById('company-period-status');
+            statusDiv.innerHTML = '';
+            
+            log('🏢 Revisando empresa y período seleccionados...');
+            
+            const company = localStorage.getItem(STORAGE_KEYS.SELECTED_COMPANY);
+            const period = localStorage.getItem(STORAGE_KEYS.SELECTED_PERIOD);
+            
+            [['Empresa', company], ['Período', period]].forEach(([name, data]) => {
+                const div = document.createElement('div');
+                div.className = 'data-item';
+                
+                if (data) {
+                    try {
+                        const parsed = JSON.parse(data);
+                        div.innerHTML = `✅ ${name}: ${parsed.name || parsed.period_name || 'Sin nombre'} (ID: ${parsed.id})`;
+                        div.className += ' success';
+                        log(`✅ ${name} seleccionada: ${parsed.name || parsed.period_name}`);
+                    } catch (e) {
+                        div.innerHTML = `⚠️ ${name}: Error parsing`;
+                        div.className += ' warning';
+                        log(`⚠️ Error parsing ${name.toLowerCase()}`);
+                    }
+                } else {
+                    div.innerHTML = `❌ ${name}: No seleccionado`;
+                    div.className += ' error';
+                    log(`❌ ${name} no seleccionada`);
+                }
+                
+                statusDiv.appendChild(div);
+            });
+        }
+
+        function checkImportedData() {
+            const statusDiv = document.getElementById('imported-data-status');
+            statusDiv.innerHTML = '';
+            
+            log('📋 Revisando datos importados...');
+            
+            const data = localStorage.getItem(STORAGE_KEYS.IMPORTED_DATA);
+            
+            if (data) {
+                try {
+                    const parsed = JSON.parse(data);
+                    const div = document.createElement('div');
+                    div.className = 'data-item success';
+                    div.innerHTML = `✅ Datos importados: ${parsed.length} registros`;
+                    statusDiv.appendChild(div);
+                    
+                    if (parsed.length > 0) {
+                        // Mostrar estructura del primer elemento
+                        const sample = parsed[0];
+                        const sampleDiv = document.createElement('div');
+                        sampleDiv.className = 'data-item';
+                        sampleDiv.innerHTML = `📋 Estructura de muestra:<br>${JSON.stringify(sample, null, 2)}`;
+                        statusDiv.appendChild(sampleDiv);
+                        
+                        // Verificar campos de fecha
+                        const dateFields = parsed.map(item => ({
+                            month: item.month,
+                            year: item.year,
+                            hasMonth: item.month !== undefined,
+                            hasYear: item.year !== undefined
+                        }));
+                        
+                        const withDates = dateFields.filter(item => item.hasMonth && item.hasYear).length;
+                        const dateDiv = document.createElement('div');
+                        dateDiv.className = `data-item ${withDates === parsed.length ? 'success' : 'warning'}`;
+                        dateDiv.innerHTML = `📅 Registros con fechas: ${withDates}/${parsed.length}`;
+                        statusDiv.appendChild(dateDiv);
+                        
+                        log(`📋 ${parsed.length} registros importados, ${withDates} con fechas`);
+                    }
+                } catch (e) {
+                    const div = document.createElement('div');
+                    div.className = 'data-item error';
+                    div.innerHTML = `❌ Error parsing datos importados: ${e.message}`;
+                    statusDiv.appendChild(div);
+                    log(`❌ Error parsing datos importados: ${e.message}`);
+                }
+            } else {
+                const div = document.createElement('div');
+                div.className = 'data-item error';
+                div.innerHTML = `❌ No hay datos importados en localStorage`;
+                statusDiv.appendChild(div);
+                log('❌ No hay datos importados en localStorage');
+            }
+        }
+
+        function checkFilters() {
+            const statusDiv = document.getElementById('filters-status');
+            statusDiv.innerHTML = '';
+            
+            log('🎯 Revisando estado de filtros...');
+            
+            // Simular el estado de filtros que tendría la aplicación
+            const div = document.createElement('div');
+            div.className = 'data-item warning';
+            div.innerHTML = `⚠️ Los filtros se manejan en el estado de React. Revisa la consola del navegador en la aplicación principal para ver los logs de filtrado.`;
+            statusDiv.appendChild(div);
+            
+            log('⚠️ Para revisar filtros, usar la consola del navegador en la aplicación principal');
+        }
+
+        function checkFinancialData() {
+            const statusDiv = document.getElementById('financial-data-status');
+            statusDiv.innerHTML = '';
+            
+            log('💰 Revisando datos financieros procesados...');
+            
+            const keys = ['FINANCIAL_METRICS', 'BALANCE_SHEET', 'INCOME_STATEMENT', 'CASH_FLOW', 'FINANCIAL_ANALYSIS'];
+            
+            keys.forEach(key => {
+                const data = localStorage.getItem(STORAGE_KEYS[key]);
+                const div = document.createElement('div');
+                div.className = 'data-item';
+                
+                if (data) {
+                    try {
+                        const parsed = JSON.parse(data);
+                        const length = Array.isArray(parsed) ? parsed.length : Object.keys(parsed).length;
+                        div.innerHTML = `✅ ${key}: ${length} elementos`;
+                        div.className += ' success';
+                        log(`✅ ${key}: ${length} elementos`);
+                    } catch (e) {
+                        div.innerHTML = `⚠️ ${key}: Error parsing`;
+                        div.className += ' warning';
+                        log(`⚠️ ${key}: Error parsing`);
+                    }
+                } else {
+                    div.innerHTML = `❌ ${key}: No encontrado`;
+                    div.className += ' error';
+                    log(`❌ ${key}: No encontrado`);
+                }
+                
+                statusDiv.appendChild(div);
+            });
+        }
+
+        function clearAllStorage() {
+            if (confirm('¿Estás seguro de que quieres limpiar todo el localStorage? Esta acción no se puede deshacer.')) {
+                Object.values(STORAGE_KEYS).forEach(key => {
+                    localStorage.removeItem(key);
+                });
+                log('🧹 localStorage limpiado completamente', 'success');
+                alert('localStorage limpiado. Recarga la página para ver los cambios.');
+            }
+        }
+
+        function simulateFilterChange() {
+            log('🎯 Para simular cambios de filtro, usa la aplicación principal y revisa la consola');
+            alert('Usa la aplicación principal para probar los filtros y revisa la consola del navegador.');
+        }
+
+        function testDataProcessing() {
+            log('🔧 Para probar el procesamiento de datos, usa la aplicación principal');
+            alert('Usa la aplicación principal para importar datos y revisa la consola del navegador.');
+        }
+
+        function exportDebugInfo() {
+            const debugInfo = {
+                timestamp: new Date().toISOString(),
+                localStorage: {},
+                userAgent: navigator.userAgent,
+                url: window.location.href
+            };
+            
+            Object.entries(STORAGE_KEYS).forEach(([key, storageKey]) => {
+                const data = localStorage.getItem(storageKey);
+                if (data) {
+                    try {
+                        debugInfo.localStorage[key] = JSON.parse(data);
+                    } catch (e) {
+                        debugInfo.localStorage[key] = `Error parsing: ${e.message}`;
+                    }
+                } else {
+                    debugInfo.localStorage[key] = null;
+                }
+            });
+            
+            const blob = new Blob([JSON.stringify(debugInfo, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `debug-info-${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            log('📁 Información de debug exportada', 'success');
+        }
+
+        // Ejecutar revisión inicial al cargar la página
+        window.onload = function() {
+            log('🚀 Herramienta de debug iniciada');
+            checkLocalStorage();
+            checkCompanyPeriod();
+        };
+    </script>
+</body>
+</html>

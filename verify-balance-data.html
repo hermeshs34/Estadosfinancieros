@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Datos del Balance - Herramienta de Depuración</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background-color: #f9fafb;
+        }
+        .section h2 {
+            color: #374151;
+            margin-top: 0;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        button:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        .danger {
+            background-color: #dc2626;
+        }
+        .danger:hover {
+            background-color: #b91c1c;
+        }
+        .success {
+            background-color: #059669;
+        }
+        .success:hover {
+            background-color: #047857;
+        }
+        .warning {
+            background-color: #d97706;
+        }
+        .warning:hover {
+            background-color: #b45309;
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f3f4f6;
+            border-radius: 6px;
+            border-left: 4px solid #2563eb;
+        }
+        .error {
+            background-color: #fef2f2;
+            border-left-color: #dc2626;
+            color: #991b1b;
+        }
+        .success-result {
+            background-color: #f0fdf4;
+            border-left-color: #059669;
+            color: #065f46;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #d1d5db;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .loading {
+            color: #2563eb;
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+        pre {
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .query-section {
+            margin: 15px 0;
+        }
+        .query-title {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Verificar Datos del Balance</h1>
+        <p style="text-align: center; color: #6b7280; margin-bottom: 30px;">
+            Herramienta para verificar los datos actuales en la base de datos antes de proceder con la eliminación
+        </p>
+
+        <!-- Configuración de Supabase -->
+        <div class="section">
+            <h2>⚙️ Configuración de Supabase</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                <div>
+                    <label for="supabaseUrl">URL de Supabase:</label>
+                    <input type="text" id="supabaseUrl" placeholder="https://tu-proyecto.supabase.co" 
+                           style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #d1d5db; border-radius: 4px;">
+                </div>
+                <div>
+                    <label for="supabaseKey">Anon Key:</label>
+                    <input type="password" id="supabaseKey" placeholder="Tu clave anon de Supabase" 
+                           style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #d1d5db; border-radius: 4px;">
+                </div>
+            </div>
+            <button onclick="initializeSupabase()">🔗 Conectar a Supabase</button>
+            <button onclick="loadFromEnv()" class="success">📁 Cargar desde .env</button>
+            <div id="connectionStatus"></div>
+        </div>
+
+        <!-- Verificaciones Rápidas -->
+        <div class="section">
+            <h2>📊 Verificaciones Rápidas</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <button onclick="countFinancialEntries()">📈 Contar Registros de Balance</button>
+                <button onclick="getDistributionByCompanyPeriod()">🏢 Distribución por Empresa/Período</button>
+                <button onclick="getLatestEntries()">🕒 Últimos Registros Creados</button>
+                <button onclick="getAllCompanies()">🏭 Ver Todas las Empresas</button>
+                <button onclick="getAllPeriods()">📅 Ver Todos los Períodos</button>
+            </div>
+            <div id="quickResults"></div>
+        </div>
+
+        <!-- Consultas Personalizadas -->
+        <div class="section">
+            <h2>🔧 Consultas Personalizadas</h2>
+            <div class="query-section">
+                <div class="query-title">Ejecutar consulta SQL personalizada:</div>
+                <textarea id="customQuery" rows="6" placeholder="SELECT * FROM financial_entries LIMIT 10;"
+                         style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 4px; font-family: monospace;"></textarea>
+                <br>
+                <button onclick="executeCustomQuery()">▶️ Ejecutar Consulta</button>
+                <button onclick="loadPredefinedQuery('count')" class="warning">📊 Contar Registros</button>
+                <button onclick="loadPredefinedQuery('distribution')" class="warning">📈 Distribución</button>
+                <button onclick="loadPredefinedQuery('latest')" class="warning">🕒 Últimos</button>
+            </div>
+            <div id="customResults"></div>
+        </div>
+
+        <!-- Herramientas Adicionales -->
+        <div class="section">
+            <h2>🛠️ Herramientas Adicionales</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <button onclick="openClearBalanceTool()" class="danger">🗑️ Abrir Herramienta de Limpieza</button>
+                <button onclick="openMonitorTool()" class="success">📱 Abrir Monitor localStorage</button>
+                <button onclick="exportCurrentData()" class="warning">💾 Exportar Datos Actuales</button>
+                <button onclick="showSQLScript()" class="warning">📜 Ver Script SQL Completo</button>
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div id="results"></div>
+    </div>
+
+    <script>
+        let supabase = null;
+
+        // Cargar configuración desde .env si está disponible
+        async function loadFromEnv() {
+            try {
+                const response = await fetch('/.env');
+                if (response.ok) {
+                    const envText = await response.text();
+                    const lines = envText.split('\n');
+                    
+                    let url = '';
+                    let key = '';
+                    
+                    lines.forEach(line => {
+                        if (line.startsWith('VITE_SUPABASE_URL=')) {
+                            url = line.split('=')[1].trim();
+                        }
+                        if (line.startsWith('VITE_SUPABASE_ANON_KEY=')) {
+                            key = line.split('=')[1].trim();
+                        }
+                    });
+                    
+                    if (url && key) {
+                        document.getElementById('supabaseUrl').value = url;
+                        document.getElementById('supabaseKey').value = key;
+                        showStatus('✅ Configuración cargada desde .env', 'success-result');
+                        initializeSupabase();
+                    } else {
+                        showStatus('⚠️ No se encontraron las variables necesarias en .env', 'error');
+                    }
+                } else {
+                    showStatus('⚠️ No se pudo cargar el archivo .env', 'error');
+                }
+            } catch (error) {
+                showStatus('❌ Error al cargar .env: ' + error.message, 'error');
+            }
+        }
+
+        function initializeSupabase() {
+            const url = document.getElementById('supabaseUrl').value;
+            const key = document.getElementById('supabaseKey').value;
+            
+            if (!url || !key) {
+                showStatus('❌ Por favor ingresa la URL y la clave de Supabase', 'error', 'connectionStatus');
+                return;
+            }
+            
+            try {
+                supabase = window.supabase.createClient(url, key);
+                showStatus('✅ Conectado a Supabase exitosamente', 'success-result', 'connectionStatus');
+            } catch (error) {
+                showStatus('❌ Error al conectar: ' + error.message, 'error', 'connectionStatus');
+            }
+        }
+
+        function showStatus(message, className = 'loading', containerId = 'results') {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `<div class="status ${className}">${message}</div>`;
+        }
+
+        function showResults(title, data, containerId = 'results') {
+            const container = document.getElementById(containerId);
+            let html = `<div class="results"><h3>${title}</h3>`;
+            
+            if (Array.isArray(data) && data.length > 0) {
+                html += '<table><thead><tr>';
+                Object.keys(data[0]).forEach(key => {
+                    html += `<th>${key}</th>`;
+                });
+                html += '</tr></thead><tbody>';
+                
+                data.forEach(row => {
+                    html += '<tr>';
+                    Object.values(row).forEach(value => {
+                        html += `<td>${value || 'N/A'}</td>`;
+                    });
+                    html += '</tr>';
+                });
+                html += '</tbody></table>';
+            } else if (Array.isArray(data)) {
+                html += '<p>No se encontraron datos.</p>';
+            } else {
+                html += `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            }
+            
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        async function executeQuery(query, title, containerId = 'results') {
+            if (!supabase) {
+                showStatus('❌ Primero debes conectarte a Supabase', 'error', containerId);
+                return;
+            }
+            
+            showStatus('🔄 Ejecutando consulta...', 'loading', containerId);
+            
+            try {
+                // Usar consultas directas de Supabase en lugar de SQL crudo
+                showStatus('⚠️ Función SQL cruda no disponible. Usando consultas directas de Supabase.', 'loading', containerId);
+                
+                // Para consultas personalizadas, mostrar el SQL pero no ejecutarlo
+                if (containerId === 'customResults') {
+                    showResults(title + ' (SQL para ejecutar en Supabase SQL Editor)', [{
+                        sql_query: query,
+                        instrucciones: 'Copia esta consulta y ejecútala en el SQL Editor de Supabase'
+                    }], containerId);
+                    return;
+                }
+                
+                // Para consultas predefinidas, usar métodos directos
+                showStatus('❌ Esta consulta debe ejecutarse directamente. Usa los botones específicos.', 'error', containerId);
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message, 'error', containerId);
+            }
+        }
+
+        // Funciones de verificación específicas usando consultas nativas de Supabase
+        async function countFinancialEntries() {
+            if (!supabase) {
+                showStatus('❌ Primero debes conectarte a Supabase', 'error', 'quickResults');
+                return;
+            }
+            
+            showStatus('🔄 Contando registros...', 'loading', 'quickResults');
+            
+            try {
+                const { count, error } = await supabase
+                    .from('financial_entries')
+                    .select('*', { count: 'exact', head: true });
+                
+                if (error) throw error;
+                
+                showResults('📊 Total de Registros en financial_entries', [{
+                    tabla: 'financial_entries',
+                    total_registros: count || 0
+                }], 'quickResults');
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message, 'error', 'quickResults');
+            }
+        }
+
+        async function getDistributionByCompanyPeriod() {
+            if (!supabase) {
+                showStatus('❌ Primero debes conectarte a Supabase', 'error', 'quickResults');
+                return;
+            }
+            
+            showStatus('🔄 Obteniendo distribución...', 'loading', 'quickResults');
+            
+            try {
+                const { data, error } = await supabase
+                    .from('financial_entries')
+                    .select(`
+                        id,
+                        companies(name),
+                        financial_periods(period_name)
+                    `);
+                
+                if (error) throw error;
+                
+                // Agrupar datos manualmente
+                const distribution = {};
+                data.forEach(entry => {
+                    const empresa = entry.companies?.name || 'Sin empresa';
+                    const periodo = entry.financial_periods?.period_name || 'Sin período';
+                    const key = `${empresa} - ${periodo}`;
+                    distribution[key] = (distribution[key] || 0) + 1;
+                });
+                
+                const result = Object.entries(distribution).map(([key, count]) => {
+                    const [empresa, periodo] = key.split(' - ');
+                    return { empresa, periodo, registros_balance: count };
+                });
+                
+                showResults('🏢 Distribución por Empresa y Período', result, 'quickResults');
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message, 'error', 'quickResults');
+            }
+        }
+
+        async function getLatestEntries() {
+            if (!supabase) {
+                showStatus('❌ Primero debes conectarte a Supabase', 'error', 'quickResults');
+                return;
+            }
+            
+            showStatus('🔄 Obteniendo últimos registros...', 'loading', 'quickResults');
+            
+            try {
+                const { data, error } = await supabase
+                    .from('financial_entries')
+                    .select(`
+                        id,
+                        account_code,
+                        description,
+                        account_name,
+                        amount,
+                        balance_amount,
+                        created_at,
+                        companies(name),
+                        financial_periods(period_name)
+                    `)
+                    .order('created_at', { ascending: false })
+                    .limit(10);
+                
+                if (error) throw error;
+                
+                const result = data.map(entry => ({
+                    id: entry.id,
+                    empresa: entry.companies?.name || 'Sin empresa',
+                    periodo: entry.financial_periods?.period_name || 'Sin período',
+                    account_code: entry.account_code,
+                    descripcion: entry.description || entry.account_name || 'Sin descripción',
+                    monto: entry.amount || entry.balance_amount || 0,
+                    created_at: entry.created_at
+                }));
+                
+                showResults('🕒 Últimos 10 Registros Creados', result, 'quickResults');
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message, 'error', 'quickResults');
+            }
+        }
+
+        async function getAllCompanies() {
+            if (!supabase) {
+                showStatus('❌ Primero debes conectarte a Supabase', 'error', 'quickResults');
+                return;
+            }
+            
+            showStatus('🔄 Obteniendo empresas...', 'loading', 'quickResults');
+            
+            try {
+                const { data, error } = await supabase
+                    .from('companies')
+                    .select('id, name, tax_id, created_at')
+                    .order('name');
+                
+                if (error) throw error;
+                
+                showResults('🏭 Todas las Empresas', data, 'quickResults');
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message, 'error', 'quickResults');
+            }
+        }
+
+        async function getAllPeriods() {
+            if (!supabase) {
+                showStatus('❌ Primero debes conectarte a Supabase', 'error', 'quickResults');
+                return;
+            }
+            
+            showStatus('🔄 Obteniendo períodos...', 'loading', 'quickResults');
+            
+            try {
+                const { data, error } = await supabase
+                    .from('financial_periods')
+                    .select(`
+                        id,
+                        period_name,
+                        start_date,
+                        end_date,
+                        is_published,
+                        companies(name)
+                    `)
+                    .order('start_date');
+                
+                if (error) throw error;
+                
+                const result = data.map(period => ({
+                    id: period.id,
+                    period_name: period.period_name,
+                    empresa: period.companies?.name || 'Sin empresa',
+                    start_date: period.start_date,
+                    end_date: period.end_date,
+                    is_published: period.is_published
+                }));
+                
+                showResults('📅 Todos los Períodos Financieros', result, 'quickResults');
+            } catch (error) {
+                showStatus('❌ Error: ' + error.message, 'error', 'quickResults');
+            }
+        }
+
+        async function executeCustomQuery() {
+            const query = document.getElementById('customQuery').value.trim();
+            if (!query) {
+                showStatus('❌ Por favor ingresa una consulta SQL', 'error', 'customResults');
+                return;
+            }
+            await executeQuery(query, '🔧 Resultado de Consulta Personalizada', 'customResults');
+        }
+
+        function loadPredefinedQuery(type) {
+            const queries = {
+                count: `SELECT 
+    'financial_entries' as tabla,
+    COUNT(*) as total_registros
+FROM financial_entries;`,
+                distribution: `SELECT 
+    c.name as empresa,
+    fp.period_name as periodo,
+    COUNT(fe.id) as registros_balance
+FROM financial_entries fe
+JOIN companies c ON fe.company_id = c.id
+JOIN financial_periods fp ON fe.period_id = fp.id
+GROUP BY c.name, fp.period_name
+ORDER BY c.name, fp.period_name;`,
+                latest: `SELECT 
+    fe.id,
+    c.name as empresa,
+    fp.period_name as periodo,
+    fe.account_code,
+    COALESCE(fe.description, fe.account_name) as descripcion,
+    COALESCE(fe.amount, fe.balance_amount) as monto,
+    fe.created_at
+FROM financial_entries fe
+JOIN companies c ON fe.company_id = c.id
+JOIN financial_periods fp ON fe.period_id = fp.id
+ORDER BY fe.created_at DESC
+LIMIT 10;`
+            };
+            
+            document.getElementById('customQuery').value = queries[type] || '';
+        }
+
+        // Funciones de herramientas adicionales
+        function openClearBalanceTool() {
+            window.open('clear-balance-data.html', '_blank');
+        }
+
+        function openMonitorTool() {
+            window.open('monitor-localStorage.html', '_blank');
+        }
+
+        async function exportCurrentData() {
+            if (!supabase) {
+                showStatus('❌ Primero debes conectarte a Supabase', 'error');
+                return;
+            }
+            
+            showStatus('🔄 Exportando datos...', 'loading');
+            
+            try {
+                const { data, error } = await supabase
+                    .from('financial_entries')
+                    .select(`
+                        *,
+                        companies(name, tax_id),
+                        financial_periods(period_name, start_date, end_date)
+                    `);
+                
+                if (error) throw error;
+                
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `financial_entries_backup_${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                showStatus('✅ Datos exportados exitosamente', 'success-result');
+            } catch (error) {
+                showStatus('❌ Error al exportar: ' + error.message, 'error');
+            }
+        }
+
+        function showSQLScript() {
+            window.open('delete-balance-data.sql', '_blank');
+        }
+
+        // Cargar configuración automáticamente al cargar la página
+        window.onload = function() {
+            loadFromEnv();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+Cuenta,Descripcion,Debe,Haber,SaldoDeudor,SaldoAcreedor
+Efectivo y Bancos,Caja y bancos,45000,0,45000,0
+Cuentas por Cobrar,Clientes,65000,0,65000,0
+Inventarios,Mercaderías,40000,0,40000,0
+Activo Corriente,Total activos corrientes,150000,0,150000,0
+Activos Fijos,Propiedad planta y equipo,350000,0,350000,0
+Total Activos,Total de activos,500000,0,500000,0
+Cuentas por Pagar,Proveedores,0,50000,0,50000
+Pasivo Corriente,Pasivos a corto plazo,0,80000,0,80000
+Deudas a Largo Plazo,Préstamos bancarios,0,120000,0,120000
+Total Pasivos,Total de pasivos,0,200000,0,200000
+Capital Social,Capital aportado,0,200000,0,200000
+Utilidades Retenidas,Ganancias acumuladas,0,100000,0,100000
+Patrimonio,Total patrimonio,0,300000,0,300000
+Ventas,Ingresos por ventas,0,800000,0,800000
+Costo de Ventas,Costo de mercaderías vendidas,480000,0,480000,0
+Utilidad Bruta,Margen bruto,0,320000,0,320000
+Gastos Operativos,Gastos de administración y ventas,200000,0,200000,0
+Utilidad Operativa,Resultado operativo,0,120000,0,120000
+Gastos Financieros,Intereses pagados,15000,0,15000,0
+Utilidad antes de Impuestos,Resultado antes de impuestos,0,105000,0,105000
+Impuestos,Impuesto a la renta,25200,0,25200,0
+Utilidad Neta,Resultado neto del ejercicio,0,79800,0,79800

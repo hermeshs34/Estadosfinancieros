@@ -1,0 +1,35 @@
+Cuenta,Valor,Tipo,Categoria
+Activo Corriente,150000,Activo,Balance
+Efectivo y Bancos,45000,Activo,Balance
+Cuentas por Cobrar,65000,Activo,Balance
+Inventarios,40000,Activo,Balance
+Activo No Corriente,350000,Activo,Balance
+Propiedades Planta y Equipo,320000,Activo,Balance
+Depreciacion Acumulada,-50000,Activo,Balance
+Activos Intangibles,80000,Activo,Balance
+Total Activos,500000,Activo,Balance
+Pasivo Corriente,80000,Pasivo,Balance
+Cuentas por Pagar,35000,Pasivo,Balance
+Deudas a Corto Plazo,25000,Pasivo,Balance
+Impuestos por Pagar,20000,Pasivo,Balance
+Pasivo No Corriente,120000,Pasivo,Balance
+Deudas a Largo Plazo,120000,Pasivo,Balance
+Total Pasivos,200000,Pasivo,Balance
+Patrimonio,300000,Patrimonio,Balance
+Capital Social,200000,Patrimonio,Balance
+Utilidades Retenidas,100000,Patrimonio,Balance
+Ventas,800000,Ingresos,Estado_Resultados
+Costo de Ventas,480000,Costos,Estado_Resultados
+Utilidad Bruta,320000,Utilidad,Estado_Resultados
+Gastos Operativos,200000,Gastos,Estado_Resultados
+Gastos de Administracion,120000,Gastos,Estado_Resultados
+Gastos de Ventas,80000,Gastos,Estado_Resultados
+Utilidad Operativa,120000,Utilidad,Estado_Resultados
+Gastos Financieros,15000,Gastos,Estado_Resultados
+Utilidad antes de Impuestos,105000,Utilidad,Estado_Resultados
+Impuestos,25200,Impuestos,Estado_Resultados
+Utilidad Neta,79800,Utilidad,Estado_Resultados
+Flujo de Efectivo Operativo,95000,Flujo,Flujo_Efectivo
+Flujo de Efectivo Inversion,-45000,Flujo,Flujo_Efectivo
+Flujo de Efectivo Financiamiento,-20000,Flujo,Flujo_Efectivo
+Flujo Neto de Efectivo,30000,Flujo,Flujo_Efectivo
