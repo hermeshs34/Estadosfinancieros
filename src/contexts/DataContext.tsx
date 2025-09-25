@@ -1115,7 +1115,9 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
   // Funciones de compatibilidad con código existente
   const loadCompanies = useCallback(async () => {
     try {
-      const allCompanies = await SupabaseService.getCompanies();
+      console.log('🏢 DataContext - Cargando empresas del usuario');
+      const allCompanies = await SupabaseService.getUserCompanies();
+      console.log('🏢 DataContext - Empresas cargadas:', allCompanies.length);
       setCompanies(allCompanies);
     } catch (error) {
       console.error('❌ Error cargando empresas:', error);
