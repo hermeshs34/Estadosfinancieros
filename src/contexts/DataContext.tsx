@@ -430,53 +430,75 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         const codigoStr = codigo.toString();
         console.log('📋 Procesando cuenta:', { codigo: codigoStr, descripcion: description, valor: value });
         
-        // ACTIVOS CORRIENTES - Múltiples formatos de códigos
+        // EFECTIVO Y BANCOS - Empresas de seguros
         if (
-          // Formato venezolano
-          codigoStr.startsWith('201') ||
-          // Formato internacional
-          codigoStr.startsWith('11') || codigoStr.startsWith('1.1') ||
-          // Formato simplificado
-          codigoStr.startsWith('1101') || codigoStr.startsWith('1102') || codigoStr.startsWith('1103') ||
-          // Por descripción
-          description.includes('caja') || description.includes('banco') || description.includes('efectivo') || 
-          description.includes('disponible') || description.includes('deposito') || description.includes('cuenta corriente')
+          // Excluir cuentas de patrimonio que no son efectivo
+          !codigoStr.startsWith('317-') &&
+          (
+            // Disponible (Seguros) - NUEVA CUENTA IDENTIFICADA
+            codigoStr.startsWith('201-01') || codigoStr.startsWith('2.201.01') ||
+            // Efectivos depositados en bancos - NUEVA CUENTA IDENTIFICADA  
+            codigoStr.startsWith('202-01') ||
+            // Bancos e inversiones en el extranjero
+            codigoStr.startsWith('203-06') ||
+            // Disponible y caja chica
+            codigoStr.startsWith('203-11') ||
+            // Cuentas tradicionales
+            codigoStr.startsWith('1101') || codigoStr.startsWith('1.101') ||
+            // Por descripción (solo para cuentas que no sean de patrimonio)
+            (description.includes('caja') || description.includes('banco') || description.includes('efectivo') ||
+            description.includes('disponible') || description.includes('DEPOSITOS A LA VISTA') ||
+            description.includes('DISPONIBLE') || description.includes('CAJA CHICA') ||
+            description.includes('INVERSIONES EN EL EXTRANJERO') || description.includes('BANCOS') ||
+            description.includes('DEPÓSITOS A PLAZO FIJO') || description.includes('MONEDA NACIONAL') ||
+            description.includes('MONEDA EXTRANJERA'))
+          )
         ) {
-          console.log('💰 Clasificando como Activo Corriente:', codigoStr);
-          
-          // Efectivo y bancos
-          if (
-            codigoStr.startsWith('201-01') || codigoStr.startsWith('1101') || codigoStr.startsWith('1.101') ||
-            description.includes('caja') || description.includes('banco') || description.includes('efectivo') ||
-            description.includes('disponible')
-          ) {
-            balanceSheet.efectivo += value;
-          }
-          
+          console.log('💰 Clasificando como Efectivo y Bancos:', codigoStr, description, 'Valor:', value);
+          balanceSheet.efectivo += value;
+          balanceSheet.cash += value;
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
           balanceSheet.activosCorrientes += value;
         }
-        // Cuentas por cobrar
+        // CUENTAS POR COBRAR - Empresas de seguros
         else if (
           codigoStr.startsWith('201-02') || codigoStr.startsWith('1102') || codigoStr.startsWith('1.102') ||
+          codigoStr.startsWith('205-') || // Cuentas deudoras por reaseguros
           description.includes('cuenta') && description.includes('cobrar') ||
-          description.includes('cliente') || description.includes('deudor')
+          description.includes('cliente') || description.includes('deudor') ||
+          description.includes('REASEGUROS') || description.includes('INTERMEDIARIOS') ||
+          description.includes('RETROCESIONARIOS')
         ) {
-          console.log('📄 Clasificando como Cuentas por Cobrar:', codigoStr);
+          console.log('📄 Clasificando como Cuentas por Cobrar:', codigoStr, description);
           balanceSheet.accountsReceivable += value;
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
           balanceSheet.activosCorrientes += value;
         }
-        // Inventarios
+        // INVENTARIOS
         else if (
           codigoStr.startsWith('201-03') || codigoStr.startsWith('1103') || codigoStr.startsWith('1.103') ||
           description.includes('inventario') || description.includes('mercancia') || description.includes('existencia')
         ) {
-          console.log('📦 Clasificando como Inventario:', codigoStr);
+          console.log('📦 Clasificando como Inventario:', codigoStr, description);
           balanceSheet.inventory += value;
           balanceSheet.inventarios += value;
+          balanceSheet.currentAssets += value;
+          balanceSheet.totalCurrentAssets += value;
+          balanceSheet.activosCorrientes += value;
+        }
+        // OTROS ACTIVOS CORRIENTES
+        else if (
+          // Formato venezolano - EXCLUIR códigos ya clasificados
+          (codigoStr.startsWith('201') && !codigoStr.startsWith('201-01') && !codigoStr.startsWith('201-02') && !codigoStr.startsWith('201-03')) ||
+          // Formato internacional - EXCLUIR códigos ya clasificados  
+          (codigoStr.startsWith('11') && !codigoStr.startsWith('1101') && !codigoStr.startsWith('1102') && !codigoStr.startsWith('1103')) ||
+          (codigoStr.startsWith('1.1') && !codigoStr.startsWith('1.101') && !codigoStr.startsWith('1.102') && !codigoStr.startsWith('1.103')) ||
+          // Por descripción
+          description.includes('cuenta corriente')
+        ) {
+          console.log('💼 Clasificando como Otros Activos Corrientes:', codigoStr, description, 'Valor:', value);
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
           balanceSheet.activosCorrientes += value;
@@ -506,12 +528,14 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         }
         // PASIVOS CORRIENTES
         else if (
-          codigoStr.startsWith('301') || codigoStr.startsWith('21') || codigoStr.startsWith('2.1') ||
+          codigoStr.startsWith('301') || codigoStr.startsWith('302-') || codigoStr.startsWith('21') || codigoStr.startsWith('2.1') ||
           description.includes('cuenta') && description.includes('pagar') ||
           description.includes('proveedor') || description.includes('acreedor') ||
-          description.includes('nomina') || description.includes('nómina') || description.includes('salario')
+          description.includes('nomina') || description.includes('nómina') || description.includes('salario') ||
+          description.includes('GASTOS DE ADQUISICION') || description.includes('COMISIONES') ||
+          description.includes('IMPUESTOS') || description.includes('PARTICIPACION DE CEDENTES')
         ) {
-          console.log('💳 Clasificando como Pasivo Corriente:', codigoStr);
+          console.log('💳 Clasificando como Pasivo Corriente:', codigoStr, description, 'Valor:', value);
           
           // Cuentas por pagar
           if (
@@ -537,20 +561,24 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           balanceSheet.totalCurrentLiabilities += Math.abs(value);
           balanceSheet.pasivosCorrientes += Math.abs(value);
         }
-        // PASIVOS NO CORRIENTES
+        // PASIVOS NO CORRIENTES - Solo para deudas a largo plazo reales
         else if (
-          codigoStr.startsWith('302') || codigoStr.startsWith('22') || codigoStr.startsWith('2.2') ||
+          codigoStr.startsWith('22') || codigoStr.startsWith('2.2') ||
+          codigoStr.startsWith('304-') || // Reservas Técnicas (seguros)
+          codigoStr.startsWith('402-') || // Códigos específicos para seguros
           description.includes('prestamo') && description.includes('largo') ||
           description.includes('credito') && description.includes('largo') ||
-          description.includes('hipoteca') || description.includes('deuda') && description.includes('largo')
+          description.includes('hipoteca') || description.includes('deuda') && description.includes('largo') ||
+          description.includes('RESERVAS TECNICAS') || description.includes('PROVISIONES') ||
+          description.includes('OBLIGACIONES LABORALES')
         ) {
-          console.log('🏦 Clasificando como Pasivo No Corriente:', codigoStr);
+          console.log('🏦 Clasificando como Pasivo No Corriente:', codigoStr, description, 'Valor:', value);
           balanceSheet.longTermDebt += Math.abs(value);
           balanceSheet.totalNonCurrentLiabilities += Math.abs(value);
         }
-        // PATRIMONIO
+        // PATRIMONIO - EXCLUIR cuentas 304- que ya se clasificaron como Pasivos No Corrientes
         else if (
-          codigoStr.startsWith('401') || codigoStr.startsWith('3') ||
+          (codigoStr.startsWith('401') || (codigoStr.startsWith('3') && !codigoStr.startsWith('304-'))) ||
           description.includes('capital') || description.includes('patrimonio') ||
           description.includes('reserva') || description.includes('utilidad') ||
           description.includes('superavit') || description.includes('superávit')

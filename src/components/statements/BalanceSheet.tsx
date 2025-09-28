@@ -349,7 +349,7 @@ export const BalanceSheet: React.FC = () => {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Efectivo y Equivalentes</span>
-                  <span className="font-medium">{formatBalanceAmount(balanceSheetData?.cashAndEquivalents || 0)}</span>
+                  <span className="font-medium">{formatBalanceAmount(balanceSheetData?.efectivo || 0)}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Cuentas por Cobrar</span>
