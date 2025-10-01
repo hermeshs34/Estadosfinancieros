@@ -1,0 +1,344 @@
+const fs = require('fs');
+
+console.log('🔍 DEPURACIÓN: Estado del DataContext - Estados Financieros');
+console.log('========================================================');
+
+// Simular localStorage para verificar qué datos se están guardando
+function simulateLocalStorageCheck() {
+  console.log('\n📱 SIMULANDO VERIFICACIÓN DE LOCALSTORAGE:');
+  console.log('==========================================');
+  
+  // Verificar si existe un archivo de localStorage simulado
+  const localStorageFiles = [
+    './debug-localStorage-data.json',
+    './localStorage-backup.json'
+  ];
+  
+  for (const file of localStorageFiles) {
+    if (fs.existsSync(file)) {
+      try {
+        const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+        console.log(`📂 Datos encontrados en ${file}:`);
+        
+        if (data.balanceSheetData) {
+          console.log('   • balanceSheetData.efectivo:', data.balanceSheetData.efectivo);
+          console.log('   • balanceSheetData.cash:', data.balanceSheetData.cash);
+          console.log('   • balanceSheetData.currentAssets:', data.balanceSheetData.currentAssets);
+        }
+        
+        if (data.importedData) {
+          const cuentas203 = data.importedData.filter(item => 
+            (item.Codigo || item.codigo || '').startsWith('203')
+          );
+          console.log(`   • Cuentas 203 en importedData: ${cuentas203.length}`);
+        }
+        
+      } catch (error) {
+        console.log(`❌ Error leyendo ${file}:`, error.message);
+      }
+    }
+  }
+}
+
+// Crear un script HTML para verificar el estado actual del navegador
+function createBrowserDebugScript() {
+  const htmlContent = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug DataContext State - Estados Financieros</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; background: white; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .warning { background-color: #fff3cd; border-color: #ffeaa7; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 3px; overflow-x: auto; font-size: 12px; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .highlight { background: yellow; padding: 2px 4px; border-radius: 2px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Debug DataContext State - Estados Financieros</h1>
+        <p class="info section">Esta herramienta verifica el estado del DataContext para resolver el problema del efectivo (cuentas 203) que no se muestra en el balance.</p>
+        
+        <div class="grid">
+            <div>
+                <div class="section">
+                    <h2>📱 LocalStorage Data</h2>
+                    <button onclick="checkLocalStorage()">Verificar LocalStorage</button>
+                    <button onclick="exportLocalStorage()">Exportar Datos</button>
+                    <div id="localStorage-result"></div>
+                </div>
+                
+                <div class="section">
+                    <h2>💰 Balance Sheet Data</h2>
+                    <button onclick="checkBalanceSheet()">Verificar Balance Sheet</button>
+                    <div id="balance-result"></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="section">
+                    <h2>📊 Imported Data</h2>
+                    <button onclick="checkImportedData()">Verificar Datos Importados</button>
+                    <div id="imported-result"></div>
+                </div>
+                
+                <div class="section">
+                    <h2>🔄 Acciones</h2>
+                    <button onclick="refreshData()">Refrescar Datos</button>
+                    <button onclick="clearAllData()">Limpiar Todo</button>
+                    <button onclick="simulateDataLoad()">Simular Carga</button>
+                    <div id="refresh-result"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Diagnóstico del Problema del Efectivo</h2>
+            <button onclick="diagnoseEfectivoIssue()">Diagnosticar Problema</button>
+            <div id="diagnosis-result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkLocalStorage() {
+            const result = document.getElementById('localStorage-result');
+            try {
+                const keys = Object.keys(localStorage);
+                let html = '<h3>Claves en LocalStorage:</h3><ul>';
+                
+                keys.forEach(key => {
+                    if (key.includes('balance') || key.includes('financial') || key.includes('imported') || key.includes('company') || key.includes('period')) {
+                        const data = localStorage.getItem(key);
+                        html += \`<li><strong>\${key}</strong>: \${data ? data.substring(0, 100) + '...' : 'null'}</li>\`;
+                    }
+                });
+                
+                html += '</ul>';
+                
+                // Verificar específicamente balanceSheetData
+                const balanceData = localStorage.getItem('balanceSheetData');
+                if (balanceData) {
+                    try {
+                        const parsed = JSON.parse(balanceData);
+                        html += '<h3>Balance Sheet Data:</h3>';
+                        html += \`<pre>\${JSON.stringify(parsed, null, 2)}</pre>\`;
+                    } catch (e) {
+                        html += '<p class="error">Error parseando balanceSheetData</p>';
+                    }
+                }
+                
+                result.innerHTML = html;
+                result.className = 'section success';
+            } catch (error) {
+                result.innerHTML = \`<p class="error">Error: \${error.message}</p>\`;
+                result.className = 'section error';
+            }
+        }
+        
+        function checkBalanceSheet() {
+            const result = document.getElementById('balance-result');
+            try {
+                const balanceData = localStorage.getItem('balanceSheetData');
+                if (balanceData) {
+                    const parsed = JSON.parse(balanceData);
+                    let html = '<h3>Valores de Efectivo:</h3>';
+                    html += \`<p><span class="highlight">efectivo:</span> \${parsed.efectivo || 0}</p>\`;
+                    html += \`<p>cash: \${parsed.cash || 0}</p>\`;
+                    html += \`<p>currentAssets: \${parsed.currentAssets || 0}</p>\`;
+                    html += \`<p>totalCurrentAssets: \${parsed.totalCurrentAssets || 0}</p>\`;
+                    
+                    // Mostrar todos los campos disponibles
+                    html += '<h4>Todos los campos disponibles:</h4>';
+                    html += \`<pre>\${JSON.stringify(parsed, null, 2)}</pre>\`;
+                    
+                    result.innerHTML = html;
+                    result.className = 'section success';
+                } else {
+                    result.innerHTML = '<p class="warning">No se encontraron datos de balance sheet</p>';
+                    result.className = 'section warning';
+                }
+            } catch (error) {
+                result.innerHTML = \`<p class="error">Error: \${error.message}</p>\`;
+                result.className = 'section error';
+            }
+        }
+        
+        function checkImportedData() {
+            const result = document.getElementById('imported-result');
+            try {
+                const importedData = localStorage.getItem('importedData');
+                if (importedData) {
+                    const parsed = JSON.parse(importedData);
+                    const cuentas203 = parsed.filter(item => 
+                        (item.Codigo || item.codigo || '').startsWith('203')
+                    );
+                    
+                    let html = \`<h3>Datos Importados:</h3>\`;
+                    html += \`<p>Total registros: \${parsed.length}</p>\`;
+                    html += \`<p><span class="highlight">Cuentas 203: \${cuentas203.length}</span></p>\`;
+                    
+                    if (cuentas203.length > 0) {
+                        html += '<h4>Cuentas 203 encontradas:</h4><ul>';
+                        cuentas203.forEach(cuenta => {
+                            const codigo = cuenta.Codigo || cuenta.codigo;
+                            const descripcion = cuenta.Descripcion || cuenta.descripcion;
+                            const saldo = cuenta.SaldoActual || cuenta.saldoActual || cuenta.Saldo || 0;
+                            html += \`<li><strong>\${codigo}</strong>: \${descripcion} - Saldo: \${saldo}</li>\`;
+                        });
+                        html += '</ul>';
+                    }
+                    
+                    result.innerHTML = html;
+                    result.className = 'section success';
+                } else {
+                    result.innerHTML = '<p class="warning">No se encontraron datos importados</p>';
+                    result.className = 'section warning';
+                }
+            } catch (error) {
+                result.innerHTML = \`<p class="error">Error: \${error.message}</p>\`;
+                result.className = 'section error';
+            }
+        }
+        
+        function diagnoseEfectivoIssue() {
+            const result = document.getElementById('diagnosis-result');
+            try {
+                let diagnosis = '<h3>🔍 Diagnóstico del Problema del Efectivo:</h3>';
+                
+                // Verificar datos importados
+                const importedData = localStorage.getItem('importedData');
+                const balanceData = localStorage.getItem('balanceSheetData');
+                
+                if (!importedData) {
+                    diagnosis += '<p class="error">❌ No hay datos importados. Carga el CSV primero.</p>';
+                } else {
+                    const parsed = JSON.parse(importedData);
+                    const cuentas203 = parsed.filter(item => 
+                        (item.Codigo || item.codigo || '').startsWith('203')
+                    );
+                    
+                    if (cuentas203.length === 0) {
+                        diagnosis += '<p class="error">❌ No se encontraron cuentas 203 en los datos importados.</p>';
+                        diagnosis += '<p class="info">💡 Verifica que hayas cargado el archivo "Balance de Comprobacion Enero 31 2025 Consolidado.csv"</p>';
+                    } else {
+                        diagnosis += \`<p class="success">✅ Se encontraron \${cuentas203.length} cuentas 203 en los datos importados.</p>\`;
+                        
+                        // Calcular total de efectivo de cuentas 203
+                        let totalEfectivo203 = 0;
+                        cuentas203.forEach(cuenta => {
+                            const saldo = parseFloat(cuenta.SaldoActual || cuenta.saldoActual || cuenta.Saldo || 0);
+                            if (!isNaN(saldo)) totalEfectivo203 += saldo;
+                        });
+                        
+                        diagnosis += \`<p class="info">💰 Total efectivo de cuentas 203: \${totalEfectivo203.toLocaleString()}</p>\`;
+                    }
+                }
+                
+                if (!balanceData) {
+                    diagnosis += '<p class="error">❌ No hay datos de balance sheet procesados.</p>';
+                    diagnosis += '<p class="info">💡 El DataContext no ha procesado los datos correctamente.</p>';
+                } else {
+                    const parsedBalance = JSON.parse(balanceData);
+                    const efectivo = parsedBalance.efectivo || 0;
+                    
+                    if (efectivo === 0) {
+                        diagnosis += '<p class="error">❌ El campo "efectivo" en balanceSheetData es 0.</p>';
+                        diagnosis += '<p class="info">💡 Problema en la lógica de procesamiento del DataContext.</p>';
+                    } else {
+                        diagnosis += \`<p class="success">✅ El campo "efectivo" tiene valor: \${efectivo.toLocaleString()}</p>\`;
+                        diagnosis += '<p class="info">💡 El problema puede estar en la visualización del componente BalanceSheet.</p>';
+                    }
+                }
+                
+                result.innerHTML = diagnosis;
+                result.className = 'section info';
+            } catch (error) {
+                result.innerHTML = \`<p class="error">Error en diagnóstico: \${error.message}</p>\`;
+                result.className = 'section error';
+            }
+        }
+        
+        function exportLocalStorage() {
+            try {
+                const data = {};
+                Object.keys(localStorage).forEach(key => {
+                    data[key] = localStorage.getItem(key);
+                });
+                
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'localStorage-export.json';
+                a.click();
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                alert('Error exportando datos: ' + error.message);
+            }
+        }
+        
+        function refreshData() {
+            window.location.reload();
+        }
+        
+        function clearAllData() {
+            const result = document.getElementById('refresh-result');
+            try {
+                const keys = Object.keys(localStorage);
+                keys.forEach(key => {
+                    if (key.includes('balance') || key.includes('financial') || key.includes('imported')) {
+                        localStorage.removeItem(key);
+                    }
+                });
+                result.innerHTML = '<p class="success">Datos limpiados. Recarga la página.</p>';
+                result.className = 'section success';
+            } catch (error) {
+                result.innerHTML = \`<p class="error">Error: \${error.message}</p>\`;
+                result.className = 'section error';
+            }
+        }
+        
+        function simulateDataLoad() {
+            const result = document.getElementById('refresh-result');
+            result.innerHTML = '<p class="info">Simula cargar el CSV en la aplicación y luego usa el botón "Diagnosticar Problema"</p>';
+            result.className = 'section info';
+        }
+        
+        // Auto-ejecutar verificaciones al cargar
+        window.onload = function() {
+            checkLocalStorage();
+            checkBalanceSheet();
+            checkImportedData();
+            diagnoseEfectivoIssue();
+        };
+    </script>
+</body>
+</html>
+  `;
+  
+  fs.writeFileSync('./debug-datacontext-state.html', htmlContent);
+  console.log('✅ Archivo debug-datacontext-state.html creado en el proyecto correcto');
+}
+
+// Ejecutar verificaciones
+simulateLocalStorageCheck();
+createBrowserDebugScript();
+
+console.log('\n🎯 PRÓXIMOS PASOS:');
+console.log('==================');
+console.log('1. Abre debug-datacontext-state.html en tu navegador');
+console.log('2. Verifica el estado actual del localStorage');
+console.log('3. Carga el CSV "Balance de Comprobacion Enero 31 2025 Consolidado.csv"');
+console.log('4. Usa el botón "Diagnosticar Problema" para identificar el issue');
+console.log('5. Verifica que el balance se actualice después de la carga');

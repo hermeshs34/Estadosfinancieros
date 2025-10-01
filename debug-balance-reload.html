@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Balance Reload</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .button { padding: 10px 20px; margin: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .button:hover { background: #0056b3; }
+        .logs { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0; max-height: 400px; overflow-y: auto; }
+        .step { margin: 10px 0; padding: 10px; border-left: 4px solid #007bff; background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <h1>🔄 Debug Balance Reload - Forzar Aplicación de Cambios</h1>
+    
+    <div class="step">
+        <h3>Paso 1: Limpiar Cache del Navegador</h3>
+        <button class="button" onclick="clearCache()">Limpiar Cache Completo</button>
+        <p>Esto limpiará localStorage, sessionStorage y cache del navegador</p>
+    </div>
+
+    <div class="step">
+        <h3>Paso 2: Recargar Aplicación Principal</h3>
+        <button class="button" onclick="reloadMainApp()">Abrir App con Recarga Forzada</button>
+        <p>Abrirá la aplicación principal con Ctrl+F5 (recarga completa)</p>
+    </div>
+
+    <div class="step">
+        <h3>Paso 3: Verificar Logs de Consola</h3>
+        <button class="button" onclick="checkConsole()">Verificar Logs</button>
+        <div id="consoleOutput" class="logs"></div>
+    </div>
+
+    <div class="step">
+        <h3>Paso 4: Estado Actual del Balance</h3>
+        <button class="button" onclick="checkBalanceState()">Verificar Estado del Balance</button>
+        <div id="balanceState" class="logs"></div>
+    </div>
+
+    <script>
+        function clearCache() {
+            // Limpiar localStorage
+            localStorage.clear();
+            
+            // Limpiar sessionStorage
+            sessionStorage.clear();
+            
+            // Mostrar mensaje
+            alert('✅ Cache limpiado completamente. Ahora recarga la aplicación principal.');
+            
+            console.log('🧹 Cache limpiado:', {
+                localStorage: 'cleared',
+                sessionStorage: 'cleared',
+                timestamp: new Date().toISOString()
+            });
+        }
+
+        function reloadMainApp() {
+            // Abrir la aplicación principal con recarga forzada
+            const mainAppUrl = 'http://localhost:5173/';
+            window.open(mainAppUrl, '_blank');
+            
+            // Instrucciones para el usuario
+            alert('📋 INSTRUCCIONES:\n\n1. Se abrió la aplicación principal\n2. Presiona Ctrl+F5 para recarga completa\n3. Abre las herramientas de desarrollador (F12)\n4. Ve a la pestaña Console\n5. Recarga los datos del balance\n6. Busca los logs que empiecen con 💳, 🏦, 💰');
+        }
+
+        function checkConsole() {
+            const output = document.getElementById('consoleOutput');
+            output.innerHTML = `
+                <h4>🔍 Logs a Buscar en la Consola:</h4>
+                <ul>
+                    <li><strong>💳 Clasificando como Pasivo Corriente:</strong> - Debe mostrar cuentas 302-</li>
+                    <li><strong>🏦 Clasificando como Pasivo No Corriente:</strong> - NO debe mostrar cuentas 302-</li>
+                    <li><strong>💰 Clasificando como Deuda Corto Plazo:</strong> - Para deudas a corto plazo</li>
+                    <li><strong>💼 Clasificando como Otros Activos Corrientes:</strong> - Para activos diversos</li>
+                    <li><strong>💵 Clasificando como Efectivo y Bancos:</strong> - Para cuentas de efectivo</li>
+                </ul>
+                <p><strong>Si NO ves estos logs:</strong> Los cambios no se están aplicando</p>
+                <p><strong>Si ves estos logs:</strong> Los cambios se están aplicando correctamente</p>
+            `;
+        }
+
+        function checkBalanceState() {
+            const output = document.getElementById('balanceState');
+            output.innerHTML = `
+                <h4>📊 Valores Esperados Después de las Correcciones:</h4>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: #e9ecef;">
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Cuenta</th>
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Valor Actual</th>
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Valor Esperado</th>
+                        <th style="padding: 8px; border: 1px solid #dee2e6;">Estado</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">Efectivo y Equivalentes</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">Bs.S 0,00</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">> Bs.S 0,00</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">❌ Debe corregirse</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">Total Pasivos Corrientes</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">Bs.S 236.707.897,06</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">> Bs.S 236.707.897,06</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">❌ Debe aumentar</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">Total Pasivos No Corrientes</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">Bs.S 0,00</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">Bs.S 0,00</td>
+                        <td style="padding: 8px; border: 1px solid #dee2e6;">✅ Correcto</td>
+                    </tr>
+                </table>
+                
+                <h4>🔧 Si los valores no cambian:</h4>
+                <ol>
+                    <li>Verifica que el servidor de desarrollo esté corriendo</li>
+                    <li>Haz una recarga completa con Ctrl+F5</li>
+                    <li>Limpia el cache del navegador</li>
+                    <li>Verifica los logs de consola</li>
+                    <li>Recarga los datos del balance desde la aplicación</li>
+                </ol>
+            `;
+        }
+
+        // Auto-ejecutar verificación al cargar
+        window.onload = function() {
+            console.log('🚀 Debug Balance Reload iniciado');
+            checkConsole();
+        };
+    </script>
+</body>
+</html>

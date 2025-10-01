@@ -48,8 +48,11 @@ function debugBalanceData() {
     longTermDebt: 0,
     totalLiabilities: 0,
     totalEquity: 0,
-    accountsReceivable: 0,
+    efectivo: 0,
     inventory: 0,
+    accountsReceivable: 0,
+    totalCurrentAssets: 0,
+    totalNonCurrentAssets: 0,
     fixedAssets: 0,
     intangibleAssets: 0,
     totalCurrentAssets: 0,
@@ -87,29 +90,35 @@ function debugBalanceData() {
       // ACTIVOS (Códigos 201-xxx para el plan contable venezolano)
       if (codigoStr.startsWith('201')) {
         // Activos corrientes - Disponible (201-01)
-        if (codigoStr.startsWith('201-01') || description.includes('caja') || description.includes('banco') || description.includes('efectivo') || description.includes('disponible') || description.includes('deposito')) {
+        if (codigoStr.startsWith('201-01')) {
+          console.log(`💰 Clasificando como Efectivo: ${codigoStr} - ${description} = ${value}`);
+          balanceSheet.efectivo += value;
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
         }
         // Cuentas por cobrar (201-02)
-        else if (codigoStr.startsWith('201-02') || (description.includes('cuenta') && description.includes('cobrar'))) {
+        else if (codigoStr.startsWith('201-02')) {
+          console.log(`📝 Clasificando como Cuentas por Cobrar: ${codigoStr} - ${description} = ${value}`);
           balanceSheet.accountsReceivable += value;
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
         }
         // Inventarios (201-03)
-        else if (codigoStr.startsWith('201-03') || description.includes('inventario') || description.includes('mercancia')) {
+        else if (codigoStr.startsWith('201-03')) {
+          console.log(`📦 Clasificando como Inventarios: ${codigoStr} - ${description} = ${value}`);
           balanceSheet.inventory += value;
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
         }
         // Otros activos corrientes (201-04, 201-05, etc.)
         else if (codigoStr.startsWith('201-04') || codigoStr.startsWith('201-05') || codigoStr.startsWith('201-06') || codigoStr.startsWith('201-07') || codigoStr.startsWith('201-08') || codigoStr.startsWith('201-09')) {
+          console.log(`📊 Clasificando como Otros Activos Corrientes: ${codigoStr} - ${description} = ${value}`);
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
         }
         // Cualquier otro código 201 que no sea específicamente clasificado
         else {
+          console.log(`⚠️ Código 201 no clasificado específicamente: ${codigoStr} - ${description} = ${value}`);
           balanceSheet.currentAssets += value;
           balanceSheet.totalCurrentAssets += value;
         }

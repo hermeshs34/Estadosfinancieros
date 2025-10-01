@@ -339,13 +339,10 @@ export class FinancialAnalysisEngine {
       '202-02-': ['2', '22', '221', '2201', '2202', '2203'], // Pasivo No Corriente
       '202-': ['2'], // Pasivos en general
       
-      // Activos - Efectivo y Bancos (códigos que empiezan con 203-06 y 203-11)
-      '203-06-': ['1', '11', '111', '1101', '1102', '1103'], // Inversiones en el extranjero, bancos
-      '203-11-': ['1', '11', '111', '1101', '1102', '1103'], // Disponible, caja chica
-      
-      // Patrimonio (códigos que empiezan con 203-01, 203-02)
+      // Patrimonio (códigos que empiezan con 203)
       '203-01-': ['3', '31', '311', '3101', '3102', '3103'], // Capital
       '203-02-': ['3', '32', '321', '3201', '3202', '3203'], // Resultados
+      '203-': ['3', '3.0'], // Patrimonio en general
       
       // Códigos venezolanos específicos
       '301': ['2', '21', '211', '2101', '2102', '2103'], // Pasivo Corriente venezolano

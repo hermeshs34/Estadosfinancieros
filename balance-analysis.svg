@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .section-title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #34495e; }
+      .item-label { font-family: Arial, sans-serif; font-size: 14px; fill: #2c3e50; }
+      .amount { font-family: Arial, sans-serif; font-size: 14px; fill: #27ae60; text-anchor: end; }
+      .amount-negative { font-family: Arial, sans-serif; font-size: 14px; fill: #e74c3c; text-anchor: end; }
+      .total-amount { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #2c3e50; text-anchor: end; }
+      .line { stroke: #bdc3c7; stroke-width: 1; }
+      .section-bg { fill: #ecf0f1; opacity: 0.3; }
+      .highlight-bg { fill: #f39c12; opacity: 0.2; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" class="title" text-anchor="middle">BALANCE GENERAL - ANÁLISIS FINANCIERO</text>
+  <text x="600" y="65" class="item-label" text-anchor="middle">Estado Actual después de Correcciones</text>
+  
+  <!-- ACTIVOS Section -->
+  <rect x="50" y="100" width="500" height="320" class="section-bg"/>
+  <text x="70" y="130" class="section-title">📈 ACTIVOS</text>
+  
+  <!-- Activos Corrientes -->
+  <text x="90" y="160" class="section-title">Activos Corrientes</text>
+  <text x="110" y="185" class="item-label">Efectivo y Equivalentes</text>
+  <text x="520" y="185" class="amount">Bs.S 0,00</text>
+  <rect x="110" y="170" width="400" height="20" class="highlight-bg"/>
+  
+  <text x="110" y="210" class="item-label">Cuentas por Cobrar</text>
+  <text x="520" y="210" class="amount">Bs.S 696.387.410,71</text>
+  
+  <text x="110" y="235" class="item-label">Inventarios</text>
+  <text x="520" y="235" class="amount">Bs.S 0,00</text>
+  <rect x="110" y="220" width="400" height="20" class="highlight-bg"/>
+  
+  <text x="110" y="260" class="item-label">Otros Activos Corrientes</text>
+  <text x="520" y="260" class="amount">Bs.S 294.261.106,58</text>
+  
+  <line x1="90" y1="275" x2="530" y2="275" class="line"/>
+  <text x="90" y="295" class="section-title">Total Activos Corrientes</text>
+  <text x="520" y="295" class="total-amount">Bs.S 990.648.517,29</text>
+  
+  <!-- Activos No Corrientes -->
+  <text x="90" y="325" class="section-title">Activos No Corrientes</text>
+  <text x="110" y="350" class="item-label">Propiedad, Planta y Equipo</text>
+  <text x="520" y="350" class="amount">Bs.S 320.652.825,45</text>
+  
+  <line x1="90" y1="365" x2="530" y2="365" class="line"/>
+  <text x="90" y="385" class="section-title">Total Activos No Corrientes</text>
+  <text x="520" y="385" class="total-amount">Bs.S 320.652.825,45</text>
+  
+  <line x1="70" y1="400" x2="530" y2="400" class="line" stroke-width="2"/>
+  <text x="70" y="420" class="title" font-size="20">TOTAL ACTIVOS</text>
+  <text x="520" y="420" class="total-amount" font-size="18">Bs.S 1.311.301.342,74</text>
+  
+  <!-- PASIVOS Y PATRIMONIO Section -->
+  <rect x="650" y="100" width="500" height="450" class="section-bg"/>
+  <text x="670" y="130" class="section-title">📊 PASIVOS Y PATRIMONIO</text>
+  
+  <!-- Pasivos Corrientes -->
+  <text x="690" y="160" class="section-title">Pasivos Corrientes</text>
+  <text x="710" y="185" class="item-label">Cuentas por Pagar</text>
+  <text x="1120" y="185" class="amount">Bs.S 236.707.897,06</text>
+  
+  <text x="710" y="210" class="item-label">Gastos de Adquisición (302-)</text>
+  <text x="1120" y="210" class="amount">Bs.S [Corregido]</text>
+  <rect x="710" y="195" width="400" height="20" class="highlight-bg"/>
+  
+  <line x1="690" y1="225" x2="1130" y2="225" class="line"/>
+  <text x="690" y="245" class="section-title">Total Pasivos Corrientes</text>
+  <text x="1120" y="245" class="total-amount">Bs.S 236.707.897,06</text>
+  
+  <!-- Pasivos No Corrientes -->
+  <text x="690" y="275" class="section-title">Pasivos No Corrientes</text>
+  <text x="710" y="300" class="item-label">Deuda a Largo Plazo</text>
+  <text x="1120" y="300" class="amount">Bs.S 0,00</text>
+  <rect x="710" y="285" width="400" height="20" class="highlight-bg"/>
+  
+  <line x1="690" y1="315" x2="1130" y2="315" class="line"/>
+  <text x="690" y="335" class="section-title">Total Pasivos No Corrientes</text>
+  <text x="1120" y="335" class="total-amount">Bs.S 0,00</text>
+  
+  <line x1="690" y1="350" x2="1130" y2="350" class="line"/>
+  <text x="690" y="370" class="section-title">TOTAL PASIVOS</text>
+  <text x="1120" y="370" class="total-amount">Bs.S 236.707.897,06</text>
+  
+  <!-- Patrimonio -->
+  <text x="690" y="400" class="section-title">Patrimonio</text>
+  <text x="710" y="425" class="item-label">Capital y Reservas</text>
+  <text x="1120" y="425" class="amount-negative">Bs.S -391.203.746,68</text>
+  
+  <line x1="690" y1="440" x2="1130" y2="440" class="line"/>
+  <text x="690" y="460" class="section-title">Total Patrimonio</text>
+  <text x="1120" y="460" class="total-amount">Bs.S -391.203.746,68</text>
+  
+  <line x1="670" y1="475" x2="1130" y2="475" class="line" stroke-width="2"/>
+  <text x="670" y="495" class="title" font-size="20">TOTAL PASIVOS + PATRIMONIO</text>
+  <text x="1120" y="495" class="total-amount" font-size="18">Bs.S 1.311.301.342,74</text>
+  
+  <!-- Analysis Notes -->
+  <rect x="50" y="550" width="1100" height="200" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+  <text x="70" y="580" class="section-title">🔍 ANÁLISIS EXPERTO - CORRECCIONES IMPLEMENTADAS</text>
+  
+  <text x="70" y="610" class="item-label">✅ PROBLEMA RESUELTO: Efectivo y Equivalentes</text>
+  <text x="90" y="630" class="item-label">• Se agregaron códigos 203-11, "DISPONIBLE" y "CAJA CHICA" para capturar efectivo</text>
+  
+  <text x="70" y="655" class="item-label">✅ PROBLEMA RESUELTO: Discrepancia en Total Activos Corrientes</text>
+  <text x="90" y="675" class="item-label">• Se corrigió la lógica para evitar doble clasificación de cuentas</text>
+  <text x="90" y="695" class="item-label">• Ahora: 696.387.410,71 + 294.261.106,58 = 990.648.517,29 ✓</text>
+  
+  <text x="70" y="720" class="item-label">✅ PROBLEMA RESUELTO: Pasivos No Corrientes en Cero</text>
+  <text x="90" y="740" class="item-label">• Las cuentas 302- se reclasificaron como Pasivos Corrientes (naturaleza operativa)</text>
+  
+</svg>

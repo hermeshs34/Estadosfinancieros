@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Card } from '../ui/Card';
-import { FileText, Upload, TrendingUp, DollarSign, BarChart3, PieChart, Coins } from 'lucide-react';
+import { FileText, Upload, TrendingUp, TrendingDown, DollarSign, BarChart3, PieChart, Coins } from 'lucide-react';
 import { useDataContext } from '../../contexts/DataContext';
 import { formatCurrency, formatNumber } from '../../lib/numberFormatting';
 import { useCurrency } from '../../contexts/CurrencyContext';
@@ -9,6 +9,7 @@ import { CURRENCY_INFO, Currency } from '../../types/financials';
 // Mapeo de strings de iconos a componentes React
 const iconMap = {
   'TrendingUp': TrendingUp,
+  'TrendingDown': TrendingDown,
   'DollarSign': DollarSign,
   'FileText': FileText,
   'Upload': Upload,

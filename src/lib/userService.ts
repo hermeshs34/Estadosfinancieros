@@ -144,15 +144,16 @@ class UserService {
   // Crear un nuevo usuario con arquitectura multicompañía
   static async createUser(userData: CreateUserRequest): Promise<User> {
     try {
-      // Usar admin.createUser para evitar auto-login del usuario creado
-      const { data: authData, error: authError } = await supabase.auth.admin.createUser({
+      // Usar signUp para crear el usuario (no requiere permisos admin)
+      const { data: authData, error: authError } = await supabase.auth.signUp({
         email: userData.email,
         password: userData.password,
-        email_confirm: true, // Confirmar email automáticamente
-        user_metadata: {
-          full_name: userData.full_name,
-          role: userData.role,
-          company_id: userData.company_id
+        options: {
+          data: {
+            full_name: userData.full_name,
+            role: userData.role,
+            company_id: userData.company_id
+          }
         }
       });
 
@@ -182,8 +183,9 @@ class UserService {
         .single();
 
       if (userError) {
-        // Si falla la creación del registro, intentar eliminar el usuario de auth
-        await supabase.auth.admin.deleteUser(authData.user.id);
+        // Si falla la creación del registro, el usuario ya fue creado en auth
+        // pero no podemos eliminarlo sin permisos admin
+        console.error('Error al crear registro de usuario:', userError);
         throw userError;
       }
 

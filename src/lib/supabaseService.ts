@@ -226,6 +226,23 @@ export class SupabaseService {
   }
 
   static async deleteFinancialEntries(companyId: string, periodId: string) {
+    // 🔒 PROTECCIÓN CRÍTICA: Verificar si el período está publicado
+    const { data: period, error: periodError } = await supabase
+      .from('financial_periods')
+      .select('is_published, period_name')
+      .eq('id', periodId)
+      .single();
+
+    if (periodError) throw periodError;
+
+    if (period?.is_published) {
+      throw new Error(
+        `❌ No se pueden eliminar los balances del período "${period.period_name}" porque está marcado como PUBLICADO. ` +
+        `Para eliminar estos balances, primero debe cambiar el estado del período a "Borrador" desde la gestión de períodos.`
+      );
+    }
+
+    // Si no está publicado, proceder con la eliminación
     const { error } = await supabase
       .from('financial_entries')
       .delete()
@@ -442,6 +459,192 @@ export class SupabaseService {
       }));
     } catch (error) {
       console.error('Error obteniendo balances multimoneda:', error);
+      throw error;
+    }
+  }
+
+  // **GUARDAR DATOS DEL BALANCE AUTOMÁTICAMENTE**
+  static async saveBalanceDataFromCSV(
+    companyId: string, 
+    periodId: string, 
+    csvData: any[]
+  ): Promise<{ success: boolean; message: string; savedCount: number }> {
+    try {
+      console.log('💾 Iniciando guardado automático de balance en Supabase...');
+      console.log(`📊 Datos a procesar: ${csvData.length} registros`);
+      
+      // Verificar que existan la empresa y el período
+      const { data: company } = await supabase
+        .from('companies')
+        .select('id, name')
+        .eq('id', companyId)
+        .single();
+        
+      if (!company) {
+        throw new Error('Empresa no encontrada');
+      }
+      
+      const { data: period } = await supabase
+        .from('financial_periods')
+        .select('id, period_name')
+        .eq('id', periodId)
+        .single();
+        
+      if (!period) {
+        throw new Error('Período financiero no encontrado');
+      }
+
+      // Limpiar datos existentes del período (opcional - comentar si se quiere mantener histórico)
+      await this.deleteFinancialEntries(companyId, periodId);
+      console.log('🗑️ Datos anteriores del período eliminados');
+
+      // Transformar datos del CSV al formato de financial_entries
+      const financialEntries = csvData.map(row => {
+        // Extraer valores numéricos de diferentes campos posibles
+        const getNumericValue = (value: any): number => {
+          if (value === null || value === undefined || value === '') return 0;
+          if (typeof value === 'number') return value;
+          if (typeof value === 'string') {
+            // Limpiar el valor string
+            const cleaned = value.replace(/[^\d.,-]/g, '').replace(/,/g, '');
+            const num = parseFloat(cleaned);
+            return isNaN(num) ? 0 : num;
+          }
+          return 0;
+        };
+
+        // Determinar el código de cuenta
+        const accountCode = row.Codigo || row.codigo || row.Code || row.account_code || '';
+        
+        // Determinar el nombre de cuenta
+        const accountName = row.Descripcion || row.descripcion || row.Description || 
+                           row.account_name || row.Cuenta || row.cuenta || '';
+        
+        // Determinar el saldo/balance
+        const balanceAmount = getNumericValue(
+          row.SaldoActual || row.saldoactual || row.Saldo || row.saldo || 
+          row.Valor || row.valor || row.Value || row.balance_amount || 
+          row.Amount || row.amount || 0
+        );
+        
+        // Determinar débitos y créditos
+        const debitAmount = getNumericValue(
+          row.Debitos || row.debitos || row.Debe || row.debe || 
+          row.Debit || row.debit || row.debit_amount || 0
+        );
+        
+        const creditAmount = getNumericValue(
+          row.Creditos || row.creditos || row.Haber || row.haber || 
+          row.Credit || row.credit || row.credit_amount || 0
+        );
+
+        // Determinar el tipo de entrada basado en el código de cuenta
+        let entryType: 'balance_sheet' | 'income_statement' | 'cash_flow' = 'balance_sheet';
+        const codeStr = String(accountCode);
+        
+        if (codeStr.startsWith('4') || codeStr.startsWith('5') || codeStr.startsWith('6')) {
+          entryType = 'income_statement';
+        } else if (codeStr.startsWith('1') || codeStr.startsWith('2') || codeStr.startsWith('3')) {
+          entryType = 'balance_sheet';
+        }
+
+        // Determinar categoría basada en el código
+        let category = '';
+        if (codeStr.startsWith('1')) category = 'Activos';
+        else if (codeStr.startsWith('2')) category = 'Pasivos';
+        else if (codeStr.startsWith('3')) category = 'Patrimonio';
+        else if (codeStr.startsWith('4')) category = 'Ingresos';
+        else if (codeStr.startsWith('5')) category = 'Gastos';
+        else if (codeStr.startsWith('6')) category = 'Costos';
+
+        return {
+          company_id: companyId,
+          period_id: periodId,
+          account_code: accountCode,
+          account_name: accountName,
+          debit_amount: debitAmount,
+          credit_amount: creditAmount,
+          balance_amount: balanceAmount,
+          entry_type: entryType,
+          category: category
+        };
+      }).filter(entry => 
+        // Filtrar solo entradas válidas
+        entry.account_code && 
+        entry.account_name && 
+        (entry.balance_amount !== 0 || entry.debit_amount !== 0 || entry.credit_amount !== 0)
+      );
+
+      console.log(`✅ Datos transformados: ${financialEntries.length} entradas válidas`);
+      console.log('📋 Ejemplo de entrada transformada:', financialEntries[0]);
+
+      // Guardar en la base de datos
+      if (financialEntries.length > 0) {
+        const { data, error } = await supabase
+          .from('financial_entries')
+          .insert(financialEntries)
+          .select();
+
+        if (error) {
+          console.error('❌ Error insertando datos:', error);
+          throw error;
+        }
+
+        console.log(`✅ ${data?.length || 0} registros guardados exitosamente en Supabase`);
+        
+        return {
+          success: true,
+          message: `Balance guardado exitosamente: ${data?.length || 0} cuentas procesadas`,
+          savedCount: data?.length || 0
+        };
+      } else {
+        return {
+          success: false,
+          message: 'No se encontraron datos válidos para guardar',
+          savedCount: 0
+        };
+      }
+
+    } catch (error) {
+      console.error('❌ Error guardando balance en Supabase:', error);
+      return {
+        success: false,
+        message: `Error guardando balance: ${error.message}`,
+        savedCount: 0
+      };
+    }
+  }
+
+  // **OBTENER DATOS DEL BALANCE DESDE SUPABASE**
+  static async getBalanceData(companyId: string, periodId: string) {
+    try {
+      console.log('📥 Cargando datos del balance desde Supabase...');
+      
+      const entries = await this.getFinancialEntries(companyId, periodId);
+      
+      if (!entries || entries.length === 0) {
+        console.log('📥 No se encontraron datos del balance');
+        return [];
+      }
+
+      // Transformar de vuelta al formato esperado por la aplicación
+      const transformedData = entries.map(entry => ({
+        Codigo: entry.account_code,
+        Descripcion: entry.account_name,
+        SaldoActual: entry.balance_amount,
+        Debitos: entry.debit_amount || 0,
+        Creditos: entry.credit_amount || 0,
+        Cuenta: `${entry.account_code} - ${entry.account_name}`,
+        Valor: entry.balance_amount,
+        category: entry.category,
+        entry_type: entry.entry_type
+      }));
+
+      console.log(`📥 ${transformedData.length} registros cargados desde Supabase`);
+      return transformedData;
+      
+    } catch (error) {
+      console.error('❌ Error cargando datos del balance:', error);
       throw error;
     }
   }

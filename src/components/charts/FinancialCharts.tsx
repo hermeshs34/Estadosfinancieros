@@ -103,124 +103,112 @@ export const FinancialCharts: React.FC = () => {
       {
         name: 'Costo de Ventas',
         value: costOfGoodsSold,
-        color: '#F59E0B',
+        color: '#EF4444',
         percentage: revenue > 0 ? (costOfGoodsSold / revenue) * 100 : 0
       },
       {
-        name: 'Gastos Operativos',
+        name: 'Gastos Operacionales',
         value: operatingExpenses,
-        color: '#EF4444',
+        color: '#F59E0B',
         percentage: revenue > 0 ? (operatingExpenses / revenue) * 100 : 0
       },
       {
         name: 'Utilidad Neta',
         value: netIncome,
-        color: '#8B5CF6',
+        color: '#3B82F6',
         percentage: revenue > 0 ? (netIncome / revenue) * 100 : 0
       }
     ];
   }, [incomeStatementData]);
 
+  // Función para exportar a Excel
   const exportToExcel = () => {
-    try {
-      const workbook = XLSX.utils.book_new();
-      
-      // Hoja de Composición de Activos
-      if (assetsComposition.length > 0) {
-        const assetsData = assetsComposition.map(item => ({
-          'Tipo de Activo': item.name,
-          'Valor': item.value,
-          'Porcentaje': `${item.percentage.toFixed(1)}%`
-        }));
-        
-        const assetsWorksheet = XLSX.utils.json_to_sheet(assetsData);
-        XLSX.utils.book_append_sheet(workbook, assetsWorksheet, 'Composición de Activos');
-      }
-      
-      // Hoja de Estructura Financiera
-      if (financialStructure.length > 0) {
-        const structureData = financialStructure.map(item => ({
-          'Componente': item.name,
-          'Valor': item.value,
-          'Porcentaje': `${item.percentage.toFixed(1)}%`
-        }));
-        
-        const structureWorksheet = XLSX.utils.json_to_sheet(structureData);
-        XLSX.utils.book_append_sheet(workbook, structureWorksheet, 'Estructura Financiera');
-      }
-      
-      // Hoja de Datos de Rentabilidad
-      if (profitabilityData.length > 0) {
-        const profitabilityWorksheet = XLSX.utils.json_to_sheet(profitabilityData);
-        XLSX.utils.book_append_sheet(workbook, profitabilityWorksheet, 'Análisis de Rentabilidad');
-      }
-      
-      XLSX.writeFile(workbook, 'graficos-financieros.xlsx');
-    } catch (error) {
-      console.error('Error al exportar a Excel:', error);
-      alert('Error al generar el archivo Excel');
+    const wb = XLSX.utils.book_new();
+    
+    // Hoja de composición de activos
+    if (assetsComposition.length > 0) {
+      const assetsData = assetsComposition.map(item => ({
+        'Tipo de Activo': item.name,
+        'Valor': item.value,
+        'Porcentaje': `${item.percentage.toFixed(1)}%`
+      }));
+      const assetsWs = XLSX.utils.json_to_sheet(assetsData);
+      XLSX.utils.book_append_sheet(wb, assetsWs, 'Composición de Activos');
     }
+    
+    // Hoja de estructura financiera
+    if (financialStructure.length > 0) {
+      const structureData = financialStructure.map(item => ({
+        'Componente': item.name,
+        'Valor': item.value,
+        'Porcentaje': `${item.percentage.toFixed(1)}%`
+      }));
+      const structureWs = XLSX.utils.json_to_sheet(structureData);
+      XLSX.utils.book_append_sheet(wb, structureWs, 'Estructura Financiera');
+    }
+    
+    // Hoja de análisis de rentabilidad
+    if (profitabilityData.length > 0) {
+      const profitabilityExportData = profitabilityData.map(item => ({
+        'Métrica': item.name,
+        'Valor': item.value,
+        'Porcentaje': `${item.percentage?.toFixed(1)}%` || 'N/A'
+      }));
+      const profitabilityWs = XLSX.utils.json_to_sheet(profitabilityExportData);
+      XLSX.utils.book_append_sheet(wb, profitabilityWs, 'Análisis de Rentabilidad');
+    }
+    
+    XLSX.writeFile(wb, `analisis_financiero_${new Date().toISOString().split('T')[0]}.xlsx`);
   };
 
+  // Función para generar PDF
   const generatePDF = async () => {
-    try {
-      const doc = new jsPDF();
-      const pageHeight = doc.internal.pageSize.height;
-      const pageWidth = doc.internal.pageSize.width;
-      const margin = 20;
-      const maxWidth = pageWidth - (margin * 2);
-      
-      // Título
-      doc.setFontSize(18);
-      doc.text('Gráficos Financieros', margin, 20);
-      
-      doc.setFontSize(12);
-      doc.text(`Fecha de generación: ${new Date().toLocaleDateString()}`, margin, 35);
-      
-      let yPosition = 50;
-      
-      // Función auxiliar para agregar imagen con control de tamaño
-      const addImageToPDF = async (element: Element, title: string) => {
+    const doc = new jsPDF();
+    let yPosition = 20;
+    
+    // Título
+    doc.setFontSize(20);
+    doc.text('Análisis Financiero', 20, yPosition);
+    yPosition += 20;
+    
+    // Fecha
+    doc.setFontSize(12);
+    doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 20, yPosition);
+    yPosition += 20;
+    
+    // Función auxiliar para capturar elementos y añadirlos al PDF
+    const addImageToPDF = async (element: Element, title: string): Promise<number> => {
+      try {
         const canvas = await html2canvas(element as HTMLElement, {
-          backgroundColor: '#ffffff',
-          scale: 1.5,
+          scale: 2,
           useCORS: true,
           allowTaint: true,
-          width: element.scrollWidth,
-          height: element.scrollHeight
+          backgroundColor: '#ffffff'
         });
         
         const imgData = canvas.toDataURL('image/png');
+        const imgWidth = 170;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
         
-        // Calcular dimensiones manteniendo proporción
-        let imgWidth = maxWidth;
-        let imgHeight = (canvas.height * imgWidth) / canvas.width;
-        
-        // Si la imagen es muy alta, ajustar por altura
-        const maxHeight = pageHeight - yPosition - 40;
-        if (imgHeight > maxHeight) {
-          imgHeight = maxHeight;
-          imgWidth = (canvas.width * imgHeight) / canvas.height;
-        }
-        
-        // Verificar si necesitamos nueva página
-        if (yPosition + imgHeight + 30 > pageHeight) {
+        // Verificar si necesitamos una nueva página
+        if (yPosition + imgHeight > 280) {
           doc.addPage();
-          yPosition = margin;
+          yPosition = 20;
         }
         
         doc.setFontSize(14);
-        doc.text(title, margin, yPosition);
-        yPosition += 15;
+        doc.text(title, 20, yPosition);
+        yPosition += 10;
         
-        // Centrar la imagen
-        const xPosition = (pageWidth - imgWidth) / 2;
-        doc.addImage(imgData, 'PNG', xPosition, yPosition, imgWidth, imgHeight);
-        yPosition += imgHeight + 20;
-        
+        doc.addImage(imgData, 'PNG', 20, yPosition, imgWidth, imgHeight);
+        return yPosition + imgHeight + 20;
+      } catch (error) {
+        console.error(`Error capturando ${title}:`, error);
         return yPosition;
-      };
-      
+      }
+    };
+
+    try {
       // Capturar métricas clave
       const metricsElement = document.querySelector('[data-chart="key-metrics"]');
       if (metricsElement) {
@@ -300,10 +288,10 @@ export const FinancialCharts: React.FC = () => {
         });
       }
       
-      doc.save('graficos-financieros.pdf');
+      doc.save(`analisis_financiero_${new Date().toISOString().split('T')[0]}.pdf`);
     } catch (error) {
-      console.error('Error al generar PDF:', error);
-      alert('Error al generar el archivo PDF');
+      console.error('Error generando PDF:', error);
+      alert('Error al generar el PDF. Por favor, inténtelo de nuevo.');
     }
   };
 
@@ -408,24 +396,26 @@ export const FinancialCharts: React.FC = () => {
             </div>
             
             {/* Leyenda */}
-            <div className="flex-1 space-y-2">
-              {data.map((item, index) => {
-                const percentage = total > 0 ? (item.value / total) * 100 : 0;
-                return (
-                  <div key={index} className="flex items-center space-x-2">
+            <div className="flex-1 space-y-3">
+              {data.map((item, index) => (
+                <div key={index} className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <div
-                      className="w-3 h-3 rounded-full"
+                      className="w-3 h-3 rounded-full mr-2"
                       style={{ backgroundColor: item.color }}
                     />
-                    <div className="flex-1">
-                      <div className="text-sm font-medium text-gray-700">{item.name}</div>
-                      <div className="text-xs text-gray-500">
-                        {formatCurrencyWithContext(item.value)} ({percentage.toFixed(1)}%)
-                      </div>
+                    <span className="text-sm font-medium text-gray-700">{item.name}</span>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm font-bold text-gray-900">
+                      {formatCurrencyWithContext(item.value)}
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      {item.percentage.toFixed(1)}%
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </CardContent>
@@ -440,31 +430,34 @@ export const FinancialCharts: React.FC = () => {
       
       const totalAssets = balanceSheetData.totalAssets || 0;
       const totalLiabilities = balanceSheetData.totalLiabilities || 0;
-      const currentAssets = balanceSheetData.currentAssets || 0;
-      const currentLiabilities = balanceSheetData.currentLiabilities || 0;
-      const revenue = incomeStatementData.revenue || 0;
+      const totalEquity = balanceSheetData.totalEquity || 0;
       const netIncome = incomeStatementData.netIncome || 0;
+      const totalRevenue = incomeStatementData.totalRevenue || 0;
       
       return [
         {
           name: 'Liquidez Corriente',
-          value: currentLiabilities > 0 ? currentAssets / currentLiabilities : 0,
+          value: balanceSheetData.currentLiabilities > 0 
+            ? (balanceSheetData.currentAssets || 0) / balanceSheetData.currentLiabilities 
+            : 0,
           format: 'ratio',
-          color: currentLiabilities > 0 && (currentAssets / currentLiabilities) >= 1.5 ? '#10B981' : '#EF4444',
+          color: balanceSheetData.currentLiabilities > 0 && 
+                 ((balanceSheetData.currentAssets || 0) / balanceSheetData.currentLiabilities) >= 1.5 
+                 ? '#10B981' : '#EF4444',
           icon: Activity
         },
         {
           name: 'Endeudamiento',
           value: totalAssets > 0 ? (totalLiabilities / totalAssets) * 100 : 0,
           format: 'percentage',
-          color: totalAssets > 0 && ((totalLiabilities / totalAssets) * 100) <= 60 ? '#10B981' : '#EF4444',
+          color: totalAssets > 0 && ((totalLiabilities / totalAssets) * 100) <= 50 ? '#10B981' : '#EF4444',
           icon: TrendingUp
         },
         {
           name: 'Margen Neto',
-          value: revenue > 0 ? (netIncome / revenue) * 100 : 0,
+          value: totalRevenue > 0 ? (netIncome / totalRevenue) * 100 : 0,
           format: 'percentage',
-          color: revenue > 0 && ((netIncome / revenue) * 100) >= 5 ? '#10B981' : '#EF4444',
+          color: totalRevenue > 0 && ((netIncome / totalRevenue) * 100) >= 10 ? '#10B981' : '#EF4444',
           icon: BarChart3
         },
         {

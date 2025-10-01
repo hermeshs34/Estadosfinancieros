@@ -8,6 +8,7 @@ import { Button } from '../ui/Button';
 import { normalizeText } from '../../lib/utils';
 import { CSVValidatorService, ValidationDisplay } from './CSVValidator';
 import { validateBalancePeriod, suggestMatchingPeriods } from '../../utils/dateValidation';
+import { SupabaseService } from '../../lib/supabaseService';
 
 // Para pdfjs-dist@5.3.93 (usa .mjs)
 import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
@@ -21,7 +22,7 @@ interface DataRow {
 }
 
 const DataImport: React.FC = () => {
-  const { setImportedData, addImportRecord, selectedPeriod, financialPeriods } = useDataContext();
+  const { setImportedData, addImportRecord, selectedPeriod, financialPeriods, selectedCompany } = useDataContext();
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [validationResult, setValidationResult] = useState<any>(null);
@@ -56,6 +57,40 @@ const DataImport: React.FC = () => {
     // Agregar información de validación al mensaje de éxito
     if (validation.warnings.length > 0) {
       successMsg += ` (${validation.warnings.length} advertencias encontradas)`;
+    }
+
+    // **GUARDADO AUTOMÁTICO EN SUPABASE**
+    if (selectedCompany && selectedPeriod && filteredData.length > 0) {
+      try {
+        console.log('💾 Iniciando guardado automático en Supabase...');
+        console.log('🏢 Empresa seleccionada:', selectedCompany.name);
+        console.log('📅 Período seleccionado:', selectedPeriod.period_name);
+        
+        const saveResult = await SupabaseService.saveBalanceDataFromCSV(
+          selectedCompany.id,
+          selectedPeriod.id,
+          filteredData
+        );
+
+        if (saveResult.success) {
+          successMsg += ` ✅ Guardado en Supabase: ${saveResult.savedCount} cuentas.`;
+          console.log('✅ Guardado automático exitoso:', saveResult);
+        } else {
+          console.warn('⚠️ Error en guardado automático:', saveResult.message);
+          successMsg += ` ⚠️ Error guardando en Supabase: ${saveResult.message}`;
+        }
+      } catch (error) {
+        console.error('❌ Error en guardado automático:', error);
+        successMsg += ` ❌ Error guardando en Supabase: ${error.message}`;
+      }
+    } else {
+      if (!selectedCompany) {
+        console.log('⚠️ No hay empresa seleccionada - saltando guardado automático');
+        successMsg += ' (No se guardó en Supabase: empresa no seleccionada)';
+      } else if (!selectedPeriod) {
+        console.log('⚠️ No hay período seleccionado - saltando guardado automático');
+        successMsg += ' (No se guardó en Supabase: período no seleccionado)';
+      }
     }
     
     setSuccessMessage(successMsg);

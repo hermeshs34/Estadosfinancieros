@@ -458,8 +458,16 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           balanceSheet.efectivo += value;
           balanceSheet.cash += value;
           balanceSheet.currentAssets += value;
-          balanceSheet.totalCurrentAssets += value;
-          balanceSheet.activosCorrientes += value;
+        }
+        // INVERSIONES Y VALORES - Empresas de seguros (CORRECCIÓN CRÍTICA)
+        else if (
+          codigoStr.startsWith('2.201') || codigoStr.startsWith('2.202') || codigoStr.startsWith('2.203') ||
+          description.includes('bienes aptos') || description.includes('valores públicos') ||
+          description.includes('participación en fondos') || description.includes('garantía a la nación') ||
+          description.includes('inversiones no aptas')
+        ) {
+          console.log('💎 Clasificando como Inversiones (Activos Corrientes):', codigoStr, description, 'Valor:', value);
+          balanceSheet.currentAssets += value;
         }
         // CUENTAS POR COBRAR - Empresas de seguros
         else if (
@@ -473,8 +481,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           console.log('📄 Clasificando como Cuentas por Cobrar:', codigoStr, description);
           balanceSheet.accountsReceivable += value;
           balanceSheet.currentAssets += value;
-          balanceSheet.totalCurrentAssets += value;
-          balanceSheet.activosCorrientes += value;
         }
         // INVENTARIOS
         else if (
@@ -485,8 +491,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           balanceSheet.inventory += value;
           balanceSheet.inventarios += value;
           balanceSheet.currentAssets += value;
-          balanceSheet.totalCurrentAssets += value;
-          balanceSheet.activosCorrientes += value;
         }
         // OTROS ACTIVOS CORRIENTES
         else if (
@@ -500,8 +504,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         ) {
           console.log('💼 Clasificando como Otros Activos Corrientes:', codigoStr, description, 'Valor:', value);
           balanceSheet.currentAssets += value;
-          balanceSheet.totalCurrentAssets += value;
-          balanceSheet.activosCorrientes += value;
         }
         // ACTIVOS NO CORRIENTES
         else if (
@@ -513,7 +515,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           console.log('🏢 Clasificando como Activo No Corriente:', codigoStr);
           balanceSheet.fixedAssets += value;
           balanceSheet.nonCurrentAssets += value;
-          balanceSheet.totalNonCurrentAssets += value;
         }
         // Activos intangibles
         else if (
@@ -524,7 +525,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           console.log('💡 Clasificando como Activo Intangible:', codigoStr);
           balanceSheet.intangibleAssets += value;
           balanceSheet.nonCurrentAssets += value;
-          balanceSheet.totalNonCurrentAssets += value;
         }
         // PASIVOS CORRIENTES
         else if (
@@ -546,8 +546,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           }
           
           balanceSheet.currentLiabilities += Math.abs(value);
-          balanceSheet.totalCurrentLiabilities += Math.abs(value);
-          balanceSheet.pasivosCorrientes += Math.abs(value);
         }
         // Deuda a corto plazo
         else if (
@@ -558,14 +556,14 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
           console.log('💰 Clasificando como Deuda Corto Plazo:', codigoStr);
           balanceSheet.shortTermDebt += Math.abs(value);
           balanceSheet.currentLiabilities += Math.abs(value);
-          balanceSheet.totalCurrentLiabilities += Math.abs(value);
-          balanceSheet.pasivosCorrientes += Math.abs(value);
         }
-        // PASIVOS NO CORRIENTES - Solo para deudas a largo plazo reales
+        // PASIVOS NO CORRIENTES - Solo para deudas a largo plazo reales (EXCLUIR INVERSIONES)
         else if (
-          codigoStr.startsWith('22') || codigoStr.startsWith('2.2') ||
+          (codigoStr.startsWith('22') || codigoStr.startsWith('2.2') ||
           codigoStr.startsWith('304-') || // Reservas Técnicas (seguros)
-          codigoStr.startsWith('402-') || // Códigos específicos para seguros
+          codigoStr.startsWith('402-')) && // Códigos específicos para seguros
+          // EXCLUIR explícitamente las cuentas de inversiones que se clasificaron mal
+          !codigoStr.startsWith('2.201') && !codigoStr.startsWith('2.202') && !codigoStr.startsWith('2.203') ||
           description.includes('prestamo') && description.includes('largo') ||
           description.includes('credito') && description.includes('largo') ||
           description.includes('hipoteca') || description.includes('deuda') && description.includes('largo') ||
@@ -574,7 +572,6 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         ) {
           console.log('🏦 Clasificando como Pasivo No Corriente:', codigoStr, description, 'Valor:', value);
           balanceSheet.longTermDebt += Math.abs(value);
-          balanceSheet.totalNonCurrentLiabilities += Math.abs(value);
         }
         // PATRIMONIO - EXCLUIR cuentas 304- que ya se clasificaron como Pasivos No Corrientes
         else if (
@@ -601,17 +598,25 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       }
     });
     
-    // Calcular totales
+    // Calcular totales finales
+    balanceSheet.totalCurrentAssets = balanceSheet.currentAssets;
+    balanceSheet.activosCorrientes = balanceSheet.currentAssets;
+    balanceSheet.totalNonCurrentAssets = balanceSheet.nonCurrentAssets;
     balanceSheet.totalAssets = balanceSheet.currentAssets + balanceSheet.nonCurrentAssets;
-    balanceSheet.totalLiabilities = balanceSheet.currentLiabilities + balanceSheet.longTermDebt + balanceSheet.totalNonCurrentLiabilities;
     balanceSheet.activosTotal = balanceSheet.totalAssets;
+    
+    balanceSheet.totalCurrentLiabilities = balanceSheet.currentLiabilities;
+    balanceSheet.pasivosCorrientes = balanceSheet.currentLiabilities;
+    balanceSheet.totalNonCurrentLiabilities = balanceSheet.longTermDebt;
+    balanceSheet.totalLiabilities = balanceSheet.currentLiabilities + balanceSheet.longTermDebt;
     
     console.log('📊 Balance Sheet calculado:', {
       'Activos Corrientes': balanceSheet.currentAssets,
       'Activos No Corrientes': balanceSheet.nonCurrentAssets,
       'Total Activos': balanceSheet.totalAssets,
       'Pasivos Corrientes': balanceSheet.currentLiabilities,
-      'Pasivos No Corrientes': balanceSheet.longTermDebt + balanceSheet.totalNonCurrentLiabilities,
+      'Deuda a Largo Plazo': balanceSheet.longTermDebt,
+      'Total Pasivos No Corrientes': balanceSheet.totalNonCurrentLiabilities,
       'Total Pasivos': balanceSheet.totalLiabilities,
       'Patrimonio': balanceSheet.totalEquity,
       'Efectivo': balanceSheet.efectivo,
@@ -906,7 +911,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
         return;
       }
       
-      await SupabaseService.deleteBalanceData(selectedCompany.id, selectedPeriod.id);
+      await SupabaseService.deleteFinancialEntries(selectedCompany.id, selectedPeriod.id);
       
       // Limpiar datos locales
       clearBalanceData();
